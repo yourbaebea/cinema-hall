@@ -1,0 +1,7 @@
+.title{
+    font-family: var(--secondary-font), var(--default-font);
+  }
+  
+.page{
+    padding: 5vh 5vw;
+}

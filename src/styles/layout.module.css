@@ -1,0 +1,26 @@
+.container{
+    padding: 5vh 5vw;
+}
+
+.footer{
+    padding: 5vh 5vw;
+}
+
+
+.navbar{
+    width: 100%;
+    padding: 10vh 20vw;
+    height: min(200px,20vh);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.navigation{
+    width: auto;
+    align-self: center;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+}

@@ -1,0 +1,19 @@
+[
+    {
+      "href": "/home",
+      "name": "Home"
+    },
+    {
+      "href": "/about",
+      "name": "About"
+    },
+    {
+      "href": "/archive",
+      "name": "Archive"
+    },
+    {
+      "href": "/collection",
+      "name": "Collection"
+    }
+  ]
+  

@@ -1,0 +1,68 @@
+:root {
+	/*declare all things here, u use them with var(--variable-name) */
+
+  /* colors */
+	--white-1: white;
+  --black-1: black;
+  --off-white: #F0ECE8;
+
+
+  /* website variables */
+ 
+  --background-color: var(--off-white);
+	--primary-text-color: var(--black-1);
+	--secondary-text-color: var(--white-1);
+
+
+	/* system settings */
+
+	--primary-font: 'Futura';
+	--secondary-font: 'Impact';
+  --default-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+
+  --letter-spacing: 10%;
+
+}
+
+/* DO NOT USE THE SAME CLASSNAME AS DEFINED HERE IT WILL GENERATE CONFLICTS*/
+
+
+html, body{
+  margin: 0;
+  font-family: var(--primary-font), var(--default-font);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-color);
+}
+
+
+a, a:hover{
+  color: var(--primary-font);
+  text-decoration: none;
+}
+
+a:hover{
+  text-decoration:underline;
+}
+
+.title{
+  font-family: var(--secondary-font), var(--default-font);
+  color: blueviolet;
+}
+
+.page{
+  padding: 5vh 5vw;
+}
+
+
+@font-face {
+	font-family: 'Futura';
+	src: local('Futura'), url(../../public/fonts/Futura\ Std\ Book.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: 'Impact';
+	src: local('Impact'), url(../../public/fonts/Impact.ttf) format('truetype');
+}

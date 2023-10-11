@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component, setState } from "react";
+import Layout from "./components/Layout/Layout";
+import Home from "./pages/Home";
+import NotFound from "./pages/NotFound";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+
+import navigation from './information/navigation.json';
+
+
+export default class App extends Component {
+  render() {
+    
+    return (
+      <div>
+      <BrowserRouter>
+        <Routes>
+          {navigation.map((link, index) => (
+                <Route
+                  key={index}
+                  path={link.href}
+                  element={
+                    <Layout
+                      page={link.name}
+                    />
+                  }
+                />
+              ))}
+
+          <Route path="/*" element={<Layout page={<NotFound />} />} />
+        </Routes>
+      </BrowserRouter>
+
+      
+      
+      </div>
+    );
+  }
 }
-
-export default App;
