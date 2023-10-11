@@ -4,7 +4,7 @@ import classes from '../styles/page.module.css';
 export default class About extends Component {
   render() {
     return (
-        <div className={classes.about}>
+        <div className={classes.page}>
             <h1>About</h1>
             <p>about text</p>
 

@@ -20,12 +20,12 @@ if an component inside a page needs components inside it and is too complex:
 
 ### Styles
 
-- index.css: all the general style, example font, colors, spacing for text, etc..., should be declared in the root
-- layout.module.css: elements of the layout
-- page.module.css: elements of all pages
+- index.css: all the general style, example font, colors, spacing for text, etc..., should be declared in the root <br>
+- layout.module.css: elements of the layout <br>
+- page.module.css: elements of all pages <br>
 
-if an component inside a page is too complex:
-- create a {component}.module.css
+if an component inside a page is too complex: <br>
+create a {component}.module.css <br>
 
 
 ## How to
