@@ -5,6 +5,11 @@
 	--white-1: white;
   --black-1: black;
   --off-white: #F0ECE8;
+  --grey-2: #555555;
+  --grey-1: #8f8f8f;
+
+
+  --grey-3: #ffc4c4;
 
 
   /* website variables */
@@ -12,6 +17,7 @@
   --background-color: var(--off-white);
 	--primary-text-color: var(--black-1);
 	--secondary-text-color: var(--white-1);
+  --poster-color: var(--grey-3);
 
 
 	/* system settings */
@@ -31,11 +37,30 @@
 
 html, body{
   margin: 0;
+  width: calc(100vw - 1rem);
   font-family: var(--primary-font), var(--default-font);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--background-color);
   letter-spacing: var(--letter-spacing);
+}
+
+::-webkit-scrollbar {
+	width: 1rem;
+}
+
+::-webkit-scrollbar-track {
+	background: var(--background-color);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: var(--grey-1);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: var(--grey-2);
 }
 
 
@@ -48,15 +73,6 @@ a:hover{
   text-decoration:underline;
 }
 
-.title{
-  font-family: var(--secondary-font), var(--default-font);
-  color: blueviolet;
-}
-
-.page{
-  padding: 5vh 5vw;
-}
-
 
 @font-face {
 	font-family: 'Futura';
@@ -67,3 +83,5 @@ a:hover{
 	font-family: 'Impact';
 	src: local('Impact'), url(../../public/fonts/Impact.ttf) format('truetype');
 }
+
+

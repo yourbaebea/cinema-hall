@@ -5,3 +5,11 @@
 .page{
     padding: 5vh 5vw;
 }
+
+
+.posterLink{
+  margin: 30px;
+  width: 200px;
+  height: 400px;
+  background-color: rgb(220, 220, 220);
+}
