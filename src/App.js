@@ -12,6 +12,7 @@ import {
 import navigation from './information/navigation.json';
 import Poster from "./pages/Poster";
 import PosterWrap from "./components/PosterWrap";
+import About from "./pages/About";
 
 
 export default class App extends Component {
@@ -21,19 +22,12 @@ export default class App extends Component {
       <div>
       <BrowserRouter>
         <Routes>
-          {navigation.map((link, index) => (
-                <Route
-                  key={index}
-                  path={link.href}
-                  element={
-                    <Layout
-                      page={link.name}
-                    />
-                  }
-                />
-              ))}
-          <Route path="/poster/:id" element={<PosterWrap/>} />
-          <Route path="/*" element={<Layout page={<NotFound />} />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<Layout page="About" />} />
+        <Route path="/archive" element={<Layout page="Archive" />} />
+        <Route path="/collection" element={<Layout page="Collection" />} />
+        <Route path="/poster/:id" element={<PosterWrap/>} />
+        <Route path="/*" element={<Layout page={<NotFound />} />} />
         </Routes>
       </BrowserRouter>
 

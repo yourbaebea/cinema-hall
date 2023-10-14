@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import classes from '../styles/page.module.css';
 import Poster from "./Poster";
 import Layout from "../components/Layout/Layout";
-
 const queryfromserver = [
   {
     "id": "1",
