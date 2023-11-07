@@ -50,10 +50,10 @@ export default class Collection extends Component {
   
             <div className={classes.collectionGrid}>
             {queryfromserver.map(poster => (
-              <div className={classes.collectionContainer}>
+              
                 <a className={classes.collectionImage} key={poster.id} href={`/poster/${poster.id}`}>poster</a>
           
-              </div>
+             
               
             ))}
             </div>
