@@ -9,7 +9,7 @@ const Footer = () => {
       
       <div className={classes.footer}>
         
-        <p>footer text</p>
+        <div>Cinema Hall ©</div>
 
       </div>
 

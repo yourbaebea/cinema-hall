@@ -11,21 +11,19 @@
   height: fit-content;
   display: flex;
   flex-direction: column;
-  gap: 3vh;
+  gap: 6vh;
 }
 
 .posterContainer{
   width:inherit;
-  height: calc(var(--poster-height) * var(--scale-archive));
+  height: max-content;
   display: flex;
   flex-direction: row;
-  gap: 3vh;
-  text-align: center;
+  gap: 6vh;
 }
 
 .posterContainer:nth-child(even) {
   flex-direction: row-reverse;
-  text-align: center;
 }
 
 .posterImage{
@@ -34,7 +32,8 @@
   background-color: rgb(220, 220, 220);
 }
 
-.posterTex{
-  height: inherit;
-  background-color: rgb(220, 220, 220);
+.posterText{
+  width: calc(100% - calc(var(--poster-width) * var(--scale-archive)));
+  height: fit-content;
+  text-align: left;
 }

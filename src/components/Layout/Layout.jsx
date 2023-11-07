@@ -22,8 +22,12 @@ class Layout extends Component {
     <div className={classes.container}>
       
       <Navbar/>
+
+      <div className={classes.PageComponent}>
+        <PageComponent/>
+      </div>
       
-      <PageComponent/>
+      
 
       <Footer/>
 

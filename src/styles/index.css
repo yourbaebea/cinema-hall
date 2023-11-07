@@ -20,10 +20,10 @@
   --poster-color: var(--grey-3);
 
 
-  --poster-width: 720px;
-  --poster-height: 1080px;
+  --poster-width: 72px;
+  --poster-height: 108px;
 
-  --scale-archive: 0.5; 
+  --scale-archive: 6; 
   --scale-collection: 0.3; 
   
 

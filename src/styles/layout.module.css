@@ -1,23 +1,32 @@
 .container{
-    padding: 5vh 5vw;
+    padding: 0vh 5vw;
+}
+
+.PageComponent{
+    min-height: 70vh;
 }
 
 .footer{
-    padding: 5vh 5vw;
+    height: 5vh;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    width: inherit;
+    display: flex;
+    justify-content:end;
+    align-items: flex-end;
 }
 
 
 .navbar{
     width: 100%;
-    padding: 10vh 20vw;
-    height: min(200px,20vh);
+    height: 20vh;
+    padding: 5vh 20vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
     text-transform: uppercase;
-    font-weight: 900;
-    
+    font-weight: 900;    
 }
 
 .navigation{

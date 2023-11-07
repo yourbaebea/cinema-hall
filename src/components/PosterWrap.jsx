@@ -23,8 +23,10 @@ function PosterWrap() {
       
       <Navbar/>
 
+      <div className={classes.PageComponent}>
+
       {data === null ? <NotFound/> : <Poster id={id} data={data}/> }
-      
+      </div>
       <Footer/>
 
     </div>
