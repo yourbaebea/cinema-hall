@@ -1,25 +1,17 @@
 .collectionGrid{
-   display:grid;
-   width: 100%;
-   height: fit-content;
-   flex-direction: column;
-   gap: 3vh;
-}
-
-.collectionContainer{
-    width:inherit;
-    height: 22%;
-    display: flex;
-    flex-direction: row;
-    padding: 3%;
-    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(3, 33vh);
+    grid-template-rows: repeat(3, 3fr);
+    gap: 1vh;
   }
-  
+
+
 
 
   .collectionImage{
-    width: 30%;
-    padding: 3%;
-    height: inherit;
-    background-color: rgb(220, 220, 220);
+    
+    border: 1px solid black;
+    min-height:40vh;
+    max-width: 30vh;
+    
   }
