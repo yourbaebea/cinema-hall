@@ -1,6 +1,6 @@
 .collectionGrid{
     display: grid;
-    grid-template-columns: repeat(3, 33vh);
+    grid-template-columns: repeat(3, 30vh);
     grid-template-rows: repeat(3, 3fr);
     gap: 1vh;
   }
