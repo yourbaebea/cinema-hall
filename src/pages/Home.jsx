@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import classes from '../styles/page.module.css';
+import home from '../styles/home.module.css';
 import navigation from '../information/navigation.json';
 
 export default class Home extends Component {
@@ -24,17 +24,17 @@ export default class Home extends Component {
     const { isMenuVisible } = this.state;
 
     return (
-      <div className={classes.page}>
+      <div className={home.page}>
 
-        <div className={classes.menuButtonContainer}>
-          <a className={classes.menuButton} onClick={this.toggleMenuVisibility}>
+        <div className={home.menuButtonContainer}>
+          <a className={home.menuButton} onClick={this.toggleMenuVisibility}>
             menu
           </a>
         </div>
 
-        <div className={`${classes.menu} ${isMenuVisible ? classes.visible : classes.hidden}`}>
+        <div className={`${home.menu} ${isMenuVisible ? home.visible : home.hidden}`}>
           {navigation.map((link, index) => (
-            <div className={classes.navigation} key={index}>
+            <div className={home.navigation} key={index}>
               <a href={link.href}>{link.name}</a>
             </div>
           ))}
@@ -42,7 +42,7 @@ export default class Home extends Component {
         </div>
           
         <div>
-          <div className={classes.imageHome}>icon dragable in the background</div>
+          <div className={home.imageHome}>icon dragable in the background</div>
         </div>
 
 

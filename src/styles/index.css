@@ -20,6 +20,14 @@
   --poster-color: var(--grey-3);
 
 
+  --poster-width: 720px;
+  --poster-height: 1080px;
+
+  --scale-archive: 0.5; 
+  --scale-collection: 0.3; 
+  
+
+
 	/* system settings */
 
 	--primary-font: 'Futura';

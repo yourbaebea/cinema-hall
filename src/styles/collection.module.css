@@ -1,0 +1,25 @@
+.collectionGrid{
+   display:grid;
+   width: 100%;
+   height: fit-content;
+   flex-direction: column;
+   gap: 3vh;
+}
+
+.collectionContainer{
+    width:inherit;
+    height: 22%;
+    display: flex;
+    flex-direction: row;
+    padding: 3%;
+    text-align: center;
+  }
+  
+
+
+  .collectionImage{
+    width: 30%;
+    padding: 3%;
+    height: inherit;
+    background-color: rgb(220, 220, 220);
+  }

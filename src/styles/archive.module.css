@@ -1,0 +1,40 @@
+.title{
+    font-family: var(--secondary-font), var(--default-font);
+  }
+  
+.page{
+    padding: 5vh 5vw;
+}
+
+.posterGrid{
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 3vh;
+}
+
+.posterContainer{
+  width:inherit;
+  height: calc(var(--poster-height) * var(--scale-archive));
+  display: flex;
+  flex-direction: row;
+  gap: 3vh;
+  text-align: center;
+}
+
+.posterContainer:nth-child(even) {
+  flex-direction: row-reverse;
+  text-align: center;
+}
+
+.posterImage{
+  width: calc(var(--poster-width) * var(--scale-archive));
+  height: calc(var(--poster-height) * var(--scale-archive));
+  background-color: rgb(220, 220, 220);
+}
+
+.posterTex{
+  height: inherit;
+  background-color: rgb(220, 220, 220);
+}
