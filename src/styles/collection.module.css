@@ -1,10 +1,22 @@
+
+
+
+.title{
+  font-family: var(--secondary-font), var(--default-font);
+}
+
+.page{
+  padding: 5vh 5vw;
+}
+
+
 .collectionGrid{
     display: grid;
     grid-template-columns: repeat(3, 30vh);
     grid-template-rows: repeat(3, 3fr);
     gap: 1vh;
-  }
-
+    float: right;
+}
 
 
 
