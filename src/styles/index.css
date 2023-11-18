@@ -8,8 +8,6 @@
   --grey-2: #555555;
   --grey-1: #8f8f8f;
   --shadow-menu: rgba(183, 147, 120, 0.966);
-
-
   --grey-3: #ffc4c4;
 
 
@@ -25,7 +23,7 @@
   --poster-height: 108px;
 
   --scale-archive: 6; 
-  --scale-collection: 0.3; 
+  --scale-collection: 6; 
   
 
 
@@ -37,7 +35,13 @@
   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
   sans-serif;
 
+
+  /* letters */
+
   --letter-spacing: 0.05rem;
+  --navbar-font-size: 23px;
+  --navbar-font-weight:900;
+  --text-font-size: 15px;
 
 }
 

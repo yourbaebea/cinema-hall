@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import classes from '../../styles/layout.module.css';
-import home from '../../styles/home.module.css';
 
 import navigation from '../../information/navigation.json';
 

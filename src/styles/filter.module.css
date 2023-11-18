@@ -22,8 +22,8 @@
 
 .filterButtonContainer {
     position: fixed;
-    top: 10px; /* Adjust the top position as needed */
-    left: 10px; /* Adjust the right position as needed */
+    top: 2rem; /* Adjust the top position as needed */
+    left: 2rem; /* Adjust the right position as needed */
     z-index: 100; /* Should be higher than the filter */
     background: var(--grey-1);
     cursor: pointer;
