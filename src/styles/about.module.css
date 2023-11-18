@@ -26,7 +26,7 @@
   position: relative;
   left: 10vw;
   top: 48vh;
-  width: 232px;
+  width: 20vw;
   height: min-content;
   flex-direction: column;
 }
@@ -42,6 +42,7 @@
   position: relative;
   left: 10vw;
   top: 45vh;
+  max-width: fit-content;
   
   flex-direction: column;
 }
