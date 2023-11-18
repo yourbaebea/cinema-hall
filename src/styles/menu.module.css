@@ -20,7 +20,7 @@
 }
 
 .menuButtonContainer {
-    position: fixed;
+    position: absolute;
     top: 2rem; /* Adjust the top position as needed */
     right: 2rem; /* Adjust the right position as needed */
     z-index: 100; /* Should be higher than the menu */

@@ -43,10 +43,12 @@ export default class Collection extends Component {
 
     const { filterNumber, filterGenre,filterDecade,filterSearch, handleFilterDecade, handleFilterGenre, handleFilterNumber, handleFilterSearch } = this.props;
 
+
+    const columnCount = 2;
+
     return (
         <div className={classes.page}>
-            <h1>Collection</h1>
-
+          
             {view ?
 
             <div>
@@ -79,7 +81,7 @@ export default class Collection extends Component {
               </div>
 
 
-              <div className={classes.collectionGrid}>
+              <div className={classes.collectionGrid} style={{ gridTemplateColumns: `repeat(3, 1fr)` }}>
                 {queryfromserver.map(poster => (<a className={classes.collectionImage} key={poster.id} href={`/poster/${poster.id}`}>
                   <div className={classes.imageWrapper}>
                   <img className={classes.image} src={"/default/poster.png"} alt="poster" />
@@ -98,8 +100,12 @@ export default class Collection extends Component {
             <div className={classes.collectionContainer}>
 
 
-            <div className={classes.collectionGrid}>
-                {queryfromserver.map(poster => (<a className={classes.collectionImage} key={poster.id} href={`/poster/${poster.id}`}><img className={classes.image} src={"/default/poster.png"} alt="poster" /></a>))}
+            <div className={classes.collectionGrid} style={{ gridTemplateColumns: `repeat(${columnCount}, 1fr)` }}>
+                {queryfromserver.map(poster => (<a className={classes.collectionImage} key={poster.id} href={`/poster/${poster.id}`}>
+                  <div className={classes.imageWrapper}>
+                  <img className={classes.image} src={"/default/poster.png"} alt="poster" />
+                  </div>
+                  </a>))}
               </div>
             
             </div>
