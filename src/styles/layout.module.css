@@ -1,5 +1,5 @@
 .container{
-    padding: 0vh 5vw;
+    padding: 0vh 0vw;
 }
 
 .PageComponent{
@@ -26,7 +26,7 @@
     align-items: center;
     box-sizing: border-box;
     text-transform: uppercase;
-    font-weight: 900;    
+    font-weight: 900; 
 }
 
 .navigation{
@@ -36,3 +36,4 @@
     justify-content: center;
     flex-direction: column;
 }
+

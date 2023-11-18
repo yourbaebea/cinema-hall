@@ -7,6 +7,7 @@
   --off-white: #F0ECE8;
   --grey-2: #555555;
   --grey-1: #8f8f8f;
+  --shadow-menu: rgba(183, 147, 120, 0.966);
 
 
   --grey-3: #ffc4c4;
@@ -45,7 +46,7 @@
 
 html, body{
   margin: 0;
-  width: calc(100vw - 1rem);
+  width: calc(100vw - 2rem);
   font-family: var(--primary-font), var(--default-font);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

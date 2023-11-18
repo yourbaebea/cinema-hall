@@ -22,7 +22,7 @@ export default class App extends Component {
       <div>
       <BrowserRouter>
         <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Layout page="Home" />} />
         <Route path="/about" element={<Layout page="About" />} />
         <Route path="/archive" element={<Layout page="Archive" />} />
         <Route path="/collection" element={<Layout page="Collection" />} />

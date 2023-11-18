@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import classes from '../styles/collection.module.css';
 import Poster from "./Poster";
 import Layout from "../components/Layout/Layout";
+import CollectionWeb from "../components/Collection/CollectionWeb";
+import CollectionMobile from "../components/Collection/CollectionMobile";
+import Filter from "../components/Filter";
+const mobileWidth= 800;
 const queryfromserver = [
   {
     "id": "1",
@@ -32,11 +36,12 @@ const queryfromserver = [
 
 export default class Collection extends Component {
 
-  
 
   render() {
 
-    const id="here";
+    const view = window.innerWidth > mobileWidth ;
+
+    const { filterNumber, filterGenre,filterDecade,filterSearch, handleFilterDecade, handleFilterGenre, handleFilterNumber, handleFilterSearch } = this.props;
 
     return (
         <div className={classes.page}>
@@ -47,22 +52,74 @@ export default class Collection extends Component {
 
             <div>this is the text back to the primary font</div>
 
-  
-            <div className={classes.collectionGrid}>
-            {queryfromserver.map(poster => (
+            {view ?
+
+            <div>
+            
+              <div>web add here the filters and collection list for the web</div>
+
+              <div> filters
+
+                {/* 
+
+                <div className={classes.category}>genre
+                  <div>current value {filterGenre}</div>
+                  <div onClick={handleFilterGenre("rock")}>change to rock</div>
+                </div>
+                <div className={classes.category}>decade
+                  <div>current value {filterDecade}</div>
+                  <div onClick={handleFilterDecade("1980")}>change to 1980</div>
+                </div>
+
+                <div className={classes.category}>decade
+                  <div>current value {filterSearch}</div>
+                  <div onClick={handleFilterSearch("tom hanks")}>change to tom hanks</div>
+                </div>
+                */}
+
+          <div className={classes.category}>genre</div>
+          <div className={classes.category}>decade</div>
+          <div className={classes.category}>search</div>
               
-                <a className={classes.collectionImage} key={poster.id} href={`/poster/${poster.id}`}>poster</a>
-          
-             
+              </div>
+
+              <div className={classes.collectionGrid}>
+              {queryfromserver.map(poster => (
+                
+                  <a className={classes.collectionImage} key={poster.id} href={`/poster/${poster.id}`}>poster</a>
+            
               
-            ))}
+                
+              ))}
+              </div>
+
             </div>
-              
-              
+            
+            
+  
+            : <div>mobile, filters are already being handled
+
+            <div className={classes.collectionGrid}>
+                          {queryfromserver.map(poster => (
+                            
+                              <a className={classes.collectionImage} key={poster.id} href={`/poster/${poster.id}`}>poster</a>
+                        
+                          
+                            
+                          ))}
+                          </div>
+
+                        </div>
+           }
+
+            
             
 
         </div>
     
     );
   }
+
 }
+
+
