@@ -1,0 +1,70 @@
+.title{
+    font-family: var(--secondary-font), var(--default-font);
+  }
+  
+.page{
+    padding: 5vh 5vw;
+}
+
+.textBlock {
+  bottom:14vh;
+  color: #000;
+  font-size: 16px;
+  font-weight: 500;
+  font-stretch: condensed;
+  font-family:  var(--primary-font), var(--default-font);
+  position: relative;
+}
+
+.ideaSelfMadePostersForTheMembe {
+  color: #211f1f;
+  font-size: 16px;
+  font-weight: 500;
+  font-stretch: condensed;
+  font-family:  var(--primary-font), var(--default-font);
+
+  position: relative;
+  left: 10vw;
+  top: 48vh;
+  width: 232px;
+  height: min-content;
+  flex-direction: column;
+}
+
+.mADEBY {
+  color: #211f1f;
+  font-size: 28px;
+  font-weight: 500;
+  font-stretch: condensed;
+  font-family:  var(--primary-font), var(--default-font);
+
+  text-transform: uppercase;
+  position: relative;
+  left: 10vw;
+  top: 45vh;
+  
+  flex-direction: column;
+}
+
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 16vh;
+  width: 50vw;
+  position: relative;
+  left: 27vw;
+ 
+
+
+}
+
+.rectangle{
+
+  flex: 1;
+  height: 37vh;
+  background-color: #ccc;
+  margin: 10px;
+}
+
