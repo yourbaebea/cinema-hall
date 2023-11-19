@@ -3,69 +3,58 @@
   }
   
 .page{
-    padding: 5vh 5vw;
+    padding: var(--page-padding);
 }
 
-.textBlock {
-  bottom:14vh;
-  color: #000;
-  font-size: 16px;
-  font-weight: 500;
-  font-stretch: condensed;
-  font-family:  var(--primary-font), var(--default-font);
-  position: relative;
+
+.aboutContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
 }
 
-.ideaSelfMadePostersForTheMembe {
-  color: #211f1f;
-  font-size: 16px;
-  font-weight: 500;
-  font-stretch: condensed;
-  font-family:  var(--primary-font), var(--default-font);
+.aboutFlexRow{
+  width: 70%;
+  display: flex;
+  height: fit-content;
+  flex-direction: row;
+  gap:2rem;
+}
 
-  position: relative;
-  left: 10vw;
-  top: 48vh;
-  width: 20vw;
-  height: min-content;
+.aboutFlexColumn {
+  display: flex;
+  height: fit-content;
   flex-direction: column;
+  gap: 2rem; 
 }
 
-.mADEBY {
-  color: #211f1f;
+.imageWrapper {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 3px solid var(--grey-1);
+}
+
+.aboutImage {
+  width:inherit;
+  height: auto;
+  object-fit: cover;
+}
+
+.image{
+  width: 100%;
+  height: auto;
+}
+
+.madeBy {
   font-size: 28px;
   font-weight: 500;
-  font-stretch: condensed;
-  font-family:  var(--primary-font), var(--default-font);
-
   text-transform: uppercase;
-  position: relative;
-  left: 10vw;
-  top: 45vh;
-  max-width: fit-content;
-  
-  flex-direction: column;
 }
 
 
-.container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 16vh;
-  width: 50vw;
-  position: relative;
-  left: 27vw;
- 
-
-
+.textBlock {
+  width: 100%;
+  min-height: 23vh;
+  margin-bottom: 10vh;
 }
-
-.rectangle{
-
-  flex: 1;
-  height: 37vh;
-  background-color: #ccc;
-  margin: 10px;
-}
-

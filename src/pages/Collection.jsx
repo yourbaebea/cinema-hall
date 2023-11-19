@@ -52,32 +52,19 @@ export default class Collection extends Component {
             {view ?
 
             <div>
-            
-              
-                {/* 
-
-                <div className={classes.category}>genre
-                  <div>current value {filterGenre}</div>
-                  <div onClick={handleFilterGenre("rock")}>change to rock</div>
-                </div>
-                <div className={classes.category}>decade
-                  <div>current value {filterDecade}</div>
-                  <div onClick={handleFilterDecade("1980")}>change to 1980</div>
-                </div>
-
-                <div className={classes.category}>decade
-                  <div>current value {filterSearch}</div>
-                  <div onClick={handleFilterSearch("tom hanks")}>change to tom hanks</div>
-                </div>
-                */}
-
 
               <div className={classes.collectionContainer}>
 
               <div className={classes.filterContainer}>
                 <div className={classes.category}>genre</div>
+                <div>options</div>
+                <div>options</div>
                 <div className={classes.category}>decade</div>
+                <div>options</div>
+                <div>options</div>
                 <div className={classes.category}>search</div>
+                <div>options</div>
+                <div>options</div>
               </div>
 
 

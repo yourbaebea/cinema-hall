@@ -104,7 +104,6 @@ class Layout extends Component {
       <div className={classes.PageComponent}>
           <PageComponent view={view}/>
       </div>
-      <Footer/>
     </div>
     : 
     
@@ -127,7 +126,10 @@ class Layout extends Component {
     
     }
 
-  
+
+    {page=="Home" ? <></>: <Footer/>}
+
+    
 
     </div>
 

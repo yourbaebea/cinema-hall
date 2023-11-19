@@ -3,15 +3,13 @@
 }
 
 .PageComponent{
-    min-height: 70vh;
     padding-left: 2rem;
-    padding-top: 2rem;
+    padding-top: 5rem;
 }
 
 .footer{
     height: 5vh;
-    padding-top: 2vh;
-    padding-bottom: 2vh;
+    padding-bottom: 3vh;
     width: 100%;
     display: flex;
     justify-content:end;

@@ -23,7 +23,10 @@
   --poster-height: 108px;
 
   --scale-archive: 6; 
-  --scale-collection: 6; 
+  --scale-collection: 6;
+  
+  
+  --page-padding: 5vh 10vw;
   
 
 
@@ -41,7 +44,7 @@
   --letter-spacing: 0.05rem;
   --navbar-font-size: 23px;
   --navbar-font-weight:900;
-  --text-font-size: 15px;
+  --text-font-size: 18px;
 
 }
 
@@ -56,6 +59,8 @@ html, body{
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--background-color);
   letter-spacing: var(--letter-spacing);
+  font-size: var(--text-font-size);
+
 }
 
 ::-webkit-scrollbar {
@@ -84,6 +89,14 @@ a, a:hover{
 
 a:hover{
   text-decoration:underline;
+}
+
+h1{
+  font-family: var(--secondary-font), var(--default-font);
+}
+
+p{
+  font-size: var(--text-font-size);
 }
 
 

@@ -1,13 +1,31 @@
-.posterDetails{
-    width: 200px;
-    height: 400px;
-    background-color: var( --poster-color);
+.page{
+    padding: var(--page-padding);
+    min-height: 80vh;
 }
 
-.buttonContainer{
+.posterDetails{
+    min-height: 30vh;
+}
+
+.lineWeb{
+    width: 100%;
+    padding-bottom: 5vh;
+    margin-top: -13vh;
+    margin-left: -15vh;
+    width: 50px;
+    height: 50px;
+}
+
+.lineMobile{
+    width: 100%;
+    padding-bottom: 5vh;
+    margin-top: -14vh;
+    margin-left: -8vh;
     width: 40px;
     height: 40px;
 }
+
+
 
 .button{
     background: var(--grey-1);
@@ -24,3 +42,43 @@
     align-self: center;
     color: var(--background-color)
 }
+
+
+.posterContainer{
+    width:inherit;
+    height: max-content;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 6vh;
+  }
+  
+  
+  .posterImage{
+    width: 40%;
+  }
+  
+  .posterText{
+    flex:1;
+    height: fit-content;
+    text-align: left;
+  }
+  
+  .imageWrapper {
+    overflow: hidden;
+    border-radius: 10px;
+    border: 3px solid var(--grey-1);
+    width: inherit;
+  }
+  
+  .imageLink {
+    width:100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .image{
+    width: 100%;
+    height: auto;
+  }
+  

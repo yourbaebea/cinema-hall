@@ -23,15 +23,29 @@ const queryfromserver = [
 
 export default class Archive extends Component {
   render() {
+    const { view } = this.props;
+
+
+    const size= (view ? 20 : 100);
+
+    //style={{width: `${size}%` }}
     return (
         <div className={classes.page}>
 
             <div className={classes.posterGrid}>
             {queryfromserver.map(poster => (
               <div className={classes.posterContainer}>
-                <a className={classes.posterImage} key={poster.id} href={`/poster/${poster.id}`}>poster</a>
+                
+                <div className={classes.posterImage} style={{width: `${size}%` }} >
+                <a className={classes.imageLink} key={poster.id} href={`/poster/${poster.id}`}>
+                  <div className={classes.imageWrapper}>
+                  <img className={classes.image} src={"/default/poster.png"} alt="poster" />
+                  </div>
+                </a>
+                </div>
+                
                 <div className={classes.posterText}>
-                  <h1 className={classes.title} >Name of {poster.id}</h1>
+                  <h1>Name of {poster.id}</h1>
                   <p>texto aqui do poster {poster.id} 
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Porta nibh venenatis cras sed felis. Nisi quis eleifend quam adipiscing vitae proin sagittis nisl. Sollicitudin nibh sit amet commodo. Sed egestas egestas fringilla phasellus faucibus scelerisque. Ac tincidunt vitae semper quis lectus nulla. Malesuada pellentesque elit eget gravida cum sociis natoque. Nec nam aliquam sem et tortor consequat id porta nibh. Eget aliquet nibh praesent tristique magna sit amet purus gravida. Nulla porttitor massa id neque aliquam vestibulum. Nunc mi ipsum faucibus vitae aliquet nec.
 
@@ -39,6 +53,8 @@ Ut aliquam purus sit amet luctus venenatis lectus magna. Turpis massa tincidunt 
 
                  </p>
                 </div>
+
+
               </div>
               
             ))}

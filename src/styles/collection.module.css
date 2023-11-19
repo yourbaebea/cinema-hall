@@ -4,7 +4,7 @@
 }
 
 .page{
-  padding: 5vh 5vw;
+  padding: var(--page-padding);
 }
 
 .collectionContainer {
@@ -13,7 +13,7 @@
 
 .filterContainer {
   min-width: 200px;
-  width: 25vw;
+  width: 20vw;
   height: 70vh;
   align-items: center;
   justify-content: center;
@@ -50,4 +50,10 @@
 .image{
   width: 100%;
   height: auto;
+}
+
+.category{
+  text-transform: uppercase;
+  font-weight: var(--navbar-font-weight); 
+  font-size: var(--navbar-font-size);
 }
