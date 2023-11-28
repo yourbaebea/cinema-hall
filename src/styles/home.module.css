@@ -10,5 +10,10 @@
 .imageHome{
     width: 200px;
     height:200px;
-    background-color: rgb(170, 45, 45);
+
+}
+
+.image{
+    width: 100%;
+    height: auto;
 }
