@@ -52,29 +52,56 @@ export default class Collection extends Component {
             {view ?
 
             <div>
-
               <div className={classes.collectionContainer}>
 
-              <div className={classes.filterContainer}>
-                <div className={classes.category}>genre</div>
-                <div>options</div>
-                <div>options</div>
-                <div className={classes.category}>decade</div>
-                <div>options</div>
-                <div>options</div>
-                <div className={classes.category}>search</div>
-                <div>options</div>
-                <div>options</div>
-              </div>
-
-
-              <div className={classes.collectionGrid} style={{ gridTemplateColumns: `repeat(3, 1fr)` }}>
-                {queryfromserver.map(poster => (<a className={classes.collectionImage} key={poster.id} href={`/poster/${poster.id}`}>
-                  <div className={classes.imageWrapper}>
-                  <img className={classes.image} src={"/default/poster.png"} alt="poster" />
+                <div className={classes.filtersContainer}>
+                  <div className={classes.genreContainer}>
+                    <img
+                      loading="lazy"
+                      src={require("../images/lines.svg").default}
+                      className={classes.img}
+                    />
+                    <div className={classes.genreFilter}>
+                      <div className={classes.genre}>GENRE</div>
+                      <div className={classes.genre1}>Horror</div>
+                      <div className={classes.genre2}>Crime</div>
+                      <div className={classes.genre3}>Thriller</div>
+                    </div>
                   </div>
-                  </a>))}
-              </div>
+                  <div className={classes.decadeContainer}>
+                    <img
+                      loading="lazy"
+                      src={require("../images/lines.svg").default}
+                      className={classes.img}
+                    />
+                    <div className={classes.decadeFilter}>
+                      <div className={classes.decade}>DECADE</div>
+                      <div className={classes.decade1}>1970-1980</div>
+                      <div className={classes.decade2}>1980-1990</div>
+                      <div className={classes.decade3}>1990-2000</div>
+                    </div>
+                  </div>
+                  <div className={classes.searchContainer}>
+                    <div className={classes.searchTitle}>Search</div>
+                    <div className={classes.searchBar}>
+                      <div className={classes.searchText}>...</div>
+                      <img
+                        loading="lazy"
+                        src={require("../images/search_icon.svg").default}
+                        className={classes.img2}
+                      />
+                    </div>
+                  </div>
+                </div>
+
+
+                <div className={classes.collectionGrid} style={{ gridTemplateColumns: `repeat(3, 1fr)` }}>
+                  {queryfromserver.map(poster => (<a className={classes.collectionImage} key={poster.id} href={`/poster/${poster.id}`}>
+                    <div className={classes.imageWrapper}>
+                    <img className={classes.image} src={"/default/poster.png"} alt="poster" />
+                    </div>
+                    </a>))}
+                </div>
             
               </div>
 
