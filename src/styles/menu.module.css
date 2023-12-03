@@ -10,6 +10,7 @@
     width: 100vw;
     height: 70vh;
     background: var(--shadow-menu);
+    backdrop-filter: blur(6px);
     display: none;
     z-index: 99;
     text-transform: uppercase;
