@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import classes from '../../styles/layout.module.css'
+import filter from '../../styles/filter.module.css'
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import Menu from '../Menu'
@@ -111,7 +112,24 @@ class Layout extends Component {
       <Menu isMenuVisible={isMenuVisible} toggleMenuVisibility={this.toggleMenuVisibility}/>
       
       {page=="Collection" ? <div>
-      <Filter isFilterVisible={isFilterVisible} toggleFilterVisibility={this.toggleFilterVisibility} />
+  
+      <div className={filter.filterContainer}>
+
+        <div className={filter.filterButtonContainer}>
+          <a className={filter.filterButton} onClick={this.toggleFilterVisibility}>
+            filter
+          </a>
+        </div>
+
+        <div className={`${filter.filter} ${isFilterVisible ? filter.visible : filter.hidden}`}>
+          <Filter view={view}></Filter>
+        </div>
+
+        </div>
+      
+      
+      
+      
       <div className={classes.PageComponent}>
         <PageComponent view={view}/>
       </div>
