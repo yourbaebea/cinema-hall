@@ -17,10 +17,12 @@ export default class Image extends Component {
     console.log(data);
 
     if(data.default==null){
-      return(<div><img className={classes.image} src={"/default/poster.png"} alt="poster"/></div>)
+      return(<div className={classes.imageLink}>
+        <div className={classes.imageWrapper}><img className={classes.image} src={"/default/poster.png"} alt="poster"/></div></div>)
     }
 
-    if(data.background==null || data.elements==null ) return(<div><img className={classes.image} src={data.default} alt="poster"/></div>)
+    if(data.background==null || data.elements==null ) return(<div className={classes.imageLink}>
+      <div className={classes.imageWrapper}><img className={classes.image} src={data.default} alt="poster"/></div></div>)
 
     return (
       <div className={animation.imageContainer}>
