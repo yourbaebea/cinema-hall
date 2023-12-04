@@ -49,50 +49,50 @@ export default class Collection extends Component {
     return (
         <div className={classes.page}>
           
-            {view ?
+          {view ?
 
-            <div>
-              <div className={classes.collectionContainer}>
-
-
-                <div className={classes.filtersContainer}>
-
-                  <Filter view={view}></Filter>
-                  
-                </div>
-
-
-                <div className={classes.collectionGrid} style={{ gridTemplateColumns: `repeat(3, 1fr)` }}>
-                  {queryfromserver.map(poster => (<a className={classes.collectionImage} key={poster.id} href={`/poster/${poster.id}`}>
-                    <div className={classes.imageWrapper}>
-                    <img className={classes.image} src={"/default/poster.png"} alt="poster" />
-                    </div>
-                    </a>))}
-                </div>
-            
-              </div>
-
-            </div>
-            
-            
-  
-            : <div>mobile, filters are already being handled
-
+          <div>
             <div className={classes.collectionContainer}>
 
 
-            <div className={classes.collectionGrid} style={{ gridTemplateColumns: `repeat(${columnCount}, 1fr)` }}>
+              <div className={classes.filtersContainer}>
+
+                <Filter view={view}></Filter>
+                
+              </div>
+
+
+              <div className={classes.collectionGrid} style={{ gridTemplateColumns: `repeat(3, 1fr)` }}>
                 {queryfromserver.map(poster => (<a className={classes.collectionImage} key={poster.id} href={`/poster/${poster.id}`}>
                   <div className={classes.imageWrapper}>
                   <img className={classes.image} src={"/default/poster.png"} alt="poster" />
                   </div>
                   </a>))}
               </div>
-            
+          
             </div>
 
+          </div>
+          
+          
+
+          : <div>mobile, filters are already being handled
+
+          <div className={classes.collectionContainer}>
+
+
+          <div className={classes.collectionGrid} style={{ gridTemplateColumns: `repeat(${columnCount}, 1fr)` }}>
+              {queryfromserver.map(poster => (<a className={classes.collectionImage} key={poster.id} href={`/poster/${poster.id}`}>
+                <div className={classes.imageWrapper}>
+                <img className={classes.image} src={"/default/poster.png"} alt="poster" />
+                </div>
+                </a>))}
             </div>
-           }
+          
+          </div>
+
+          </div>
+          }
 
 
             
