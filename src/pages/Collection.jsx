@@ -42,7 +42,7 @@ export default class Collection extends Component {
 
 
                 <div className={classes.collectionGrid} style={{ gridTemplateColumns: `repeat(3, 1fr)` }}>
-                  {queryfromserver.map(poster => (<a className={classes.collectionImage} key={poster.id} href={`/poster/${poster.id}`}>
+                  {queryfromserver.map( (poster, index) => (<a className={classes.collectionImage} key={index} href={`/poster/${poster.id}`}>
                     <Image data={poster.image} animate={false}/>
                     </a>))}
                 </div>
@@ -60,9 +60,7 @@ export default class Collection extends Component {
 
             <div className={classes.collectionGrid} style={{ gridTemplateColumns: `repeat(${columnCount}, 1fr)` }}>
                 {queryfromserver.map(poster => (<a className={classes.collectionImage} key={poster.id} href={`/poster/${poster.id}`}>
-                  <div className={classes.imageWrapper}>
-                  <img className={classes.image} src={"/default/poster.png"} alt="poster" />
-                  </div>
+                  <Image data={poster.image} animate={false}/>
                   </a>))}
               </div>
             

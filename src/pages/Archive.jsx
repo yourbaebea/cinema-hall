@@ -11,17 +11,15 @@ export default class Archive extends Component {
 
 
     const size= (view ? 20 : 100);
-
-    //style={{width: `${size}%` }}
     return (
         <div className={classes.page}>
 
             <div className={classes.posterGrid}>
-            {queryfromserver.map(poster => (
+            {queryfromserver.map((poster, index) => (
               <div className={classes.posterContainer}>
                 
                 <div className={classes.posterImage} style={{width: `${size}%` }} >
-                <a className={classes.imageLink} key={poster.id} href={`/poster/${poster.id}`}>
+                <a className={classes.imageLink} key={index} href={`/poster/${poster.id}`}>
                   <Image data={poster.image} animate={false}/>
                 </a>
                 </div>

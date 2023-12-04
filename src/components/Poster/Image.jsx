@@ -14,7 +14,7 @@ export default class Image extends Component {
 
     const {data, animate}= this.props;
     if(animate==null) animate=false;
-    console.log(data);
+    //console.log(data);
 
     if(data.default==null){
       return(<div className={classes.imageLink}>
