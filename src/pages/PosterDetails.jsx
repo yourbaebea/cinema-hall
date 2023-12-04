@@ -2,12 +2,16 @@ import React, { Component, useParams} from "react";
 import { useHistory } from 'react-router-dom';
 import {BiLeftArrowAlt} from 'react-icons/bi';
 import NotFound from "./NotFound";
+import Image from "../components/Poster/Image"
 
 
 import classes from '../styles/poster.module.css'
 
 
-class Poster extends Component {
+class PosterDetails extends Component {
+  constructor(props) {
+    super(props);
+  }
 
   handleGoBack = () => {
     window.history.back();
@@ -36,21 +40,17 @@ class Poster extends Component {
 
 
               <div className={classes.posterContainer}>
+              <div className={classes.posterImage} style={{width: `${size}%` }} >
                 
-                <div className={classes.posterImage} style={{width: `${size}%` }} >
-                <div className={classes.imageLink}>
-                  <div className={classes.imageWrapper}>
-                  <img className={classes.image} src={"/default/poster.png"} alt="poster" />
-                  </div>
+                  <Image data={data.image} animate={true}></Image>
+
                 </div>
-                </div>
+
                 
                 <div className={classes.posterText}>
-                  <h1>Name of {data.id}</h1>
+                  <h1>{data.name}</h1>
                   <p>texto aqui do poster {data.id} 
-                  <div>poster id: {data.id}, equal to the id from href: {id}</div>
-                  <div>poster name: {data.name}</div>
-                  <div>{data.link}</div>
+                  <div>CHECK poster id: {data.id} should be equal to the id from href: {id}</div>
                   <div>{data.description}</div>
                   </p>
                 </div>
@@ -65,4 +65,4 @@ class Poster extends Component {
   }
 }
 
-export default Poster;
+export default PosterDetails;

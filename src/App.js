@@ -10,8 +10,8 @@ import {
 } from "react-router-dom";
 
 import navigation from './information/navigation.json';
-import Poster from "./pages/Poster";
-import PosterWrap from "./components/PosterWrap";
+import Poster from "./pages/PosterDetails";
+import PosterWrap from "./components/Poster/PosterWrap";
 import About from "./pages/About";
 
 

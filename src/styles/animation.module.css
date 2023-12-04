@@ -1,0 +1,24 @@
+
+.imageContainer:hover .rotateVertigo{
+  animation: rotateAnimation 5s linear infinite;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes rotateAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

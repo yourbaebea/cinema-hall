@@ -34,7 +34,7 @@
 
 .posterText{
   flex:1;
-  min-width: 30vh;
+  min-width: 40vh;
   height: fit-content;
   text-align: left;
 }
