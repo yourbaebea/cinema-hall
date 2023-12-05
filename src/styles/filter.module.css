@@ -2,126 +2,12 @@
 .img {
   aspect-ratio: 0.4;
   object-fit: contain;
-  object-position: center;
+  object-position: top;
   width: 54px;
   fill: #000;
   overflow: hidden;
   max-width: 100%;
-  margin: auto 0;
-}
-
-.filters {
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  width: 90%;
-  gap: 30px;
-}
-
-
-.filterSection {
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
-  gap: 10px;
-}
-
-.filterContainer {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: start;
-  gap: 15px;
-  max-height: 150px;
-  overflow-y: auto;
-}
-
-.filterTitle {
-  display: flex;
-  color: #000;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  align-self: end;
-  font: 500 30px Futura, sans-serif;
-}
-
-.filterOptionsContainer {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: start;
-  gap: 15px;
-  max-height: 150px;
-  overflow-y: auto;
-}
-
-.filterContainer .filterOptionsContainer {
-  max-height: 150px;
-  overflow-y: auto;
-}
-
-/* For Webkit-based browsers */
-.filterOptionsContainer::-webkit-scrollbar {
-  width: 0px;
-}
-
-.filterOptionsContainer::-webkit-scrollbar-thumb {
-  background-color: #888; /* Color of the scrollbar thumb */
-}
-
-.filterOptionsContainer::-webkit-scrollbar-track {
-  background-color: #eee; /* Color of the scrollbar track */
-}
-
-/* Add this style to your CSS */
-
-.filterOption {
-  position: relative; /* Ensure relative positioning for absolute positioning of checkbox */
-  padding-left: 25px; /* Adjust as needed to provide space for the checkbox */
-  cursor: pointer;
-}
-
-.filterOption input[type="checkbox"] {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
-  opacity: 0; /* Hide the actual checkbox */
-}
-
-/* Customize the appearance of the checkbox */
-.filterOption input[type="checkbox"]+span {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 16px; /* Adjust the size of the checkbox */
-  height: 16px;
-  background-color: #fff; /* Background color when not checked */
-  border: 2px solid #000; /* Border color of the checkbox */
-  border-radius: 3px;
-  transition: background-color 0.3s, border-color 0.3s;
-}
-
-/* Style for the checkbox when checked */
-.filterOption input[type="checkbox"]:checked+span {
-  background-color: #c4c4c4; /* Background color when checked */
-  border-color: #fff; /* Border color when checked */
-}
-
-/* Adjust the style of the checkbox label text */
-.filterOption label {
-  margin-left: 25px; /* Adjust to create space between the checkbox and label */
-  font-weight: 500;
-  letter-spacing: 1.6px;
-  font: 500 16px Futura, sans-serif;
-  align-self: flex-start;
-}
-
-/* Optional: Hover effect on the entire filterOption */
-.filterOption:hover {
-  background-color: #f4f4f4; /* Change this to your desired hover background color */
+  padding-top: 20px;
 }
 
 
@@ -174,5 +60,101 @@
 }
 
 .searchButton:hover {
-  background-color: #c4c4c4; /* Change this to the desired darker color */
+  background-color: #b4b4b4;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  width: 90%;
+  gap: 30px;
+}
+
+.filterTitle {
+  display: flex;
+  color: #000;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  align-self: flex-start;
+  font: 500 30px Futura, sans-serif;
+}
+
+.filterSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  gap: 10px;
+}
+
+.filterContainer {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: start;
+  gap: 15px;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.filterOptionsContainer {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: start;
+  gap: 15px;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.filterContainer .filterOptionsContainer {
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.filterOptionsContainer::-webkit-scrollbar {
+  width: 0px;
+}
+
+.filterOption {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  justify-content: start;
+}
+
+.filterOption input[type="checkbox"] {
+  position: relative;
+  opacity: 0;
+}
+
+.filterOption input[type="checkbox"] + label::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  border: 2px solid #000;
+  border-radius: 50%; /* Tornar o círculo */
+  background-color: #f4f4f4;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
+  margin-right: 5px;
+}
+
+.filterOption input[type="checkbox"]:hover + label::before {
+  background-color: #b4b4b4;
+}
+
+.filterOption input[type="checkbox"]:checked + label::before {
+  background-color: #000; /* Torna o círculo preto quando está marcado */
+  border-color: #000;
+}
+
+.filterOption label {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  letter-spacing: 1.6px;
+  font: 500 16px Futura, sans-serif;
+  cursor: pointer;
+  align-items: flex-start;
 }

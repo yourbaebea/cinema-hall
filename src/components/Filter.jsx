@@ -64,42 +64,57 @@ export default class Filter extends Component {
                 <div className={classes.filterOption}>
                   <input
                     type="checkbox"
+                    id="checkboxHorror"
                     checked={this.state.selectedGenres.has("Horror")}
                     onChange={() => this.handleGenreSelect("Horror")}
                   />
-                  Horror
+                  <label for="checkboxHorror">
+                    Horror
+                  </label>
                 </div>
                 <div className={classes.filterOption}>
                   <input
                     type="checkbox"
+                    id="checkboxCrime"
                     checked={this.state.selectedGenres.has("Crime")}
                     onChange={() => this.handleGenreSelect("Crime")}
                   />
-                  Crime
+                  <label for="checkboxCrime">
+                    Crime
+                  </label>
                 </div>
                 <div className={classes.filterOption}>
                   <input
                     type="checkbox"
+                    id="checkboxThriller"
                     checked={this.state.selectedGenres.has("Thriller")}
                     onChange={() => this.handleGenreSelect("Thriller")}
                   />
-                  Thriller
+                  <label for="checkboxThriller">
+                    Thriller
+                  </label>
                 </div>
                 <div className={classes.filterOption}>
                   <input
                     type="checkbox"
+                    id="checkboxRomance"
                     checked={this.state.selectedGenres.has("Romance")}
                     onChange={() => this.handleGenreSelect("Romance")}
                   />
-                  Romance
+                  <label for="checkboxRomance">
+                    Romance
+                  </label>
                 </div>
                 <div className={classes.filterOption}>
                   <input
                     type="checkbox"
+                    id="checkboxComedy"
                     checked={this.state.selectedGenres.has("Comedy")}
                     onChange={() => this.handleGenreSelect("Comedy")}
                   />
-                  Comedy
+                  <label for="checkboxComedy">
+                    Comedy
+                  </label>
                 </div>
               </div>
             </div>
@@ -117,50 +132,68 @@ export default class Filter extends Component {
                 <div className={classes.filterOption}>
                   <input
                     type="checkbox"
+                    id="checkbox1970-1980"
                     checked={this.state.selectedDecades.has("1970-1980")}
                     onChange={() => this.handleDecadeSelect("1970-1980")}
                   />
-                  1970-1980
+                  <label for="checkbox1970-1980">
+                    1970-1980
+                  </label>
                 </div>
                 <div className={classes.filterOption}>
                   <input
                     type="checkbox"
+                    id="checkbox1980-1990"
                     checked={this.state.selectedDecades.has("1980-1990")}
                     onChange={() => this.handleDecadeSelect("1980-1990")}
                   />
-                  1980-1990
+                  <label for="checkbox1980-1990">
+                    1980-1990
+                  </label>
                 </div>
                 <div className={classes.filterOption}>
                   <input
                     type="checkbox"
+                    id="checkbox1990-2000"
                     checked={this.state.selectedDecades.has("1990-2000")}
                     onChange={() => this.handleDecadeSelect("1990-2000")}
                   />
-                  1990-2000
+                  <label for="checkbox1990-2000">
+                    1990-2000
+                  </label>
                 </div>
                 <div className={classes.filterOption}>
                   <input
                     type="checkbox"
+                    id="checkbox2000-2010"
                     checked={this.state.selectedDecades.has("2000-2010")}
                     onChange={() => this.handleDecadeSelect("2000-2010")}
                   />
-                  2000-2010
+                  <label for="checkbox2000-2010">
+                    2000-2010
+                  </label>
                 </div>
                 <div className={classes.filterOption}>
                   <input
                     type="checkbox"
+                    id="checkbox2010-2020"
                     checked={this.state.selectedDecades.has("2010-2020")}
                     onChange={() => this.handleDecadeSelect("2010-2020")}
                   />
-                  2010-2020
+                  <label for="checkbox2010-2020">
+                    2010-2020
+                  </label>
                 </div>
                 <div className={classes.filterOption}>
                   <input
                     type="checkbox"
+                    id="checkbox2020-2030"
                     checked={this.state.selectedDecades.has("2020-2030")}
                     onChange={() => this.handleDecadeSelect("2020-2030")}
                   />
-                  2020-2030
+                  <label for="checkbox2020-2030">
+                    2020-2030
+                  </label>
                 </div>
               </div>
             </div>
