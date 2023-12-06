@@ -47,6 +47,7 @@ export default class Image extends Component {
               position: 'absolute',
               top: `${data.background.y}`,
               left: `${data.background.x}`,
+              zIndex: data.background.z
             }}
              />
             {data.elements.map((element, index) => ( element.link == null ?  
@@ -60,6 +61,7 @@ export default class Image extends Component {
               position: 'absolute',
               top: `${(element.y / data.background.height) * 100}%`,
               left: `${(element.x / data.background.width) * 100}%`,
+              zIndex: element.z
             }}
             ></div>
             
@@ -77,6 +79,7 @@ export default class Image extends Component {
                 position: 'absolute',
                 top: `${(element.y / data.background.height) * 100}%`,
                 left: `${(element.x / data.background.width) * 100}%`,
+                zIndex: element.z
               }}
             />
             

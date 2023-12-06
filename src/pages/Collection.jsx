@@ -59,10 +59,8 @@ export default class Collection extends Component {
 
 
             <div className={classes.collectionGrid} style={{ gridTemplateColumns: `repeat(${columnCount}, 1fr)` }}>
-                {queryfromserver.map(poster => (<a className={classes.collectionImage} key={poster.id} href={`/poster/${poster.id}`}>
-                  <div className={classes.imageWrapper}>
-                  <img className={classes.image} src={"/default/poster.png"} alt="poster" />
-                  </div>
+            {queryfromserver.map(poster => (<a className={classes.collectionImage} key={poster.id} href={`/poster/${poster.id}`}>
+                  <Image data={poster.image} animate={false}/>
                   </a>))}
               </div>
             
