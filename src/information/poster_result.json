@@ -20,10 +20,16 @@
       },
       "description": "NO ANIMATIONS HERE"
     },
+    
     {
       "id": "3",
-      "name": "Else",
+      "name": "Nightmare Before Christmas",
       "image":{
+        "default": "/posters/nightmare/nightmare.jpg",
+        "background": {"width": 1000,"height": 1500,"x": 0,"y": 0,"link": "/posters/nightmare/background.png","animation": ""},
+        "elements": [
+        {"width": 603,"height": 611,"x": 199,"y": 71,"animation": "moonNightmare"}
+        ]
       },
       "description": "information here"
     },

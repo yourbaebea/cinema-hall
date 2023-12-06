@@ -28,24 +28,60 @@ export default class Image extends Component {
       <div className={animation.imageContainer}>
       <div className={classes.imageLink}>
         <div className={classes.imageWrapper}>
-          {!animate ? <img className={classes.image} src={data.default} alt="poster" /> :
+          {!animate ?
+          
+          <img className={classes.image} src={data.default} alt="poster" /> 
+          
+          :
+          
           <div>
-          <img className={classes.image} src={data.background.link} alt="poster"  />
-          {data.elements.map((element, index) => (
-          <img
-          key={index}
-          className={`${classes.image} ${element.animation && animation[element.animation]}`}
-          src={element.link}
-          alt={`poster element ${index}`}
-          style={{
-            width: `${(element.width / data.background.width) * 100}%`,
-            height: `${(element.height / data.background.height) * 100}%`,
-            position: 'absolute',
-            top: `${(element.y / data.background.height) * 100}%`,
-            left: `${(element.x / data.background.width) * 100}%`,
-          }}/>
-          ))}
-        </div>
+
+
+            <img className={animation.defaultImage} src={data.default} alt="poster" /> 
+
+
+            <img className={classes.image} src={data.background.link} alt="poster" 
+            style={{
+              width: `${data.background.width}`,
+              height: `${data.background.height}`,
+              position: 'absolute',
+              top: `${data.background.y}`,
+              left: `${data.background.x}`,
+            }}
+             />
+            {data.elements.map((element, index) => ( element.link == null ?  
+            
+            <div 
+            key={index}
+            className={`${classes.image} ${element.animation && animation[element.animation]}`}
+            style={{
+              width: `${(element.width / data.background.width) * 100}%`,
+              height: `${(element.height / data.background.height) * 100}%`,
+              position: 'absolute',
+              top: `${(element.y / data.background.height) * 100}%`,
+              left: `${(element.x / data.background.width) * 100}%`,
+            }}
+            ></div>
+            
+            
+            : 
+            
+            <img
+              key={index}
+              className={`${classes.image} ${element.animation && animation[element.animation]}`}
+              src={element.link}
+              alt={`poster element ${index}`}
+              style={{
+                width: `${(element.width / data.background.width) * 100}%`,
+                height: `${(element.height / data.background.height) * 100}%`,
+                position: 'absolute',
+                top: `${(element.y / data.background.height) * 100}%`,
+                left: `${(element.x / data.background.width) * 100}%`,
+              }}
+            />
+            
+            ))}
+          </div>
 
           
           

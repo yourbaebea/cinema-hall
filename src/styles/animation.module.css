@@ -1,12 +1,88 @@
 
+.defaultImage{
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  z-index: 9999;
+  visibility: visible;
+}
+
+.imageContainer:hover .defaultImage{
+  visibility: hidden;
+}
+
+/* add bellow the animations with the same format!*/
+
 .imageContainer:hover .rotateVertigo{
   animation: rotateAnimation 5s linear infinite;
 }
+/*
+
+.imageContainer:hover .moonNightmare {
+  background: radial-gradient(circle, rgba(237, 229, 215, 1) 0%, rgba(239, 209, 92, 1) 50%, rgba(233, 140, 23, 1) 100%);
+  border-radius: 50%;
+  animation: changeColorNightmare 15s infinite;  
+}
+
+@keyframes changeColorNightmare {
+  0% {
+    transition: 3s ease-in-out;
+    background: radial-gradient(circle, rgba(237, 229, 215, 1) 0%, rgba(239, 209, 92, 1) 50%, rgba(233, 140, 23, 1) 100%);
+  }
+  25% {
+    transition: 3s ease-in-out;
+    background: radial-gradient(circle, rgba(237, 229, 215, 1) 0%, rgba(206, 142, 110, 1) 50%, rgba(233, 65, 23, 1) 100%);
+  }
+  50% {
+    transition: 3s ease-in-out;
+    background: radial-gradient(circle, rgba(237, 229, 215, 1) 0%, rgba(239, 209, 92, 1) 50%, rgba(233, 140, 23, 1) 100%);
+  }
+  75% {
+    transition: 3s ease-in-out;
+    background: radial-gradient(circle, rgba(237, 229, 215, 1) 0%, rgba(206, 142, 110, 1) 50%, rgba(233, 65, 23, 1) 100%);
+  }
+  100% {
+    transition: 3s ease-in-out;
+    background: radial-gradient(circle, rgba(237, 229, 215, 1) 0%, rgba(239, 209, 92, 1) 50%, rgba(233, 140, 23, 1) 100%);
+  }
+}
+
+*/
+
+.imageContainer:hover .moonNightmare {
+  /*
+animation-name:myfirst;
+animation-duration:5s;
+animation-timing-function:linear;
+animation-delay:0s;
+animation-iteration-count:infinite;
+animation-direction:alternate;
+animation-play-state:running;
+*/
+
+border-radius: 50%;
 
 
+animation: colorAnimation 9s ease-in-out infinite;
+  }
 
 
-
+@keyframes colorAnimation
+{
+0%  {background: radial-gradient(circle, rgba(237, 229, 215, 1) 0%, rgba(239, 209, 92, 1) 45%, rgb(219, 100, 56) 100%) }
+10%  {background: radial-gradient(circle, rgba(237, 229, 215, 1) 0%, rgba(239, 209, 92, 1) 40%, rgb(219, 100, 56) 100%) }
+20%  {background: radial-gradient(circle, rgba(237, 229, 215, 1) 0%, rgba(239, 209, 92, 1) 35%, rgb(219, 100, 56) 100%) }
+30%  {background: radial-gradient(circle, rgba(237, 229, 215, 1) 0%, rgba(239, 209, 92, 1) 30%, rgb(219, 100, 56) 100%) }
+40%  {background: radial-gradient(circle, rgba(237, 229, 215, 1) 0%, rgba(239, 209, 92, 1) 25%, rgb(219, 100, 56) 100%) }
+50%  {background: radial-gradient(circle, rgba(237, 229, 215, 1) 0%, rgba(239, 209, 92, 1) 20%, rgb(219, 100, 56) 100%) }
+60%  {background: radial-gradient(circle, rgba(237, 229, 215, 1) 0%, rgba(239, 209, 92, 1) 25%, rgb(219, 100, 56) 100%) }
+70%  {background: radial-gradient(circle, rgba(237, 229, 215, 1) 0%, rgba(239, 209, 92, 1) 30%, rgb(219, 100, 56) 100%) }
+80%  {background: radial-gradient(circle, rgba(237, 229, 215, 1) 0%, rgba(239, 209, 92, 1) 35%, rgb(219, 100, 56) 100%) }
+90%  {background: radial-gradient(circle, rgba(237, 229, 215, 1) 0%, rgba(239, 209, 92, 1) 40%, rgb(219, 100, 56) 100%) }
+100%  {background: radial-gradient(circle, rgba(237, 229, 215, 1) 0%, rgba(239, 209, 92, 1) 45%, rgb(219, 100, 56) 100%) }
+}
 
 
 
