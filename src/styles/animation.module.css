@@ -71,17 +71,10 @@ animation: colorAnimation 9s ease-in-out infinite;
 
 @keyframes colorAnimation
 {
-0%  {background: radial-gradient(circle, rgba(237, 229, 215, 1) 0%, rgba(239, 209, 92, 1) 45%, rgb(219, 100, 56) 100%) }
-10%  {background: radial-gradient(circle, rgba(237, 229, 215, 1) 0%, rgba(239, 209, 92, 1) 40%, rgb(219, 100, 56) 100%) }
-20%  {background: radial-gradient(circle, rgba(237, 229, 215, 1) 0%, rgba(239, 209, 92, 1) 35%, rgb(219, 100, 56) 100%) }
-30%  {background: radial-gradient(circle, rgba(237, 229, 215, 1) 0%, rgba(239, 209, 92, 1) 30%, rgb(219, 100, 56) 100%) }
-40%  {background: radial-gradient(circle, rgba(237, 229, 215, 1) 0%, rgba(239, 209, 92, 1) 25%, rgb(219, 100, 56) 100%) }
-50%  {background: radial-gradient(circle, rgba(237, 229, 215, 1) 0%, rgba(239, 209, 92, 1) 20%, rgb(219, 100, 56) 100%) }
-60%  {background: radial-gradient(circle, rgba(237, 229, 215, 1) 0%, rgba(239, 209, 92, 1) 25%, rgb(219, 100, 56) 100%) }
-70%  {background: radial-gradient(circle, rgba(237, 229, 215, 1) 0%, rgba(239, 209, 92, 1) 30%, rgb(219, 100, 56) 100%) }
-80%  {background: radial-gradient(circle, rgba(237, 229, 215, 1) 0%, rgba(239, 209, 92, 1) 35%, rgb(219, 100, 56) 100%) }
-90%  {background: radial-gradient(circle, rgba(237, 229, 215, 1) 0%, rgba(239, 209, 92, 1) 40%, rgb(219, 100, 56) 100%) }
-100%  {background: radial-gradient(circle, rgba(237, 229, 215, 1) 0%, rgba(239, 209, 92, 1) 45%, rgb(219, 100, 56) 100%) }
+0%,100%  {background:  #EED243}
+33%  {background: #cea36e}
+66%  {background:  #b75746}
+
 }
 
 
