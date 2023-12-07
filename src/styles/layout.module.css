@@ -39,3 +39,9 @@
     flex-direction: column;
 }
 
+.filterContainer {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+

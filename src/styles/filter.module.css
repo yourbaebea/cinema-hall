@@ -1,3 +1,51 @@
+.filter {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 15vh 0vw;
+  width: 100vw;
+  height: 70vh;
+  justify-content: center;
+  align-content: center;
+  background: var(--shadow-menu);
+  backdrop-filter: blur(6px);
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 99;
+  text-transform: uppercase;
+  font-weight: var(--navbar-font-weight); 
+  font-size: var(--navbar-font-size);
+}
+.filter.visible {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.filterButtonContainer {
+  position: absolute;
+  top: 2rem; /* Adjust the top position as needed */
+  left: 2rem; /* Adjust the right position as needed */
+  z-index: 100; /* Should be higher than the filter */
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: var(--navbar-font-weight); 
+  font-size: var(--navbar-font-size); 
+}
+.filterButton {
+  width: 100%;
+  height: 100%;
+}
+.category{
+  width: auto;
+  align-self: center;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+}
 
 .img {
   aspect-ratio: 0.4;

@@ -12,12 +12,6 @@
   flex-direction: row;
 }
 
-.filtersContainer {
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-}
-
 .collectionGrid {
   flex: 1;
   height: fit-content;
