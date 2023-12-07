@@ -15,6 +15,77 @@
 
 /*------------------------------------------godfather-----------------------------------------------------*/
 
+.imageContainer .stretched-strings {
+  
+  opacity: 0;
+  transform: scale(1);
+}
+.imageContainer .normal-strings {
+ 
+  opacity: 1;
+}
+
+.imageContainer:hover {
+  .normal-strings {
+    animation: disappear 0.2s ease-in-out forwards;
+  }
+
+  .stretched-strings {
+    animation: grow 2s  forwards;
+  }
+}
+
+@keyframes disappear {
+  from {
+    opacity: 1;
+  }
+  
+
+  to{
+    opacity: 0;
+  }
+  
+}
+
+@keyframes grow {
+  from {
+    opacity: 1;
+    transform: translateY(-2px);
+   
+  }
+
+  20% {
+    opacity: 1;
+    transform: translateY(-2px);
+    
+  }
+
+  40% {
+    opacity: 1;
+    transform: translateY(-2px);
+   
+  }
+
+  60% {
+    opacity: 1;
+    transform: translateY(-2px);
+    
+  }
+
+  80% {
+    opacity: 1;
+    transform: translateY(-2px);
+   
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(-2px);
+   
+  }
+}
+  
+
 
 
 
@@ -109,6 +180,31 @@
 /*------------------------------------------jurassic-----------------------------------------------------*/
 
 
+
+.imageContainer:hover .mouth-bottom {
+  
+  
+    transform: translateY(-10px) rotate(-15deg);
+    animation: bite 2s ease-in-out infinite;
+  
+}
+
+
+
+@keyframes bite {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform:translateY(-6.5px)  translateX(6px)  rotate(-10deg);
+  }
+
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+ 
 
 
 /*------------------------------------------howls-----------------------------------------------------*/

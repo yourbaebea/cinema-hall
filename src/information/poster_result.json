@@ -3,8 +3,15 @@
     "id": "1",
     "name": "The GodFather",
     "image":{
-      "default": "/default/poster.png"
+      "default": "/posters/godfather/godfather.jpg",
+      "background": {"width": 1108,"height": 1662,"x": 0,"y": 0, "z": 1,"link": "/posters/godfather/godfather_2.png","animation": ""},
+      "elements": [
+      {"width": 322,"height": 266,"x": 744,"y": 449, "z": 3,"link": "/posters/godfather/strings_1.png","animation": "normal-strings"},
+      {"width": 322,"height": 778,"x": 744,"y": 449, "z": 2,"link": "/posters/godfather/strings_stretched.png","animation": "stretched-strings"}
+      
+      ]
     },
+
     "description": "information here"
   },
   {
@@ -92,7 +99,14 @@
     "id": "9",
     "name": "Jurassic Park",
     "image":{
-      "default": "/default/poster.png"
+      "default": "/posters/jurassic_park/cropped-jurassic_park_poster.jpg",
+      "background": {"width": 817,"height": 1225,"x": 0,"y": 0, "z": 1, "link": "/posters/jurassic_park/background_jurassic.png","animation": ""},
+      "elements": [
+        {"width": 136,"height": 105,"x": 404,"y": 253, "z": 2,"link": "/posters/jurassic_park/jurassic_mouth1.png","animation": "mouth-bottom"},
+        {"width": 201,"height": 148,"x": 404,"y": 152, "z": 3,"link": "/posters/jurassic_park/jurassic_mouth2.png","animation": "mouth-top"}
+      ]
+      
+    
     },
     "description": "information here"
   },
