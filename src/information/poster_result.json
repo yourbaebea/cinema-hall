@@ -91,7 +91,7 @@
     "id": "8",
     "name": "Grave of the Fireflies",
     "image":{
-      "default": "/default/poster.png"
+      "default": "/posters/grave_fireflies/grave_of_fireflies_poster.jpg"
     },
     "description": "information here"
   },
