@@ -116,9 +116,39 @@
     "id": "12",
     "name": "The Wolf of Wall Street",
     "image":{
-      "default": "/default/poster.png"
+      "default": "/posters/wolf/wolf.png",
+      "background": {"width": 988,"height": 1482,"x": 0,"y": 0, "z": 1, "link": "/posters/wolf/wolf.png","animation": ""},
+      "elements": [
+      {"width": 648,"height": 1391,"x": 170,"y": 91,"z": 3,"link": "/posters/wolf/leo.png", "animation": ""},
+      {"width":15,"height": 20,"x": -100,"y": -30,"z": 2, "animation": "confettiWolf-1"},
+      {"width":15,"height": 20,"x": 0,"y": -30,"z": 2, "animation": "confettiWolf-2"},
+      {"width":15,"height": 20,"x": 100,"y": -30,"z": 2, "animation": "confettiWolf-3"},
+      {"width":15,"height": 20,"x": 200,"y": -30,"z": 2, "animation": "confettiWolf-4"},
+      {"width":15,"height": 20,"x": 300,"y": -30,"z": 2, "animation": "confettiWolf-5"},
+      {"width":15,"height": 20,"x": 400,"y": -30,"z": 2, "animation": "confettiWolf-6"},
+      {"width":15,"height": 20,"x": 500,"y": -30,"z": 2, "animation": "confettiWolf-7"},
+      {"width":15,"height": 20,"x": 600,"y": -30,"z": 2, "animation": "confettiWolf-8"},
+      {"width":15,"height": 20,"x": 700,"y": -30,"z": 2, "animation": "confettiWolf-9"},
+      {"width":15,"height": 20,"x": 800,"y": -30,"z": 2, "animation": "confettiWolf-10"},
+      {"width":15,"height": 20,"x": 900,"y": -30,"z": 2, "animation": "confettiWolf-3"},
+      {"width":15,"height": 20,"x": 1000,"y": -30,"z": 2, "animation": "confettiWolf-2"},
+      {"width":15,"height": 20,"x": 1100,"y": -30,"z": 2, "animation": "confettiWolf-1"},
+      {"width":15,"height": 20,"x": 1200,"y": -30,"z": 2, "animation": "confettiWolf-4"},
+      {"width":15,"height": 20,"x": 1300,"y": -30,"z": 2, "animation": "confettiWolf-5"},
+      {"width":15,"height": 20,"x": 10,"y": -30,"z": 2, "animation": "confettiWolf-6"},
+      {"width":15,"height": 20,"x": 850,"y": -30,"z": 2, "animation": "confettiWolf-7"},
+      {"width":15,"height": 20,"x": 360,"y": -30,"z": 2, "animation": "confettiWolf-8"},
+      {"width":15,"height": 20,"x": 120,"y": -30,"z": 2, "animation": "confettiWolf-9"},
+      {"width":15,"height": 20,"x": 1070,"y": -30,"z": 2, "animation": "confettiWolf-10"},
+      {"width":15,"height": 20,"x": 1140,"y": -30,"z": 2, "animation": "confettiWolf-6"},
+      {"width":15,"height": 20,"x": 1250,"y": -30,"z": 2, "animation": "confettiWolf-8"},
+      {"width":15,"height": 20,"x": 940,"y": -30,"z": 2, "animation": "confettiWolf-9"}
+      ]
     },
-    "description": "information here"
+    "description": "information here",
+    "year": 1234,
+    "genre": "idk",
+    "something": "else"
   }
   
 
