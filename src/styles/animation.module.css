@@ -13,75 +13,51 @@
   visibility: hidden;
 }
 
-/* add bellow the animations with the same format!*/
+/*------------------------------------------godfather-----------------------------------------------------*/
+
+
+
+
+
+/*------------------------------------------anatomy-----------------------------------------------------*/
+
+.imageContainer .dropRed {
+  transition: transform 0.5s ease-in-out ; /* Add transition for smoothness */
+  transform-origin: center center; 
+}
+
+.imageContainer:hover .dropRed {
+  transform: rotate(-5deg) translateX(-10%) translateY(80%);
+  transition-delay: 0.2s;
+  
+}
+
+.imageContainer .dropYellow {
+  transition: transform 0.5s ease-in-out; /* Add transition for smoothness */
+  transform-origin: center center; 
+  transition-delay: 0.5s;
+}
+
+.imageContainer:hover .dropYellow {
+  transform: rotate(-60deg) translateX(-100%) translateY(20%);
+  
+}
+
+.imageContainer .dropMen {
+  transition: transform 0.3s ease-in-out; /* Add transition for smoothness */
+  transform-origin: center center; 
+}
+
+.imageContainer:hover .dropMen {
+  transform: rotate(195deg) translateX(-10%) translateY(-150%);
+  
+}
+
+/*------------------------------------------vertigo-----------------------------------------------------*/
 
 .imageContainer:hover .rotateVertigo{
   animation: rotateAnimation 5s linear infinite;
 }
-/*
-
-.imageContainer:hover .moonNightmare {
-  background: radial-gradient(circle, rgba(237, 229, 215, 1) 0%, rgba(239, 209, 92, 1) 50%, rgba(233, 140, 23, 1) 100%);
-  border-radius: 50%;
-  animation: changeColorNightmare 15s infinite;  
-}
-
-@keyframes changeColorNightmare {
-  0% {
-    transition: 3s ease-in-out;
-    background: radial-gradient(circle, rgba(237, 229, 215, 1) 0%, rgba(239, 209, 92, 1) 50%, rgba(233, 140, 23, 1) 100%);
-  }
-  25% {
-    transition: 3s ease-in-out;
-    background: radial-gradient(circle, rgba(237, 229, 215, 1) 0%, rgba(206, 142, 110, 1) 50%, rgba(233, 65, 23, 1) 100%);
-  }
-  50% {
-    transition: 3s ease-in-out;
-    background: radial-gradient(circle, rgba(237, 229, 215, 1) 0%, rgba(239, 209, 92, 1) 50%, rgba(233, 140, 23, 1) 100%);
-  }
-  75% {
-    transition: 3s ease-in-out;
-    background: radial-gradient(circle, rgba(237, 229, 215, 1) 0%, rgba(206, 142, 110, 1) 50%, rgba(233, 65, 23, 1) 100%);
-  }
-  100% {
-    transition: 3s ease-in-out;
-    background: radial-gradient(circle, rgba(237, 229, 215, 1) 0%, rgba(239, 209, 92, 1) 50%, rgba(233, 140, 23, 1) 100%);
-  }
-}
-
-*/
-
-.imageContainer:hover .moonNightmare {
-  /*
-animation-name:myfirst;
-animation-duration:5s;
-animation-timing-function:linear;
-animation-delay:0s;
-animation-iteration-count:infinite;
-animation-direction:alternate;
-animation-play-state:running;
-*/
-
-border-radius: 50%;
-
-
-animation: colorAnimation 9s ease-in-out infinite;
-  }
-
-
-@keyframes colorAnimation
-{
-0%,100%  {background:  #EED243}
-33%  {background: #cea36e}
-66%  {background:  #b75746}
-
-}
-
-
-
-
-
-
 
 @keyframes rotateAnimation {
   from {
@@ -91,3 +67,57 @@ animation: colorAnimation 9s ease-in-out infinite;
     transform: rotate(360deg);
   }
 }
+
+/*------------------------------------------silence-----------------------------------------------------*/
+
+
+
+
+/*------------------------------------------oppenheimer-----------------------------------------------------*/
+
+
+
+
+/*------------------------------------------nightmare-----------------------------------------------------*/
+
+
+
+.imageContainer:hover .moonNightmare {
+  border-radius: 50%;
+  animation: colorAnimation 9s ease-in-out infinite;
+  }
+
+
+@keyframes colorAnimation
+{
+  0%,100%  {background:  #EED243}
+  33%  {background: #cea36e}
+  66%  {background:  #b75746}
+}
+
+/*------------------------------------------up-----------------------------------------------------*/
+
+
+
+
+
+/*------------------------------------------fireflies-----------------------------------------------------*/
+
+
+
+
+/*------------------------------------------jurassic-----------------------------------------------------*/
+
+
+
+
+/*------------------------------------------howls-----------------------------------------------------*/
+
+
+
+/*------------------------------------------pinocchio-----------------------------------------------------*/
+
+
+
+
+/*------------------------------------------wolf-----------------------------------------------------*/

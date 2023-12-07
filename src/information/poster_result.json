@@ -1,12 +1,37 @@
 [
   {
     "id": "1",
+    "name": "The GodFather",
+    "image":{
+      "default": "/default/poster.png"
+    },
+    "description": "information here"
+  },
+  {
+    "id": "2",
+    "name": "Anatomy of a Murder",
+    "image":{
+      "default": "/posters/anatomy/anatomy.png",
+      "background": {"width": 2616,"height": 3924,"x": 0,"y": 0, "z": 1,"link": "/posters/anatomy/background.png","animation": ""},
+      "elements": [
+      {"width": 2295,"height": 1411,"x": 193,"y": 2195, "z": 2,"link": "/posters/anatomy/red.png","animation": "dropRed"},
+      {"width": 2328,"height": 2065,"x": 119,"y": 149, "z": 3,"link": "/posters/anatomy/yellow.png","animation": "dropYellow"},
+      {"width": 1464,"height": 1045,"x": 569,"y": 791, "z": 4,"link": "/posters/anatomy/men.png","animation": "dropMen"}
+      ]
+    },
+    "description": "information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo ",
+    "year": 1234,
+    "genre": "idk",
+    "something": "else"
+  },
+  {
+    "id": "3",
     "name": "Vertigo",
     "image":{
       "default": "/posters/vertigo/vertigo.png",
-      "background": {"width": 590,"height": 885,"x": 0,"y": 0, "z": 1,"link": "/posters/vertigo/vertigo-background.png","animation": ""},
+      "background": {"width": 590,"height": 885,"x": 0,"y": 0, "z": 1,"link": "/posters/vertigo/background.png","animation": ""},
       "elements": [
-      {"width": 528,"height": 495,"x": 30,"y": 238, "z": 2,"link": "/posters/vertigo/vertigo-element.png","animation": "rotateVertigo"}
+      {"width": 528,"height": 495,"x": 30,"y": 238, "z": 2,"link": "/posters/vertigo/circle.png","animation": "rotateVertigo"}
       ]
     },
     "description": "information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo information of vertigo ",
@@ -15,9 +40,25 @@
     "something": "else"
   
   },
+  {
+    "id": "4",
+    "name": "Silence of the Lambs",
+    "image":{
+      "default": "/default/poster.png"
+    },
+    "description": "information here"
+  },
+  {
+    "id": "5",
+    "name": "Oppenheimer",
+    "image":{
+      "default": "/default/poster.png"
+    },
+    "description": "information here"
+  },
   
   {
-    "id": "2",
+    "id": "6",
     "name": "Nightmare Before Christmas",
     "image":{
       "default": "/posters/nightmare/nightmare.png",
@@ -32,28 +73,53 @@
     "something": "else"
   },
   {
-    "id": "3",
-    "name": "The GodFather",
-    "image":{
-      "default": "/posters/godfather/godfather.jpg"
-    },
-    "description": "NO ANIMATIONS HERE"
-  },
-  {
-    "id": "4",
-    "name": "Else",
+    "id": "7",
+    "name": "Up",
     "image":{
       "default": "/default/poster.png"
     },
     "description": "information here"
   },
   {
-    "id": "5",
-    "name": "Else",
+    "id": "8",
+    "name": "Grave of the Fireflies",
+    "image":{
+      "default": "/default/poster.png"
+    },
+    "description": "information here"
+  },
+  {
+    "id": "9",
+    "name": "Jurassic Park",
+    "image":{
+      "default": "/default/poster.png"
+    },
+    "description": "information here"
+  },
+  {
+    "id": "10",
+    "name": "Howls Moving Castle",
+    "image":{
+      "default": "/default/poster.png"
+    },
+    "description": "information here"
+  },
+  {
+    "id": "11",
+    "name": "Pinocchio",
+    "image":{
+      "default": "/default/poster.png"
+    },
+    "description": "information here"
+  },
+  {
+    "id": "12",
+    "name": "The Wolf of Wall Street",
     "image":{
       "default": "/default/poster.png"
     },
     "description": "information here"
   }
+  
 
 ]
