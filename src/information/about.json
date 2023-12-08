@@ -1,0 +1,14 @@
+[
+    {
+    "text": "long description of the about page",
+    "anab":{
+        "default": "/default/poster.png"
+    },
+    "moura":{
+        "default": "/default/poster.png"
+      },
+      "filipe":{
+        "default": "/default/poster.png"
+      }
+    }
+]
