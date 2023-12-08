@@ -45,14 +45,79 @@ class PosterDetails extends Component {
                 
                 <div className={classes.posterText}>
                   <h1>{data.name}</h1>
-                  <p>texto aqui do poster {data.id} 
-                  <div>CHECK poster id: {data.id} should be equal to the id from href: {id}</div>
-                  <div>{data.description}</div>
-                  </p>
-                </div>
+                  {data.details == null ?
+                    <div>No Details Available</div>
+                    :
+                    <div>
+                      <div>
+                        {Object.entries(data.details).map(([key, value]) => (
+                          <div key={key}>
+                            {(key !== "cast" && key !== "score") && (
+                              <>
+                                <p><strong>{`${key.charAt(0).toUpperCase() + key.slice(1)}:`}</strong> {Array.isArray(value) ? '' : `${value}`}</p>
+                                {Array.isArray(value) ? (
+                                  <div style={{ marginLeft: '20px' }}>
+                                    {value.map((item, index) => (
+                                      <p key={index}>{Object.entries(item).map(([subKey, subValue], subIndex) => (
+                                        <span key={subIndex}><strong>{`${subKey.charAt(0).toUpperCase() + subKey.slice(1)}:`}</strong> {`${subValue}`} </span>
+                                      )).join(', ')}</p>
+                                    ))}
+                                  </div>
+                                ) : (
+                                  <p></p>
+                                )}
+                              </>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                      <div>
+                      <h3><strong>Cast</strong></h3>
+                      {data.details && data.details.cast && (
+                        <ul>
+                          {data.details.cast.map((actor, index) => (
+                            <li key={index}>
+                              <strong>{`${Object.keys(actor)[0].charAt(0).toUpperCase() + Object.keys(actor)[0].slice(1)}:`}</strong> {`${Object.values(actor)[0].charAt(0).toUpperCase() + Object.values(actor)[0].slice(1)}, `}
+                              <strong>{`${Object.keys(actor)[1].charAt(0).toUpperCase() + Object.keys(actor)[1].slice(1)}:`}</strong> {`${Object.values(actor)[1].charAt(0).toUpperCase() + Object.values(actor)[1].slice(1)}`}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+
+                      </div>
+                      <div>
+                      <h3><strong>Score</strong></h3>
+                      <ul>
+                        {data.details.score && data.details.score.map((score, index) => (
+                          <li key={index}>
+                            
+                            {score.tomatometer ? 
+                              <div>
+                                <strong>{score.platform}:</strong> {score.value}
+                                <span> ({score.tomatometer}% Tomatometer, {score.audienceScore}% Audience Score)</span>
+                              </div> 
+                            :
+                            <div><strong>{score.platform}:</strong> {score.value}/{score.scale}</div>
+                            }
+                          </li>
+                        ))}
+                      </ul>
 
 
+
+
+
+
+
+                      </div>
+                    </div>
+                  }
+
+                <h3><strong>Description</strong></h3>
+                
+                <div>{data.description}</div>
               </div>
+        </div>
 
         
       </div>
