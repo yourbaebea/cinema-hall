@@ -15,6 +15,77 @@
 
 /*------------------------------------------godfather-----------------------------------------------------*/
 
+.imageContainer .stretched-strings {
+  
+  opacity: 0;
+  transform: scale(1);
+}
+.imageContainer .normal-strings {
+ 
+  opacity: 1;
+}
+
+.imageContainer:hover {
+  .normal-strings {
+    animation: disappear 0.2s ease-in-out forwards;
+  }
+
+  .stretched-strings {
+    animation: grow 2s  forwards;
+  }
+}
+
+@keyframes disappear {
+  from {
+    opacity: 1;
+  }
+  
+
+  to{
+    opacity: 0;
+  }
+  
+}
+
+@keyframes grow {
+  from {
+    opacity: 1;
+    transform: translateY(-2px);
+   
+  }
+
+  20% {
+    opacity: 1;
+    transform: translateY(-2px);
+    
+  }
+
+  40% {
+    opacity: 1;
+    transform: translateY(-2px);
+   
+  }
+
+  60% {
+    opacity: 1;
+    transform: translateY(-2px);
+    
+  }
+
+  80% {
+    opacity: 1;
+    transform: translateY(-2px);
+   
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(-2px);
+   
+  }
+}
+  
+
 
 
 
@@ -104,11 +175,111 @@
 /*------------------------------------------fireflies-----------------------------------------------------*/
 
 
+.imageContainer:hover .bright-point {
+  
+  opacity: 0.5;
+  
+  animation: moveAndBlink 7s linear infinite alternate-reverse;
+ 
+}
+
+.imageContainer:hover .bright-point2 {
+  
+  opacity: 0.5;
+  
+  animation: moveAndBlink2 7s linear infinite alternate-reverse;
+ 
+}
+
+@keyframes moveAndBlink {
+  0%, 100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+
+  25% {
+    transform: translate(var(--varX1), var(--varY1));
+    opacity: 0.1;
+  }
+
+  50% {
+    transform: translate(var(--varX2), var(--varY2));
+  }
+
+  75% {
+    transform: translate(var(--varX3), var(--varY3));
+    opacity: 0.8;
+  }
+}
+
+.bright-point {
+  --varX1: 70px;
+  --varY1: -30px;
+  --varX2: -50px;
+  --varY2: -100px;
+  --varX3: 0;
+  --varY3: 0;
+}
+
+@keyframes moveAndBlink2 {
+  0%, 100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+
+  25% {
+    transform: translate(var(--varX1a), var(--varY1a));
+    opacity: 0.1;
+  }
+
+  50% {
+    transform: translate(var(--varX2a), var(--varY2a));
+  }
+
+  75% {
+    transform: translate(var(--varX3a), var(--varY3a));
+    opacity: 0.8;
+  }
+}
+
+.bright-point2 {
+  --varX1a: 30px;
+  --varY1a: -20px;
+  --varX2a: -40px;
+  --varY2a: 60px;
+  --varX3a: 10px;
+  --varY3a: -10px;
+}
 
 
 /*------------------------------------------jurassic-----------------------------------------------------*/
 
 
+
+.imageContainer:hover .mouth-bottom {
+  
+  
+    transform: translateY(-10px) rotate(-15deg);
+    animation: bite 2s ease-in-out infinite;
+  
+}
+
+
+
+@keyframes bite {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform:translateY(-6.5px)  translateX(6px)  rotate(-10deg);
+  }
+
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+ 
 
 
 /*------------------------------------------howls-----------------------------------------------------*/
