@@ -2,13 +2,13 @@
     {
     "text": "long description of the about page",
     "anab":{
-        "default": "/default/poster.png"
+        "default": "/about/anab.png"
     },
     "moura":{
-        "default": "/default/poster.png"
+        "default": "/about/twilight.jpg"
       },
       "filipe":{
-        "default": "/default/poster.png"
+        "default": "/about/twilight.jpg"
       }
     }
 ]

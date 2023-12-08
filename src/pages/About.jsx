@@ -33,10 +33,10 @@ export default class About extends Component {
                   <Image data={aboutfromserver.anab} animate={false}/>
                 </a>
                 <a className={classes.aboutImage}>
-                <Image data={aboutfromserver.anab} animate={false}/>
+                <Image data={aboutfromserver.moura} animate={false}/>
                 </a>
                 <a className={classes.aboutImage}>
-                <Image data={aboutfromserver.anab} animate={false}/>
+                <Image data={aboutfromserver.filipe} animate={false}/>
                 </a>
               </div>
             </div>
@@ -48,10 +48,10 @@ export default class About extends Component {
                 <Image data={aboutfromserver.anab} animate={false}/>
                 </a>
                 <a className={classes.aboutImage}>
-                <Image data={aboutfromserver.anab} animate={false}/>
+                <Image data={aboutfromserver.moura} animate={false}/>
                 </a>
                 <a className={classes.aboutImage}>
-                <Image data={aboutfromserver.anab} animate={false}/>
+                <Image data={aboutfromserver.filipe} animate={false}/>
                 </a>
               </div>
             </div>
