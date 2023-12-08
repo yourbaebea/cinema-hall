@@ -20,10 +20,6 @@ class PosterDetails extends Component {
   render() {
 
     const { id, data, view} = this.props;
-
-    console.log(id);
-
-
   
     const icon = view ? 50 : 40;
     const size= (view ? 40 : 100);

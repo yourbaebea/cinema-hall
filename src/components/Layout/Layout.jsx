@@ -6,6 +6,8 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import Menu from '../Menu'
 import Filter from "../Filter";
+import Collection from "../../pages/Collection"
+import Query from "../../information/Query"
 
 const mobileWidth= 800;
 
@@ -16,10 +18,8 @@ class Layout extends Component {
     this.state = {
       isMenuVisible: false,
       isFilterVisible: false,
-      filterNumber: 3,
-      filterGenre: null,
-      filterDecade: null,
-      filterSearch:null
+      filterNumber: 1,
+      query: "",
     };
   }
 
@@ -37,34 +37,37 @@ class Layout extends Component {
     }));
   };
 
-
   handleFilterNumber = (value) => {
     this.setState((prevState) => ({
       filterNumber: value,
     }));
   };
 
-  handleFilterGenre = (value) => {
-    this.setState((prevState) => ({
-      filterGenre: value,
-    }));
-  };
+  handleFilterOptions = (selectedGenresArray, selectedDecadesArray, searchText) => {
+    
+  
+    console.log("CHANGE IN FILTER - Genres:", selectedGenresArray);
+    console.log("CHANGE IN FILTER - Decades:", selectedDecadesArray);
+    console.log("CHANGE IN FILTER - Search Text:", searchText);
 
-  handleFilterDecade = (value) => {
-    this.setState((prevState) => ({
-      filterDecade: value,
-    }));
-  };
+    const query = Query.formatFilterQuery(selectedGenresArray,selectedDecadesArray,searchText);
 
-  handleFilterSearch = (value) => {
-    this.setState((prevState) => ({
-      filterDecade: value,
-    }));
+
+    this.setState({
+      query: query
+    })
+  
   };
 
   
+  
   render() {
     const { page } = this.props;
+    const { isMenuVisible, isFilterVisible, filterOptions, filterNumber, query } = this.state;
+
+    const view = window.innerWidth > mobileWidth ;
+
+    //console.log("window inner: "+ window.innerWidth + "> mobile width"+ mobileWidth + "view"+ view);
 
     let PageComponent = null;
 
@@ -74,12 +77,7 @@ class Layout extends Component {
       PageComponent = require(`../../pages/NotFound`).default;
     }
 
-    const view = window.innerWidth > mobileWidth ;
-
-    console.log("window inner: "+ window.innerWidth + "> mobile width"+ mobileWidth + "view"+ view);
-
-    const { isMenuVisible, isFilterVisible, filterDecade, filterGenre, filterNumber, filterSearch } = this.state;
-
+    
     console.log(page);
     
     
@@ -87,67 +85,53 @@ class Layout extends Component {
 
     <div className={classes.container}>
 
-      {/*filterNumber={filterNumber}
-                  filterGenre={filterGenre}
-                  filterDecade={filterDecade}
-                  filterSearch={filterSearch}
-                  handleFilterNumber={this.handleFilterNumber}
-                  handleFilterGenre={this.handleFilterGenre}
-      handleFilterDecade={this.handleFilterDecade}*/}
 
+      {page=="Collection" ? 
+      <div>
+        {view ?  <Navbar/>: 
+        <div>
+          <Menu isMenuVisible={isMenuVisible} toggleMenuVisibility={this.toggleMenuVisibility}/>
 
-    {view ?
-    
-    <div> 
-      {page=="Home" ? <Menu isMenuVisible={isMenuVisible} toggleMenuVisibility={this.toggleMenuVisibility}/>
-      : <Navbar/>} 
+          <div className={filter.filterContainer}>
+            <div className={filter.filterButtonContainer}>
+              <a className={filter.filterButton} onClick={this.toggleFilterVisibility}>
+                filter
+              </a>
+            </div>
 
-      <div className={classes.PageComponent}>
-          <PageComponent view={view}/>
-      </div>
-    </div>
-    : 
-    
-    <div>
-      <Menu isMenuVisible={isMenuVisible} toggleMenuVisibility={this.toggleMenuVisibility}/>
-      
-      {page=="Collection" ? <div>
-  
-      <div className={filter.filterContainer}>
+            <div className={`${filter.filter} ${isFilterVisible ? filter.visible : filter.hidden}`}>
+              <Filter view={view} filterOptions={filterOptions} filterNumber={filterNumber} handleFilterOptions={this.handleFilterOptions} handleFilterNumber={this.handleFilterNumber}   ></Filter>
+            </div>
+          </div>
+        </div>
+        }
 
-        <div className={filter.filterButtonContainer}>
-          <a className={filter.filterButton} onClick={this.toggleFilterVisibility}>
-            filter
-          </a>
+        <div className={classes.PageComponent}>
+          <Collection view={view} query={query} filterOptions={this.state.filterOptions} filterNumber={this.state.filterNumber} handleFilterOptions={this.handleFilterOptions} handleFilterNumber={this.handleFilterNumber}/>
         </div>
 
-        <div className={`${filter.filter} ${isFilterVisible ? filter.visible : filter.hidden}`}>
-          <Filter view={view}></Filter>
-        </div>
-
-        </div>
-      
-      
-      
-      
-      <div className={classes.PageComponent}>
-        <PageComponent view={view}/>
       </div>
-      </div>
-      : 
       
-    <div className={classes.PageComponent}>
-    <PageComponent view={view}/>
-    </div>}
-    
-    </div>
-    
-    }
+      :
 
+      <div> 
+        {view ?
+          <>{page=="Home" ? <Menu isMenuVisible={isMenuVisible} toggleMenuVisibility={this.toggleMenuVisibility}/> : <Navbar/>} </>
+          : 
+          <Menu isMenuVisible={isMenuVisible} toggleMenuVisibility={this.toggleMenuVisibility}/>
+        }
 
-    {page=="Home" ? <></>: <Footer/>}
+        <div className={classes.PageComponent}>
+            <PageComponent view={view}/>
+        </div>
+      
 
     
+      </div>
+    
+      }
+
+    {page=="Home" ? <></> : <Footer/>} 
 
     </div>
 
