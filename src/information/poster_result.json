@@ -73,7 +73,12 @@
     "id": "4",
     "name": "Silence of the Lambs",
     "image":{
-      "default": "/default/poster.png"
+      "default": "/posters/silence_lambs/cropped-silence_poster.jpg",
+      "background": {"width": 1900,"height": 2850,"x": 0,"y": 0, "z": 1,"link": "/posters/silence_lambs/Layer 0.png","animation": ""},
+      "elements": [
+      {"width": 1188,"height": 630,"x": 355,"y": 1131, "z": 2,"link": "/posters/silence_lambs/Layer 1.png","animation": "moth"}
+    
+      ]
     },
     "description": "information here"
   },
