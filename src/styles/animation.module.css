@@ -175,6 +175,81 @@
 /*------------------------------------------fireflies-----------------------------------------------------*/
 
 
+.imageContainer:hover .bright-point {
+  
+  opacity: 0.5;
+  
+  animation: moveAndBlink 7s linear infinite alternate-reverse;
+ 
+}
+
+.imageContainer:hover .bright-point2 {
+  
+  opacity: 0.5;
+  
+  animation: moveAndBlink2 7s linear infinite alternate-reverse;
+ 
+}
+
+@keyframes moveAndBlink {
+  0%, 100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+
+  25% {
+    transform: translate(var(--varX1), var(--varY1));
+    opacity: 0.1;
+  }
+
+  50% {
+    transform: translate(var(--varX2), var(--varY2));
+  }
+
+  75% {
+    transform: translate(var(--varX3), var(--varY3));
+    opacity: 0.8;
+  }
+}
+
+.bright-point {
+  --varX1: 70px;
+  --varY1: -30px;
+  --varX2: -50px;
+  --varY2: -100px;
+  --varX3: 0;
+  --varY3: 0;
+}
+
+@keyframes moveAndBlink2 {
+  0%, 100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+
+  25% {
+    transform: translate(var(--varX1a), var(--varY1a));
+    opacity: 0.1;
+  }
+
+  50% {
+    transform: translate(var(--varX2a), var(--varY2a));
+  }
+
+  75% {
+    transform: translate(var(--varX3a), var(--varY3a));
+    opacity: 0.8;
+  }
+}
+
+.bright-point2 {
+  --varX1a: 30px;
+  --varY1a: -20px;
+  --varX2a: -40px;
+  --varY2a: 60px;
+  --varX3a: 10px;
+  --varY3a: -10px;
+}
 
 
 /*------------------------------------------jurassic-----------------------------------------------------*/
