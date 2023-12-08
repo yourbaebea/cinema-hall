@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import classes from '../styles/archive.module.css';
 import Image from "../components/Poster/Image";
+import Query from "../information/Query";
 
 
-import queryfromserver from '../information/poster_result.json';
 
 export default class Archive extends Component {
   render() {
     const { view } = this.props;
-
+    const queryfromserver = Query.queryArchive();
 
     const size= (view ? 20 : 100);
     return (
@@ -20,7 +20,7 @@ export default class Archive extends Component {
                 
                 <div className={classes.posterImage} style={{width: `${size}%` }} >
                 <a className={classes.imageLink} key={index} href={`/poster/${poster.id}`}>
-                  <Image data={poster.image} animate={false}/>
+                  <Image data={poster.image} animate={true}/>
                 </a>
                 </div>
                 

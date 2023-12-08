@@ -7,10 +7,12 @@ export default class Filter extends Component {
     super(props);
 
     this.state = {
+      selectedNumber: this.props.filterNumber,
       selectedGenres: new Set(),
       selectedDecades: new Set(),
     };
   }
+
 
   handleGenreSelect = (genre) => {
     this.setState((prevState) => {
@@ -32,14 +34,37 @@ export default class Filter extends Component {
     const { selectedGenres, selectedDecades } = this.state;
     const searchText = document.getElementById("search-text").value;
   
-    console.log("Selected Genres:", Array.from(selectedGenres));
-    console.log("Selected Decades:", Array.from(selectedDecades));
+    const selectedGenresArray = Array.from(selectedGenres);
+    const selectedDecadesArray = Array.from(selectedDecades);
+
+    console.log("Selected Genres:", selectedGenresArray);
+    console.log("Selected Decades:", selectedDecadesArray);
     console.log("Search Text:", searchText);
     console.log("Searching...");
+
+    this.props.handleFilterOptions(selectedGenresArray, selectedDecadesArray, searchText);
   };
+
+  handleGenreSelect = (genre) => {
+    this.setState((prevState) => {
+      const selectedGenres = new Set(prevState.selectedGenres);
+      selectedGenres.has(genre) ? selectedGenres.delete(genre) : selectedGenres.add(genre);
+      return { selectedGenres };
+    });
+  };
+
+
+  handleFilterNumberChange = (value) => {
+    this.setState({ selectedNumber: value }, () => {
+      this.props.handleFilterNumber(this.state.selectedNumber);
+    });
+  };
+
 
   render() {
     const { view } = this.props;
+
+
 
     return (
       <div>
@@ -213,7 +238,25 @@ export default class Filter extends Component {
         </div>
       </div>    
         :
-          <div className={classes.category}>mobile posters/page</div>
+        <div>
+
+            <div>
+              <div className={classes.category}>mobile posters/page</div>
+            
+              <div>current value: {this.state.selectedNumber}</div>
+              
+                <div onClick={() => this.handleFilterNumberChange(1)}>1</div>
+              
+                <div onClick={() => this.handleFilterNumberChange(2)}>2</div>
+              
+                <div onClick={() => this.handleFilterNumberChange(3)}>3</div>
+            
+
+            </div>
+            </div>
+
+
+          
         }
         
 

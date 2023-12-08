@@ -4,26 +4,28 @@ import Poster from "./PosterDetails";
 import Layout from "../components/Layout/Layout";
 import Filter from "../components/Filter";
 import Image from "../components/Poster/Image";
+import Query from "../information/Query";
 
 
-import queryfromserver from '../information/poster_result.json';
+//import queryfromserver from '../information/poster_result.json';
 
 export default class Collection extends Component {
-  constructor(props) {
-    super(props);
+  shouldComponentUpdate(nextProps) {
+    // Check if relevant props are changing
+    return (
+      nextProps.view !== this.props.view ||
+      nextProps.query !== this.props.query ||
+      nextProps.filterOptions !== this.props.filterOptions ||
+      nextProps.filterNumber !== this.props.filterNumber
+    );
   }
 
-
   render() {
+    const { view, query, filterOptions, filterNumber } = this.props;
 
-    const { view } = this.props;
-
-    const { filterNumber, filterGenre,filterDecade,filterSearch, handleFilterDecade, handleFilterGenre, handleFilterNumber, handleFilterSearch } = this.props;
-
-
-    console.log(queryfromserver);
-
-    const columnCount = 2;
+    const queryfromserver = Query.queryFilterFromServer(query);
+  
+    const columnCount = getColumnCount(filterNumber);
 
     return (
         <div className={classes.page}>
@@ -36,7 +38,7 @@ export default class Collection extends Component {
 
               <div className={classes.filtersContainer}>
 
-                <Filter view={view}></Filter>
+                <Filter {...this.props}></Filter>
                 
               </div>
 
@@ -78,6 +80,21 @@ export default class Collection extends Component {
     );
   }
 
+  
+
 }
 
 
+function getColumnCount(filterNumber) {
+  switch (filterNumber) {
+    case 1:
+      return 1;
+    case 2:
+      return 2;
+    case 3:
+      return 3;
+    // Add more cases as needed
+    default:
+      return 2; // Default to 2 columns
+  }
+}
