@@ -4,10 +4,10 @@
     "name": "The GodFather",
     "image":{
       "default": "/posters/godfather/godfather.jpg",
-      "background": {"width": 1108,"height": 1662,"x": 0,"y": 0, "z": 1,"link": "/posters/godfather/godfather_2.png","animation": ""},
+      "background": {"width": 1108,"height": 1662,"x": 0,"y": 0, "z": 1,"link": "/posters/godfather/background.png","animation": ""},
       "elements": [
-      {"width": 322,"height": 266,"x": 744,"y": 449, "z": 3,"link": "/posters/godfather/strings_1.png","animation": "normal-strings"},
-      {"width": 322,"height": 778,"x": 744,"y": 449, "z": 2,"link": "/posters/godfather/strings_stretched.png","animation": "stretched-strings"}
+      {"width": 322,"height": 790,"x": 743,"y": -75, "z": 2,"link": "/posters/godfather/strings.png","animation": "stretched-strings"},
+      {"width": 405,"height": 715,"x": 703,"y": 0, "z": 3,"link": "/posters/godfather/puppet.png","animation": ""}
       
       ]
     },
