@@ -131,7 +131,8 @@
     "name": "Grave of the Fireflies",
     "image":{
       "default": "/posters/grave_fireflies/grave_of_fireflies_poster.jpg",
-      "background": {"width": 1000,"height": 1500,"x": 0,"y": 0, "z": 1, "link": "/posters/grave_fireflies/Layer 0 copy.png","animation": ""},
+      "background": {"width": 1000,"height": 1500,"x": 0,"y": 0, "z": 1, "link": "/posters/grave_fireflies/Layer 0.png","animation": ""},
+      
       "elements":[
         {"width": 13,"height": 12,"x": 292,"y": 724,"z": 2,"link": "/posters/grave_fireflies/Layer 1.png", "animation": "bright-point"},
         {"width": 16,"height": 14,"x": 80,"y": 876,"z": 3,"link": "/posters/grave_fireflies/Layer 2.png", "animation": "bright-point"},
@@ -173,7 +174,8 @@
         {"width": 19,"height": 21,"x": 958,"y": 883,"z": 39,"link": "/posters/grave_fireflies/Layer 38.png", "animation": "bright-point2"},
         {"width": 16,"height": 17,"x": 978,"y": 904,"z": 40,"link": "/posters/grave_fireflies/Layer 39.png", "animation": "bright-point"},
         {"width": 36,"height": 35,"x": 905,"y": 1008,"z": 41,"link": "/posters/grave_fireflies/Layer 40.png", "animation": "bright-point2"},
-        {"width": 18,"height": 18,"x": 861,"y": 1064,"z": 42,"link": "/posters/grave_fireflies/Layer 41.png", "animation": "bright-point2"}
+        {"width": 18,"height": 18,"x": 861,"y": 1064,"z": 42,"link": "/posters/grave_fireflies/Layer 41.png", "animation": "bright-point2"},
+        {"width":1000 ,"height": 1022,"x": 0,"y": 478,"z": 43,"link": "/posters/grave_fireflies/back_2.png", "animation": ""}
       ]
     },
     "description": "information here"
