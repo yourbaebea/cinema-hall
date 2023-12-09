@@ -142,41 +142,27 @@
 /*------------------------------------------silence-----------------------------------------------------*/
 
 .imageContainer:hover .moth {
-  
-  transform: translate(-50%, -50%);
-  animation: moth-path 1s ease-in-out infinite;
+  animation: moth-path 10s infinite;
+  transform-origin: center center; 
 }
-
 
 @keyframes moth-path {
   0% {
-    transform: translate(-50%, -50%) rotate(0deg);
+    transform: translate(0%, 0%) rotate(-360deg);
   }
-  15% {
-    transform: translate(-40%, 60%) rotate(15deg);
+  25% {
+    transform: translate(50%, 100%) rotate(-90deg);
   }
-  30% {
-    transform: translate(0%, 80%) rotate(30deg);
+  50%{
+    transform: translate(-50%, 50%) rotate(-180deg);
   }
-  45% {
-    transform: translate(40%, 60%) rotate(45deg);
+  75%{
+    transform: translate(30%, -200%) rotate(-270deg);
   }
-  60% {
-    transform: translate(80%, -10%) rotate(60deg);
-  }
-  75% {
-    transform: translate(40%, -50%) rotate(75deg);
-  }
-  90% {
-    transform: translate(0%, -80%) rotate(90deg);
-  }
-  100% {
-    transform: translate(-50%, -50%) rotate(105deg);
+  100%{
+    transform: translate(0%, 0%) rotate(0deg);
   }
 }
-
-
-
 
 
 /*------------------------------------------oppenheimer-----------------------------------------------------*/
