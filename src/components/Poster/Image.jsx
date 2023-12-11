@@ -12,7 +12,7 @@ export default class Image extends Component {
 
   render() {
 
-    const {data, animate}= this.props;
+    const {data, animate, isImageClicked}= this.props;
     if(animate==null) animate=false;
     //console.log(data);
 
@@ -48,6 +48,20 @@ export default class Image extends Component {
               top: `${data.background.y}`,
               left: `${data.background.x}`,
               zIndex: data.background.z
+            }}
+             />
+
+
+            <img className={classes.image} src={data.alt.link} alt="poster" 
+            style={{
+              opacity: isImageClicked ? 1 : 0,
+              width: `${data.alt.width}`,
+              height: `${data.alt.height}`,
+              position: 'absolute',
+              top: `${data.alt.y}`,
+              left: `${data.alt.x}`,
+              zIndex: data.alt.z,
+              transition: 'opacity 0.5s ease-in-out',
             }}
              />
             {data.elements.map((element, index) => ( element.link == null ?  

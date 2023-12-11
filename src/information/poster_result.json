@@ -5,6 +5,7 @@
     "image":{
       "default": "/posters/godfather/godfather.jpg",
       "background": {"width": 1108,"height": 1662,"x": 0,"y": 0, "z": 1,"link": "/posters/godfather/background.png","animation": ""},
+      "alt": {"width": 700,"height": 1053,"x": 0,"y": 0, "z": 499,"link": "/posters/godfather/gabz_godfather.png","animation": ""},
       "elements": [
       {"width": 322,"height": 790,"x": 743,"y": -75, "z": 2,"link": "/posters/godfather/strings.png","animation": "stretched-strings"},
       {"width": 405,"height": 715,"x": 703,"y": 0, "z": 3,"link": "/posters/godfather/puppet.png","animation": ""}
@@ -20,6 +21,7 @@
     "image":{
       "default": "/posters/anatomy/anatomy.png",
       "background": {"width": 2616,"height": 3924,"x": 0,"y": 0, "z": 1,"link": "/posters/anatomy/background.png","animation": ""},
+      "alt": "",
       "elements": [
       {"width": 2295,"height": 1411,"x": 193,"y": 2195, "z": 2,"link": "/posters/anatomy/red.png","animation": "dropRed"},
       {"width": 2328,"height": 2065,"x": 119,"y": 149, "z": 3,"link": "/posters/anatomy/yellow.png","animation": "dropYellow"},
@@ -48,6 +50,7 @@
     "image":{
       "default": "/posters/vertigo/vertigo.png",
       "background": {"width": 590,"height": 885,"x": 0,"y": 0, "z": 1,"link": "/posters/vertigo/background.png","animation": ""},
+      "alt": "",
       "elements": [
       {"width": 528,"height": 495,"x": 30,"y": 238, "z": 2,"link": "/posters/vertigo/circle.png","animation": "rotateVertigo"}
       ]
@@ -75,6 +78,7 @@
     "image":{
       "default": "/posters/silence_lambs/cropped-silence_poster.jpg",
       "background": {"width": 1900,"height": 2850,"x": 0,"y": 0, "z": 1,"link": "/posters/silence_lambs/Layer 0.png","animation": ""},
+      "alt": "",
       "elements": [
       {"width": 1188,"height": 630,"x": 355,"y": 1131, "z": 2,"link": "/posters/silence_lambs/Layer 1.png","animation": "moth"}
     
@@ -97,6 +101,7 @@
     "image":{
       "default": "/posters/nightmare/nightmare.png",
       "background": {"width": 1000,"height": 1500,"x": 0,"y": 0, "z": 2, "link": "/posters/nightmare/background.png","animation": ""},
+      "alt": "",
       "elements": [
       {"width": 603,"height": 611,"x": 199,"y": 71,"z": 1, "animation": "moonNightmare"}
       ]
@@ -122,7 +127,8 @@
     "id": "7",
     "name": "Up",
     "image":{
-      "default": "/default/poster.png"
+      "default": "/default/poster.png",
+      "alt": ""
     },
     "description": "information here"
   },
@@ -132,6 +138,7 @@
     "image":{
       "default": "/posters/grave_fireflies/grave_of_fireflies_poster.jpg",
       "background": {"width": 1000,"height": 1500,"x": 0,"y": 0, "z": 1, "link": "/posters/grave_fireflies/Layer 0.png","animation": ""},
+      "alt": "",
       
       "elements":[
         {"width": 13,"height": 12,"x": 292,"y": 724,"z": 2,"link": "/posters/grave_fireflies/Layer 1.png", "animation": "bright-point"},
@@ -186,6 +193,7 @@
     "image":{
       "default": "/posters/jurassic_park/cropped-jurassic_park_poster.jpg",
       "background": {"width": 817,"height": 1225,"x": 0,"y": 0, "z": 1, "link": "/posters/jurassic_park/background_jurassic.png","animation": ""},
+      "alt": "",
       "elements": [
         {"width": 136,"height": 105,"x": 404,"y": 253, "z": 2,"link": "/posters/jurassic_park/jurassic_mouth1.png","animation": "mouth-bottom"},
         {"width": 201,"height": 148,"x": 404,"y": 152, "z": 3,"link": "/posters/jurassic_park/jurassic_mouth2.png","animation": "mouth-top"}
@@ -199,7 +207,8 @@
     "id": "10",
     "name": "Howls Moving Castle",
     "image":{
-      "default": "/default/poster.png"
+      "default": "/default/poster.png",
+      "alt": ""
     },
     "description": "information here"
   },
@@ -207,7 +216,8 @@
     "id": "11",
     "name": "Pinocchio",
     "image":{
-      "default": "/default/poster.png"
+      "default": "/default/poster.png",
+      "alt": ""
     },
     "description": "information here"
   },
@@ -217,6 +227,7 @@
     "image":{
       "default": "/posters/wolf/wolf.png",
       "background": {"width": 988,"height": 1482,"x": 0,"y": 0, "z": 1, "link": "/posters/wolf/wolf.png","animation": ""},
+      "alt": "",
       "elements": [
       {"width": 648,"height": 1391,"x": 170,"y": 91,"z": 3,"link": "/posters/wolf/leo.png", "animation": ""},
       {"width":15,"height": 20,"x": -100,"y": -30,"z": 2, "animation": "confettiWolf-1"},
