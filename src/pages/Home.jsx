@@ -24,8 +24,8 @@ const imagesHomepage = [
 const image1 = require('../images/poster.png');
 
 const generateRandomPosition = () => {
-  const imageWidth = 8 * window.innerWidth / 100; // 8vw
-  const imageHeight = 20 * window.innerHeight / 100; // 20vh
+  const imageWidth = 8 * window.innerWidth / 100; 
+  const imageHeight = 20 * window.innerHeight / 100; 
 
   const newX = Math.random() * (window.innerWidth - imageWidth);
   const newY = Math.random() * (window.innerHeight - imageHeight);

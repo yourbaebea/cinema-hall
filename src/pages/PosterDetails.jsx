@@ -11,7 +11,16 @@ import classes from '../styles/poster.module.css'
 class PosterDetails extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      isImageClicked: false,
+    };
   }
+
+  handleImageClick = () => {
+    this.setState((prevState) => ({
+      isImageClicked: !prevState.isImageClicked,
+    }));
+  };
 
   handleGoBack = () => {
     window.history.back();
@@ -36,9 +45,9 @@ class PosterDetails extends Component {
 
 
               <div className={classes.posterContainer}>
-              <div className={classes.posterImage} style={{width: `${size}%` }} >
+              <div className={classes.posterImage}  onClick={this.handleImageClick} >
                 
-                  <Image data={data.image} animate={true}></Image>
+              <Image data={data.image} animate={true} isImageClicked={this.state.isImageClicked} />
 
                 </div>
 
