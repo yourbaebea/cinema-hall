@@ -54,10 +54,6 @@
   }
   
   
-  .posterImage{
-    width: 40%;
-  }
-  
   .posterText{
     flex:1;
     height: fit-content;

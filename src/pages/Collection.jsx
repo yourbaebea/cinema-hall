@@ -55,7 +55,7 @@ export default class Collection extends Component {
           
           
 
-          : <div>mobile, filters are already being handled
+          : <div>
 
           <div className={classes.collectionContainer}>
 

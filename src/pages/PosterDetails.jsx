@@ -31,7 +31,7 @@ class PosterDetails extends Component {
     const { id, data, view} = this.props;
   
     const icon = view ? 50 : 40;
-    const size= (view ? 40 : 100);
+    const size= (view ? 50 : 100);
 
 
     return (
@@ -45,11 +45,11 @@ class PosterDetails extends Component {
 
 
               <div className={classes.posterContainer}>
-              <div className={classes.posterImage}  onClick={this.handleImageClick} >
+              <div className={classes.posterImage} style={{width: `${size}%`}}  onClick={this.handleImageClick} >
                 
               <Image data={data.image} animate={false} alt={true} isImageClicked={this.state.isImageClicked} />
 
-                </div>
+              </div>
 
                 
                 <div className={classes.posterText}>
