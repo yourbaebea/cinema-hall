@@ -1,5 +1,6 @@
 import queryfromserver from '../information/poster_result.json';
 import aboutfromserver from '../information/about.json';
+import imagesHomepage from '../information/home.json';
 
 
 const formatFilterQuery = (selectedGenresArray, selectedDecadesArray, searchText) => {
@@ -33,6 +34,11 @@ const queryAbout = () => {
   return aboutfromserver[0];
 };
 
+const queryHome = () => {
+  console.log("Query: loading some Elements for Home")
+  return imagesHomepage;
+};
+
 const queryDetailsPoster = (id_data) => {
   console.log("Query: loading Details Poster Query")
   return queryfromserver[id_data];
@@ -43,7 +49,8 @@ const Query = {
   queryArchive,
   queryDetailsPoster,
   formatFilterQuery,
-  queryAbout
+  queryAbout,
+  queryHome
 };
 
 export default Query;
