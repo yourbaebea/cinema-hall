@@ -60,8 +60,11 @@ class PosterDetails extends Component {
                     <div>
                       <div>
                         {Object.entries(data.details).map(([key, value]) => (
+
                           <div key={key}>
-                            {(key !== "cast" && key !== "score") && (
+                            {key!=="genre"? 
+                            <div>
+                              {(key !== "cast" && key !== "score") && (
                               <>
                                 <p><strong>{`${key.charAt(0).toUpperCase() + key.slice(1)}:`}</strong> {Array.isArray(value) ? '' : `${value}`}</p>
                                 {Array.isArray(value) ? (
@@ -77,6 +80,19 @@ class PosterDetails extends Component {
                                 )}
                               </>
                             )}
+                            </div>
+                            :
+
+                            <div>
+                              <p>
+                                <strong>{`${key.charAt(0).toUpperCase() + key.slice(1)}:`}</strong> {value.join('/')}
+                              </p>
+                            
+                            </div>
+                            
+                            
+                            }
+                            
                           </div>
                         ))}
                       </div>

@@ -8,8 +8,6 @@ export default class Image extends Component {
     super(props);
   }
 
-
-
   render() {
 
     let {data, animate, alt, isImageClicked}= this.props;
@@ -140,3 +138,5 @@ export default class Image extends Component {
     );
   }
 }
+
+
