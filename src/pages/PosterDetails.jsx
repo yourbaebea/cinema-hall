@@ -47,7 +47,7 @@ class PosterDetails extends Component {
               <div className={classes.posterContainer}>
               <div className={classes.posterImage}  onClick={this.handleImageClick} >
                 
-              <Image data={data.image} animate={true} isImageClicked={this.state.isImageClicked} />
+              <Image data={data.image} animate={false} alt={true} isImageClicked={this.state.isImageClicked} />
 
                 </div>
 

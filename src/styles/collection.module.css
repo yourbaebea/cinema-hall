@@ -28,10 +28,17 @@
 }
 
 .collectionImage {
-  width:inherit;
+  width: inherit;
   height: auto;
   object-fit: cover;
+  transition: transform 0.3s ease-in-out;
 }
+
+.collectionImage:hover {
+  transform: scale(1.05);
+  opacity: 60%;
+}
+
 
 .image{
   width: 100%;

@@ -12,9 +12,9 @@ export default class Image extends Component {
 
   render() {
 
-    const {data, animate, isImageClicked}= this.props;
+    let {data, animate, alt, isImageClicked}= this.props;
     if(animate==null) animate=false;
-    //console.log(data);
+    if(alt==null) alt=false;
 
     if(data.default==null){
       return(<div className={classes.imageLink}>
@@ -29,13 +29,33 @@ export default class Image extends Component {
       <div className={classes.imageLink}>
         <div className={classes.imageWrapper}>
           {!animate ?
+
+          <div> 
+
+            <img className={classes.image} src={data.default} alt="poster" /> 
+
+            {alt ? <img className={classes.image} src={data.alt.link} alt="poster" 
+              style={{
+                opacity: isImageClicked ? 1 : 0,
+                width: `${data.alt.width}`,
+                height: `${data.alt.height}`,
+                position: 'absolute',
+                top: `${data.alt.y}`,
+                left: `${data.alt.x}`,
+                zIndex: data.alt.z,
+                transition: 'opacity 0.5s ease-in-out',
+              }}
+              />: <></>}
+
+          </div>
           
-          <img className={classes.image} src={data.default} alt="poster" /> 
+
           
           :
           
           <div>
 
+          
 
             <img className={animation.defaultImage} src={data.default} alt="poster" /> 
 
