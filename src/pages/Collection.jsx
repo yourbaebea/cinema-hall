@@ -23,9 +23,9 @@ export default class Collection extends Component {
   render() {
     const { view, query, filterOptions, filterNumber } = this.props;
 
-    const queryfromserver = Query.queryFilterFromServer(query);
+    let queryfromserver = Query.queryFilterFromServer(query);
   
-    const columnCount = getColumnCount(filterNumber);
+    let columnCount = getColumnCount(filterNumber);
 
     return (
         <div className={classes.page}>

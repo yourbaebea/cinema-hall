@@ -4,7 +4,7 @@ import imagesHomepage from '../information/home.json';
 
 
 const formatFilterQuery = (selectedGenresArray, selectedDecadesArray, searchText) => {
-  const query="";
+  let query="";
   if(searchText!="") query= "LAYOUT: new query [" + searchText + ";" + selectedDecadesArray + ";" + searchText + "]" ;
   else{
     console.log("Query: new filters were empty, working as it should!");
@@ -14,7 +14,6 @@ const formatFilterQuery = (selectedGenresArray, selectedDecadesArray, searchText
   return query;
 
 }
-
 
 const queryFilterFromServer = (value) => {
   if(value=="") console.log("Query: loading filtered Query NO FILTERS:");
