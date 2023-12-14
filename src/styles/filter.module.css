@@ -1,116 +1,3 @@
-.filter {
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding: 15vh 0vw;
-  width: 100vw;
-  height: 70vh;
-  justify-content: center;
-  align-content: center;
-  background: var(--shadow-menu);
-  backdrop-filter: blur(6px);
-  width: 100%;
-  height: 100%;
-  display: none;
-  z-index: 99;
-  text-transform: uppercase;
-  font-weight: var(--navbar-font-weight); 
-  font-size: var(--navbar-font-size);
-}
-.filter.visible {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-.filterButtonContainer {
-  position: absolute;
-  top: 2rem; /* Adjust the top position as needed */
-  left: 2rem; /* Adjust the right position as needed */
-  z-index: 100; /* Should be higher than the filter */
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-transform: uppercase;
-  font-weight: var(--navbar-font-weight); 
-  font-size: var(--navbar-font-size); 
-}
-.filterButton {
-  width: 100%;
-  height: 100%;
-}
-.category{
-  width: auto;
-  align-self: center;
-  text-align: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.img {
-  aspect-ratio: 0.4;
-  object-fit: contain;
-  object-position: top;
-  width: 54px;
-  fill: #000;
-  overflow: hidden;
-  max-width: 100%;
-  padding-top: 20px;
-}
-
-
-.searchContainer {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 90%;
-  margin-right: 0px;
-  align-self: center;
-  gap: 15px;
-}
-
-.searchTitle {
-  color: #000;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  align-self: flex-end; /* Align the search title to the center */
-  font: 500 30px Futura, sans-serif;
-}
-
-
-
-.searchBar {
-  font: 500 16px Futura, sans-serif;
-  position: relative;
-  --field-padding: 12px;
-  display: flex;
-}
-
-.searchBar input {
-  border: none;
-  -webkit-appearance: none;
-  -ms-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: #f4f4f4;
-  padding: 12px;
-  width: 100%;
-  font: 500 16px Futura, sans-serif;
-  padding: var(--field-padding);
-}
-
-.searchButton {
-  padding: 0%;
-  border: 0;
-  cursor: pointer;
-  background-color: #f4f4f4;
-  transition: background-color 0.3s ease; /* Add a transition for a smoother effect */
-}
-
-.searchButton:hover {
-  background-color: #b4b4b4;
-}
-
 .filters {
   display: flex;
   flex-direction: column;
@@ -205,4 +92,302 @@
   font: 500 16px Futura, sans-serif;
   cursor: pointer;
   align-items: flex-start;
+}
+
+.img {
+  aspect-ratio: 0.4;
+  object-fit: contain;
+  object-position: top;
+  width: 54px;
+  fill: #000;
+  overflow: hidden;
+  max-width: 100%;
+  padding-top: 20px;
+}
+
+.searchContainer {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 90%;
+  margin-right: 0px;
+  align-self: center;
+  gap: 15px;
+}
+
+.searchTitle {
+  color: #000;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  align-self: flex-end; /* Align the search title to the center */
+  font: 500 30px Futura, sans-serif;
+}
+
+.searchBar {
+  font: 500 16px Futura, sans-serif;
+  position: relative;
+  --field-padding: 12px;
+  display: flex;
+}
+
+.searchBar input {
+  border: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #f4f4f4;
+  padding: 12px;
+  width: 100%;
+  font: 500 16px Futura, sans-serif;
+  padding: var(--field-padding);
+}
+
+.searchButton {
+  padding: 0%;
+  border: 0;
+  cursor: pointer;
+  background-color: #f4f4f4;
+  transition: background-color 0.3s ease; /* Add a transition for a smoother effect */
+}
+
+.searchButton:hover {
+  background-color: #b4b4b4;
+}
+
+
+
+
+
+
+
+
+.filter {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 15vh 0vw;
+  width: 100vw;
+  height: 70vh;
+  justify-content: center;
+  align-content: center;
+  background: var(--shadow-menu);
+  backdrop-filter: blur(6px);
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 99;
+  text-transform: uppercase;
+  font-weight: var(--navbar-font-weight); 
+  font-size: var(--navbar-font-size);
+}
+.filter.visible {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.filterButtonContainer {
+  position: absolute;
+  top: 2rem; /* Adjust the top position as needed */
+  left: 2rem; /* Adjust the right position as needed */
+  z-index: 100; /* Should be higher than the filter */
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: var(--navbar-font-weight); 
+  font-size: var(--navbar-font-size); 
+}
+.filterButton {
+  width: 100%;
+  height: 100%;
+}
+.filtersMobile{
+  display: flex;
+  width: auto;
+  align-self: center;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.postersPerPage {
+  display: flex;
+  flex-direction: column;
+}
+
+.postersPerPageTitle {
+  display: flex;
+  color: #000;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  align-self: center;
+  font: 500 30px Futura, sans-serif;
+}
+
+.postersPerPageOptionContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.postersPerPageOption {
+  display: flex;
+  border: solid;
+  border-radius: 50%;
+}
+
+.postersPerPageOptionText {
+  display: flex;
+  color: #000;
+  text-transform: uppercase;
+  align-self: center;
+  font: 500 30px Futura, sans-serif;
+  margin-left: 7px;
+  margin-right: 6px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.filterTitleMobile {
+  display: flex;
+  color: #000;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  align-self: center;
+  font: 500 30px Futura, sans-serif;
+}
+
+.filterSectionMobile {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+}
+
+.filterContainerMobile {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: start;
+  gap: 15px;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.filterOptionsContainerMobile {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: start;
+  gap: 15px;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.filterContainerMobile .filterOptionsContainerMobile {
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.filterOptionsContainerMobile::-webkit-scrollbar {
+  width: 0px;
+}
+
+.filterOptionMobile {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  justify-content: start;
+}
+
+.filterOptionMobile input[type="checkbox"] {
+  position: relative;
+  opacity: 0;
+}
+
+.filterOptionMobile input[type="checkbox"] + label::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  border: 2px solid #000;
+  border-radius: 50%; /* Tornar o círculo */
+  background-color: #f4f4f4;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
+  margin-right: 5px;
+}
+
+.filterOptionMobile input[type="checkbox"]:hover + label::before {
+  background-color: #b4b4b4;
+}
+
+.filterOptionMobile input[type="checkbox"]:checked + label::before {
+  background-color: #000; /* Torna o círculo preto quando está marcado */
+  border-color: #000;
+}
+
+.filterOptionMobile label {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  letter-spacing: 1.6px;
+  font: 500 16px Futura, sans-serif;
+  cursor: pointer;
+  align-items: flex-start;
+}
+
+.searchContainerMobile {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 80%;
+  margin-right: 0px;
+  align-self: center;
+  gap: 15px;
+}
+
+.searchTitleMobile {
+  color: #000;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  align-self: center;
+  font: 500 30px Futura, sans-serif;
+}
+
+.searchBarMobile {
+  font: 500 16px Futura, sans-serif;
+  position: relative;
+  --field-padding: 12px;
+  display: flex;
+}
+
+.searchBarMobile input {
+  border: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #f4f4f4;
+  padding: 12px;
+  width: 100%;
+  font: 500 16px Futura, sans-serif;
+  padding: var(--field-padding);
+}
+
+.searchButtonMobile {
+  padding: 0%;
+  border: 0;
+  cursor: pointer;
+  background-color: #f4f4f4;
+  transition: background-color 0.3s ease; /* Add a transition for a smoother effect */
+}
+
+.searchButtonMobile:hover {
+  background-color: #b4b4b4;
 }
