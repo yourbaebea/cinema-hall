@@ -1,27 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSpring, animated } from "react-spring";
 import home from '../styles/home.module.css';
-
-const imagesHomepage = [
-  {
-    "id": "1",
-    "link": "query from wordpress 1",
-  },
-  {
-    "id": "2",
-    "link": "query from wordpress 2",
-  },
-  {
-    "id": "3",
-    "link": "query from wordpress 3",
-  },
-  {
-    "id": "4",
-    "link": "query from wordpress 4",
-  },
-];
-
-const image1 = require('../images/poster.png');
+import Query from "../information/Query";
 
 const generateRandomPosition = () => {
   const imageWidth = 8 * window.innerWidth / 100; 
@@ -100,7 +80,7 @@ const DraggableImage = ({ image }) => {
       }}
     >
       <img
-        src={image1}
+        src={image.element}
         alt={`Image ${image.id}`}
         style={{ width: `${8}vw`, height: `${20}vh` }}
       />
@@ -118,12 +98,14 @@ const Home = () => {
     overflow: 'hidden',
   };
 
+  const imagesHomepage = Query.queryHome() || [];
+
+  console.log(imagesHomepage);
+
   return (
     <div className={home.page} style={{ overflow: 'hidden' }}>
       <div style={containerStyle}>
-        {imagesHomepage.map((image) => (
-          <DraggableImage key={image.id} image={image} />
-        ))}
+        {imagesHomepage.map(image => (<DraggableImage key={image.id} image={image} />))}
       </div>
     </div>
   );
