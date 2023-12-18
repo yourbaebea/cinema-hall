@@ -20,7 +20,7 @@ const formatFilterQuery = (selectedGenresArray, selectedDecadesArray, searchText
 
   return query;
 
-}
+};
 
 
 
@@ -38,24 +38,60 @@ const posters =  await cosmic.objects.find({"type": "posters"})
   .depth(2);
 
   return posters;
-}
-
-const queryAbout = () => {
-  console.log("Query: loading About Query")
-  return aboutfromserver[0];
 };
 
-const queryHome = () => {
-  console.log("Query: loading some Elements for Home")
-  return imagesHomepage;
+async function aboutPosters(){
+  try {
+  const  posters = await cosmic.objects.find({"type": "about-posters"})
+  .props("slug,title,metadata")
+  .depth(1)
+  return posters;
+  } catch (error) {
+    console.error('Error fetching objects:', error);
+    return null;
+  }
 };
+async function aboutText() {
+  try {
+    const text = await cosmic.objects.findOne({
+      type: "about-text",
+      slug: "text-final-about"
+    }).props("slug,title,metadata")
+    .depth(1)
+    console.log(text);
+    return text;
+  } catch (error) {
+    console.error('Error fetching objects:', error);
+    return null;
+  }
+};
+async function queryHome() {
+
+ 
+  try {
+    const objects = await cosmic.objects.find({"type": "home-elements"})
+    .props("slug,title,metadata")
+    .depth(1)
+
+
+    
+    return objects;
+  } catch (error) {
+    console.error('Error fetching objects:', error);
+    return null;
+  }
+};
+
 
 async function queryDetailsPoster(id_data){
-  const poster =  await cosmic.objects.findOne({"type": "posters", "id": id_data})
-  .props("slug,title,metadata")
-  .depth(2);
+  const numericId = Number(id_data);
 
-  return poster;
+  if (isNaN(numericId)) {
+    throw new Error('Invalid id_data. It cannot be converted to a number.');
+  }
+  const poster =  await cosmic.objects.findOne({"type": "posters", "id": numericId}).props("slug,title,metadata").depth(2);
+
+  return poster;
 };
 
 const Query = {
@@ -63,7 +99,8 @@ const Query = {
   fetchPosters,
   queryDetailsPoster,
   formatFilterQuery,
-  queryAbout,
+  aboutPosters,
+  aboutText,
   queryHome
 };
 

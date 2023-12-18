@@ -9,20 +9,43 @@ import Image from "../components/Poster/Image";
 export default class About extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      aboutText: null,
+      aboutPosters: [],
+      loading: true,
+    };
+  }
+
+
+  async componentDidMount() {
+    try {
+      const response = await Query.aboutPosters();
+      const responseText = await Query.aboutText()
+      if (response && response.objects && responseText.object) {
+        const aboutPosters = response.objects;
+        this.setState({ aboutPosters });
+        const aboutText = responseText.object;
+        this.setState({ aboutText });
+      }
+    } catch (error) {
+      console.error('Error fetching posters:', error);
+    }
+
+   
   }
 
 
   render() {
 
     const { view } = this.props;
-
-    const aboutfromserver = Query.queryAbout();
-
+    const { aboutText, aboutPosters, loading } = this.state;
+    
 
     return (
         <div className={classes.page}>
+          
 
-          <div className={classes.textBlock}>{aboutfromserver.text}</div>
+          <div className={classes.textBlock}>{aboutText.metadata['text-about']}</div>
           
             {view ?
 
@@ -30,13 +53,13 @@ export default class About extends Component {
               <div className={classes.madeBy} style={{width: "50%", textAlign: "end", marginRight: "2rem"}}>Made by:</div>
               <div className={classes.aboutFlexRow}>
                 <a className={classes.aboutImage}>
-                  <Image data={aboutfromserver.anab} animate={false}/>
+                  <Image data={aboutPosters[0].metadata['about-poster'].imgix_url} animate={false}/>
                 </a>
                 <a className={classes.aboutImage}>
-                <Image data={aboutfromserver.moura} animate={false}/>
+                <Image data={aboutPosters[0].metadata['about-poster'].imgix_url} animate={false}/>
                 </a>
                 <a className={classes.aboutImage}>
-                <Image data={aboutfromserver.filipe} animate={false}/>
+                <Image data={aboutPosters[0].metadata['about-poster'].imgix_url} animate={false}/>
                 </a>
               </div>
             </div>
@@ -45,13 +68,13 @@ export default class About extends Component {
               <div className={classes.madeBy} style={{marginBottom: "2rem"}}> Made by:</div>
               <div className={classes.aboutFlexColumn}>
                 <a className={classes.aboutImage}>
-                <Image data={aboutfromserver.anab} animate={false}/>
+                <Image data={aboutPosters[0].metadata['about-poster'].imgix_url} animate={false}/>
                 </a>
                 <a className={classes.aboutImage}>
-                <Image data={aboutfromserver.moura} animate={false}/>
+                <Image data={aboutPosters[0].metadata['about-poster'].imgix_url} animate={false}/>
                 </a>
                 <a className={classes.aboutImage}>
-                <Image data={aboutfromserver.filipe} animate={false}/>
+                <Image data={aboutPosters[0].metadata['about-poster'].imgix_url} animate={false}/>
                 </a>
               </div>
             </div>

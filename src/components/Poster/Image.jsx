@@ -11,16 +11,20 @@ export default class Image extends Component {
   render() {
 
     
+
+    
     let {data, animate, alt, isImageClicked}= this.props;
     if(animate==null) animate=false;
     if(alt==null) alt=false;
 
-    if(data.metadata.default==null){
+    
+
+    if(data==null || data.metadata==null||  data.metadata.default==null){
       return(<div className={classes.imageLink}>
         <div className={classes.imageWrapper}><img className={classes.image} src={"/default/poster.png"} alt="poster"/></div></div>)
     }
 
-    if(data.background==null || data.elements==null ) return(<div className={classes.imageLink}>
+    if(data.metadata.background==null || data.metadata.elements==null ) return(<div className={classes.imageLink}>
       <div className={classes.imageWrapper}><img className={classes.image} src={data.metadata.default.imgix_url} alt="poster"/></div></div>)
    
     return (

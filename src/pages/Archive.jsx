@@ -33,10 +33,10 @@ export default class Archive extends Component {
     return (
       <div className={classes.page}>
         <div className={classes.posterGrid}>
-          {posters.map((poster, id) => (
-            <div className={classes.posterContainer} key={id}>
+          {posters.map((poster, index) => (
+            <div className={classes.posterContainer} key={index}>
               <div className={classes.posterImage} style={{ width: `${size}%` }}>
-                <a className={classes.imageLink} href={poster.metadata.id}>
+                <a className={classes.imageLink} key={index}href={`/poster/${poster.metadata.id}`}>
                   
                   <Image data={poster.metadata.image} animate={true}/>
                 </a>

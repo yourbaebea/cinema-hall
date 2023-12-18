@@ -15,10 +15,12 @@ function PosterWrap() {
 
   console.log("poster wrap with id: " + id);
   const id_data= id;
-  console.log(id);
+  console.log(id_data)
   let data = Query.queryDetailsPoster(id_data);
 
-
+  //this is just from the dummy information
+  //let data = poster_details[id_data];
+  //data= null; //what happens when there is a wrong id in the parameters
   const view = window.innerWidth > mobileWidth ;
   return (
 
