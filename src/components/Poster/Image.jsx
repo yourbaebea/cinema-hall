@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import classes from '../../styles/poster.module.css'
+import classesImage from '../../styles/poster.module.css'
 import animation from '../../styles/animation.module.css'
 import poster_result from '../../information/poster_result.json';
 
@@ -17,27 +17,25 @@ export default class Image extends Component {
     if(animate==null) animate=false;
     if(alt==null) alt=false;
 
-    
-
     if(data==null || data.metadata==null||  data.metadata.default==null){
-      return(<div className={classes.imageLink}>
-        <div className={classes.imageWrapper}><img className={classes.image} src={"/default/poster.png"} alt="poster"/></div></div>)
+      return(<div className={classesImage.imageLink}>
+        <div className={classesImage.imageWrapper}><img className={classesImage.image} src={"/default/poster.png"} alt="poster"/></div></div>)
     }
 
-    if(data.metadata.background==null || data.metadata.elements==null ) return(<div className={classes.imageLink}>
-      <div className={classes.imageWrapper}><img className={classes.image} src={data.metadata.default.imgix_url} alt="poster"/></div></div>)
+    if(data.metadata.background==null || data.metadata.elements==null ) return(<div className={classesImage.imageLink}>
+      <div className={classesImage.imageWrapper}><img className={classesImage.image} src={data.metadata.default.imgix_url} alt="poster"/></div></div>)
    
     return (
       <div className={animation.imageContainer}>
-      <div className={classes.imageLink}>
-        <div className={classes.imageWrapper}>
+      <div className={classesImage.imageLink}>
+        <div className={classesImage.imageWrapper}>
           {!animate ?
 
           <div> 
 
-            <img className={classes.image} src={data.metadata.default.url} alt="poster" /> 
+            <img className={classesImage.image} src={data.metadata.default.url} alt="poster" /> 
 
-            {alt ? <img className={classes.image} src={data.metadata.alt.metadata['image-element'].imgix_url} alt="poster" 
+            {alt ? <img className={classesImage.image} src={data.metadata.alt.metadata['image-element'].imgix_url} alt="poster" 
               style={{
                 opacity: isImageClicked ? 1 : 0,
                 width: `${data.metadata.alt.metadata.width}`,
@@ -63,7 +61,7 @@ export default class Image extends Component {
             <img className={animation.defaultImage} src={data.metadata.default.imgix_url} alt="poster" /> 
 
 
-            <img className={classes.image} src={data.metadata.background.metadata['image-element'].url} alt="poster" 
+            <img className={classesImage.image} src={data.metadata.background.metadata['image-element'].url} alt="poster" 
             style={{
               width: `${data.metadata.background.metadata.width}`,
               height: `${data.metadata.background.metadata.height}`,
@@ -75,7 +73,7 @@ export default class Image extends Component {
              />
 
 
-            <img className={classes.image} src={data.metadata.alt.metadata['image-element'].url} alt="poster" 
+            <img className={classesImage.image} src={data.metadata.alt.metadata['image-element'].url} alt="poster" 
             style={{
               opacity: isImageClicked ? 1 : 0,
               width: `${data.metadata.alt.metadata.width}`,
@@ -91,7 +89,7 @@ export default class Image extends Component {
             
             <div 
             key={index}
-            className={`${classes.image} ${element.metadata.animation && animation[element.metadata.animation]}`}
+            className={`${classesImage.image} ${element.metadata.animation && animation[element.metadata.animation]}`}
             style={{
               width: `${(element.metadata.width / data.metadata.background.metadata.width) * 100}%`,
               height: `${(element.metadata.height / data.metadata.background.metadata.height) * 100}%`,
@@ -109,7 +107,7 @@ export default class Image extends Component {
             
             <img
               key={index}
-              className={`${classes.image} ${element.metadata.animation && animation[element.metadata.animation]}`}
+              className={`${classesImage.image} ${element.metadata.animation && animation[element.metadata.animation]}`}
               src={element.metadata['image-element'].url}
               alt={`poster element ${index}`}
               style={{

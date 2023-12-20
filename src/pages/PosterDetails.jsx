@@ -75,7 +75,7 @@ class PosterDetails extends Component {
           </div>
 
           <div className={classes.posterText}>
-            <h1>{data.name}</h1>
+            <h1>{poster.metadata.name}</h1>
             {poster.metadata.details == null ? (
               <div>No Details Available</div>
             ) : (

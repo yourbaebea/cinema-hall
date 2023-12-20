@@ -54,8 +54,7 @@ async function aboutPosters(){
 async function aboutText() {
   try {
     const text = await cosmic.objects.findOne({
-      type: "about-text",
-      slug: "text-final-about"
+      type: "about-text"
     }).props("slug,title,metadata")
     .depth(1)
     console.log(text);
@@ -84,13 +83,18 @@ async function queryHome() {
 
 
 async function queryDetailsPoster(id_data){
+
+  console.log("QUERY: "+ id_data);
   const numericId = Number(id_data);
+
+  console.log("QUERY: "+ numericId);
 
   if (isNaN(numericId)) {
     throw new Error('Invalid id_data. It cannot be converted to a number.');
   }
   const poster =  await cosmic.objects.findOne({"type": "posters", "id": numericId}).props("slug,title,metadata").depth(2);
 
+  console.log(poster);
   return poster;
 };
 
