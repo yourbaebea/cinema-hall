@@ -92,7 +92,13 @@
     "id": "5",
     "name": "Oppenheimer",
     "image":{
-      "default": "/default/poster.png"
+      "default": "/posters/oppenheimer/oppenheimer_original.png",
+      "background": {"width": 2480,"height": 3508,"x": 0,"y": 0, "z": 1,"link": "/posters/oppenheimer/oppenheimer_background.png","animation": ""},
+      "alt": "",
+      "elements": [
+        {"width": 2480,"height": 3508,"x": 0,"y": 0, "z": 2,"link": "/posters/oppenheimer/oppenheimer_ash.png","animation": "oppenheimerAsh"},
+        {"width": 2480,"height": 3508,"x": 0,"y": 0, "z": 2,"link": "/posters/oppenheimer/oppenheimer_smoke.png","animation": "oppenheimerSmoke"}
+        ]
     },
     "description": "information here"
   },

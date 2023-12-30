@@ -105,6 +105,16 @@
 /*------------------------------------------oppenheimer-----------------------------------------------------*/
 
 
+.imageContainer:hover .oppenheimerAsh {
+  border-radius: 50%;
+  animation: colorAnimation 9s ease-in-out infinite;
+}
+
+.imageContainer:hover .oppenheimerSmoke {
+  border-radius: 50%;
+  animation: colorAnimation 9s ease-in-out infinite;
+}
+
 
 
 /*------------------------------------------nightmare-----------------------------------------------------*/
@@ -114,7 +124,7 @@
 .imageContainer:hover .moonNightmare {
   border-radius: 50%;
   animation: colorAnimation 9s ease-in-out infinite;
-  }
+}
 
 
 @keyframes colorAnimation
