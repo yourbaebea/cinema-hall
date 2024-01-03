@@ -93,11 +93,11 @@
     "name": "Oppenheimer",
     "image":{
       "default": "/posters/oppenheimer/oppenheimer_original.png",
-      "background": {"width": 2480,"height": 3508,"x": 0,"y": 0, "z": 1,"link": "/posters/oppenheimer/oppenheimer_background.png","animation": ""},
+      "background": {"width": 2423,"height": 3480,"x": 0,"y": 0, "z": 1,"link": "/posters/oppenheimer/oppenheimer_background.png","animation": ""},
       "alt": "",
       "elements": [
-        {"width": 2480,"height": 3508,"x": 0,"y": 0, "z": 2,"link": "/posters/oppenheimer/oppenheimer_ash.png","animation": "oppenheimerAsh"},
-        {"width": 2480,"height": 3508,"x": 0,"y": 0, "z": 2,"link": "/posters/oppenheimer/oppenheimer_smoke.png","animation": "oppenheimerSmoke"}
+        {"width": 55,"height": 56,"x": 388,"y": 1323, "z": 2,"link": "/posters/oppenheimer/oppenheimer_ash.png","animation": "oppenheimerAsh"},
+        {"width": 260,"height": 451,"x": 285,"y": 850, "z": 2,"link": "/posters/oppenheimer/oppenheimer_smoke.png","animation": "oppenheimerSmoke"}
         ]
     },
     "description": "information here"
@@ -136,8 +136,12 @@
     "id": "7",
     "name": "Up",
     "image":{
-      "default": "/default/poster.png",
-      "alt": ""
+      "default": "/posters/up/up_original.png",
+      "background": {"width": 540,"height": 810,"x": 0,"y": 0, "z": 1,"link": "/posters/up/up_background.png","animation": ""},
+      "alt": "",
+      "elements": [
+        {"width": 293,"height": 449,"x": 0,"y": 304, "z": 2,"link": "/posters/up/up_house.png","animation": "upHouse"}
+        ]
     },
     "description": "information here"
   },
@@ -216,8 +220,12 @@
     "id": "10",
     "name": "Howls Moving Castle",
     "image":{
-      "default": "/default/poster.png",
-      "alt": ""
+      "default": "/posters/castle/castle_original.png",
+      "background": {"width": 720,"height": 1015,"x": 0,"y": 0, "z": 1,"link": "/posters/castle/castle_background.png","animation": ""},
+      "alt": "",
+      "elements": [
+        {"width": 464,"height": 542,"x": 256,"y": 402, "z": 2,"link": "/posters/castle/castle_house.png","animation": "castleHouse"}
+        ]
     },
     "description": "information here"
   },
@@ -225,8 +233,12 @@
     "id": "11",
     "name": "Pinocchio",
     "image":{
-      "default": "/default/poster.png",
-      "alt": ""
+      "default": "/posters/pinocchio/pinocchio_original.png",
+      "background": {"width": 1586,"height": 2048,"x": 0,"y": 0, "z": 1,"link": "/posters/pinocchio/pinocchio_background.png","animation": ""},
+      "alt": "",
+      "elements": [
+        {"width": 133,"height": 89,"x": 675,"y": 1067, "z": 2,"link": "/posters/pinocchio/pinocchio_nose.png","animation": "pinocchioNose"}
+        ]
     },
     "description": "information here"
   },

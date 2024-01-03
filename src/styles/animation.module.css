@@ -116,14 +116,13 @@
 }
 
 
-
 /*------------------------------------------nightmare-----------------------------------------------------*/
 
 
 
 .imageContainer:hover .moonNightmare {
   border-radius: 50%;
-  animation: colorAnimation 9s ease-in-out infinite;
+  animation: colorAnimation 10s ease-in-out infinite;
 }
 
 
@@ -137,7 +136,45 @@
 /*------------------------------------------up-----------------------------------------------------*/
 
 
+.imageContainer:hover .upHouse {
+  animation: houseFloat 8s infinite;
+}
 
+@keyframes houseFloat {
+  0% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(30%, -35%);
+  }
+  20% {
+    transform: translate(35%, -10%) rotate(10deg);
+  }
+  30% {
+    transform: translate(70%, -65%);
+  }
+  40% {
+    transform: translate(85%, -10%) rotate(-30deg);
+  }
+  50% {
+    transform: translate(10%, -65%)  rotate(-15deg);
+  }
+  60% {
+    transform: translate(15%, -25%)  rotate(10deg);
+  }
+  70% {
+    transform: translate(25%, -5%) rotate(-30deg);
+  }
+  80% {
+    transform: translate(60%, -45%) rotate(5deg);
+  }
+  90% {
+    transform: translate(70%, -10%) rotate(-20deg);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
 
 
 /*------------------------------------------fireflies-----------------------------------------------------*/
@@ -252,12 +289,18 @@
 
 /*------------------------------------------howls-----------------------------------------------------*/
 
-
+.imageContainer:hover .castleHouse {
+  border-radius: 50%;
+  animation: colorAnimation 9s ease-in-out infinite;
+}
 
 /*------------------------------------------pinocchio-----------------------------------------------------*/
 
 
-
+.imageContainer:hover .pinocchioNose {
+  border-radius: 50%;
+  animation: colorAnimation 9s ease-in-out infinite;
+}
 
 /*------------------------------------------wolf-----------------------------------------------------*/
 
