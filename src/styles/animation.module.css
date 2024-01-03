@@ -137,42 +137,39 @@
 
 
 .imageContainer:hover .upHouse {
-  animation: houseFloat 8s infinite;
+  animation: houseFloat 10s infinite linear;
 }
 
 @keyframes houseFloat {
-  0% {
+  0%, 100% {
     transform: translate(0, 0);
   }
   10% {
-    transform: translate(30%, -35%);
-  }
-  20% {
-    transform: translate(35%, -10%) rotate(10deg);
+    transform: translate(-10%, 15%) rotate(-10deg); 
   }
   30% {
-    transform: translate(70%, -65%);
+    transform: translate(50%, -72%); 
   }
   40% {
-    transform: translate(85%, -10%) rotate(-30deg);
+    transform: translate(90%, 15%) rotate(-30deg);
   }
-  50% {
-    transform: translate(10%, -65%)  rotate(-15deg);
+  55% {
+    transform: translate(-10%, -35%) rotate(330deg);
   }
-  60% {
-    transform: translate(15%, -25%)  rotate(10deg);
-  }
-  70% {
-    transform: translate(25%, -5%) rotate(-30deg);
+  65% {
+    transform: translate(50%, -72%) rotate(360deg);
   }
   80% {
-    transform: translate(60%, -45%) rotate(5deg);
+    transform: translate(100%, -40%) rotate(370deg);
   }
-  90% {
-    transform: translate(70%, -10%) rotate(-20deg);
+}
+
+@keyframes balloonBounce {
+  0%, 100% {
+    transform: translateY(0);
   }
-  100% {
-    transform: translate(0, 0);
+  50% {
+    transform: translateY(20px);
   }
 }
 
@@ -290,8 +287,44 @@
 /*------------------------------------------howls-----------------------------------------------------*/
 
 .imageContainer:hover .castleHouse {
-  border-radius: 50%;
-  animation: colorAnimation 9s ease-in-out infinite;
+  animation: castleJump 5s linear infinite;
+}
+
+@keyframes castleJump {
+  0%, 100% {
+    transform: translate(0, 0) scale(1, 1);
+  }
+  6% {
+    transform: translate(0, 3%) scale(1.05, 0.95);
+  }
+  12%, 94% {
+    transform: translate(-10%, -15%) scale(1, 1);
+  }
+  18%, 88% {
+    transform: translate(-20%, 0) scale(1, 1);
+  }
+  24%, 82% {
+    transform: translate(-20%, 3%) scale(1.05, 0.95);
+  }
+  30%, 76% {
+    transform: translate(-30%, -25%) scale(1, 1);
+  }
+  36%, 70% {
+    transform: translate(-40%, -5%) scale(1, 1); 
+  }
+
+  40%, 66% {
+    transform: translate(-40%, 5%) scale(1.10, 0.90); 
+  }
+  53% {
+    transform: translate(-40%, -50%) scale(1, 1); 
+  }
+  54%, 56% {
+    transform: translate(-40%, -50%) rotate(15deg); 
+  }
+  55%, 57% {
+    transform: translate(-40%, -50%) rotate(-15deg); 
+  }
 }
 
 /*------------------------------------------pinocchio-----------------------------------------------------*/
