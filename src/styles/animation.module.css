@@ -105,6 +105,157 @@
 /*------------------------------------------oppenheimer-----------------------------------------------------*/
 
 
+.imageContainer:hover .oppenheimerAshBg {
+  animation: ashLitBg 7s linear infinite;
+}
+
+@keyframes ashLitBg {
+  9%, 23% {
+    filter: brightness(0) saturate(100%) invert(57%) sepia(22%) saturate(5677%) hue-rotate(-12deg) brightness(103%) contrast(99%);
+  }
+  29%, 100% {
+    filter: initial;
+  }
+}
+
+.imageContainer:hover .oppenheimerAsh {
+  animation: ashLit 7s linear infinite;
+}
+
+@keyframes ashLit {
+  9%, 23% {
+    filter: brightness(0) saturate(100%) invert(29%) sepia(99%) saturate(2752%) hue-rotate(-4deg) brightness(70%) contrast(140%);
+  }
+  29%, 100% {
+    filter: initial;
+  }
+}
+
+
+
+
+.imageContainer:hover .oppenheimerSmoke1, 
+.imageContainer:hover .oppenheimerSmoke2,
+.imageContainer:hover .oppenheimerSmoke3 {
+  filter: blur(5px);
+  transform-origin: 50% 50%;
+  opacity: 0;
+}
+
+.imageContainer:hover .oppenheimerSmoke1 {
+  animation: opSmoke1 3s linear infinite;
+  animation-delay: 0.5s;
+}
+
+.imageContainer:hover .oppenheimerSmoke2 {
+  animation: opSmoke2 3s linear infinite;
+  animation-delay: 1.5s;
+}
+
+.imageContainer:hover .oppenheimerSmoke3 {
+  animation: opSmoke3 4s linear infinite;
+  animation-delay: 2.5s;
+}
+
+@keyframes opSmoke1 {
+  0% {
+    filter: blur(0px);
+    transform: translateY(0px) scale(-1, 1);
+    opacity: 0;
+  }
+
+  25% {
+    filter: blur(3px);
+    transform: translateY(-10px) scale(-1, 1.05);
+    opacity: 0.5;
+  }
+
+  50% {
+    filter: blur(5px);
+    transform: translateY(-20px) scale(-1, 1.1);
+    opacity: 1;
+  }
+
+  75% {
+    filter: blur(5px);
+    transform: translateY(-30px) scale(-1, 1.15);
+    opacity: 0.5;
+  }
+
+  100% {
+    filter: blur(7px);
+    transform: translateY(-40px) scale(-1, 1.2);
+    opacity: 0;
+  }
+}
+
+@keyframes opSmoke2 {
+  0% {
+    filter: blur(0px);
+    transform: translateY(0px) scale(1);
+    opacity: 0;
+  }
+
+  25% {
+    filter: blur(3px);
+    transform: translateY(-10px) scale(1.05);
+    opacity: 0.5;
+  }
+
+  50% {
+    filter: blur(5px);
+    transform: translateY(-20px) scale(1.1);
+    opacity: 1;
+  }
+
+  75% {
+    filter: blur(5px);
+    transform: translateY(-30px) scale(1.15);
+    opacity: 0.5;
+  }
+
+  100% {
+    filter: blur(7px);
+    transform: translateY(-40px) scale(1.2);
+    opacity: 0;
+  }
+}
+
+@keyframes opSmoke3 {
+  0% {
+    filter: blur(0px);
+    transform: translateY(0px) scale(1);
+    opacity: 0;
+  }
+
+  25% {
+    filter: blur(3px);
+    transform: translateY(-20px) scale(1.05);
+    opacity: 0.5;
+  }
+
+  50% {
+    filter: blur(5px);
+    transform: translateY(-40px) scale(1.1);
+    opacity: 1;
+  }
+
+  75% {
+    filter: blur(5px);
+    transform: translateY(-60px) scale(1.15);
+    opacity: 0.5;
+  }
+
+  100% {
+    filter: blur(7px);
+    transform: translateY(-80px) scale(1.2);
+    opacity: 0;
+  }
+}
+
+
+
+
 
 
 /*------------------------------------------nightmare-----------------------------------------------------*/
@@ -113,8 +264,8 @@
 
 .imageContainer:hover .moonNightmare {
   border-radius: 50%;
-  animation: colorAnimation 9s ease-in-out infinite;
-  }
+  animation: colorAnimation 10s ease-in-out infinite;
+}
 
 
 @keyframes colorAnimation
@@ -127,7 +278,42 @@
 /*------------------------------------------up-----------------------------------------------------*/
 
 
+.imageContainer:hover .upHouse {
+  animation: houseFloat 10s infinite linear;
+}
 
+@keyframes houseFloat {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(-10%, 15%) rotate(-10deg); 
+  }
+  30% {
+    transform: translate(50%, -72%); 
+  }
+  40% {
+    transform: translate(90%, 15%) rotate(-30deg);
+  }
+  55% {
+    transform: translate(-10%, -35%) rotate(330deg);
+  }
+  65% {
+    transform: translate(50%, -72%) rotate(360deg);
+  }
+  80% {
+    transform: translate(100%, -40%) rotate(370deg);
+  }
+}
+
+@keyframes balloonBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+}
 
 
 /*------------------------------------------fireflies-----------------------------------------------------*/
@@ -242,12 +428,62 @@
 
 /*------------------------------------------howls-----------------------------------------------------*/
 
+.imageContainer:hover .castleHouse {
+  animation: castleJump 5s linear infinite;
+}
 
+@keyframes castleJump {
+  0%, 100% {
+    transform: translate(0, 0) scale(1, 1);
+  }
+  6% {
+    transform: translate(0, 3%) scale(1.05, 0.95);
+  }
+  12%, 94% {
+    transform: translate(-10%, -15%) scale(1, 1);
+  }
+  18%, 88% {
+    transform: translate(-20%, 0) scale(1, 1);
+  }
+  24%, 82% {
+    transform: translate(-20%, 3%) scale(1.05, 0.95);
+  }
+  30%, 76% {
+    transform: translate(-30%, -25%) scale(1, 1);
+  }
+  36%, 70% {
+    transform: translate(-40%, -5%) scale(1, 1); 
+  }
+
+  40%, 66% {
+    transform: translate(-40%, 5%) scale(1.10, 0.90); 
+  }
+  53% {
+    transform: translate(-40%, -50%) scale(1, 1); 
+  }
+  54%, 56% {
+    transform: translate(-40%, -50%) rotate(15deg); 
+  }
+  55%, 57% {
+    transform: translate(-40%, -50%) rotate(-15deg); 
+  }
+}
 
 /*------------------------------------------pinocchio-----------------------------------------------------*/
 
 
+.imageContainer:hover .pinocchioNose {
+  animation: noseGrow 10s ease-in-out infinite;
+}
 
+@keyframes noseGrow {
+  0%, 100% {
+    transform: translate(0, 0) scale(1, 1);
+  }
+  50% {
+    transform: translate(-50%, 0) scale(2, 1);
+  }
+}
 
 /*------------------------------------------wolf-----------------------------------------------------*/
 
