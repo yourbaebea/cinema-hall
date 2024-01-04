@@ -5,6 +5,7 @@ import Layout from "../components/Layout/Layout";
 import Filter from "../components/Filter";
 import Image from "../components/Poster/Image";
 import Query from "../information/Query";
+import classesImage from '../styles/poster.module.css'
 
 
 //import queryfromserver from '../information/poster_result.json';
@@ -24,6 +25,7 @@ export default class Collection extends Component {
     const { view, query, filterOptions, filterNumber } = this.props;
 
     let queryfromserver = Query.queryFilterFromServer(query);
+    console.log(queryfromserver);
   
     let columnCount = getColumnCount(filterNumber);
 
@@ -45,7 +47,8 @@ export default class Collection extends Component {
 
               <div className={classes.collectionGrid} style={{ gridTemplateColumns: `repeat(3, 1fr)` }}>
                 {queryfromserver.map(poster => (<a className={classes.collectionImage} key={poster.id} href={`/poster/${poster.id}`}>
-                  <Image data={poster.image} animate={false}/>
+                  <div className={classesImage.imageLink}>
+                  <div className={classesImage.imageWrapper}><img className={classesImage.image} src={poster.image.default} alt="poster"/></div></div>
                   </a>))}
               </div>
           

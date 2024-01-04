@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSpring, animated } from "react-spring";
 import home from '../styles/home.module.css';
 import Query from "../information/Query";
 
 const generateRandomPosition = () => {
-  const imageWidth = 8 * window.innerWidth / 100; 
-  const imageHeight = 20 * window.innerHeight / 100; 
+  const imageWidth = 8 * window.innerWidth / 100;
+  const imageHeight = 20 * window.innerHeight / 100;
 
   const newX = Math.random() * (window.innerWidth - imageWidth);
   const newY = Math.random() * (window.innerHeight - imageHeight);
@@ -13,12 +13,16 @@ const generateRandomPosition = () => {
   return [newX, newY];
 };
 
-const DraggableImage = ({ image }) => {
+const DraggableImage = ({ imageData }) => {
   const [isDragging, setDragging] = useState(false);
+  const [loaded, setLoaded] = useState(false);
   const [{ xy }, set] = useSpring(() => ({
     xy: generateRandomPosition(),
     config: { tension: 150, friction: 100 },
-  }));
+    
+  }))
+  
+  console.log(imageData.element.imgix_url);
 
   const handleMouseDown = (e) => {
     e.preventDefault();
@@ -29,8 +33,8 @@ const DraggableImage = ({ image }) => {
     if (isDragging) {
       const { clientX, clientY } = e;
 
-      const imageWidth = 8 * window.innerWidth / 100; // 8vw
-      const imageHeight = 20 * window.innerHeight / 100; // 20vh
+      const imageWidth = 8 * window.innerWidth / 100;
+      const imageHeight = 20 * window.innerHeight / 100;
 
       const newX = Math.min(Math.max(clientX - imageWidth / 2, 0), window.innerWidth - imageWidth);
       const newY = Math.min(Math.max(clientY - imageHeight / 2, 0), window.innerHeight - imageHeight);
@@ -48,8 +52,8 @@ const DraggableImage = ({ image }) => {
       if (isDragging) {
         const { clientX, clientY } = e;
 
-        const imageWidth = 8 * window.innerWidth / 100; // 8vw
-        const imageHeight = 20 * window.innerHeight / 100; // 20vh
+        const imageWidth = 8 * window.innerWidth / 100;
+        const imageHeight = 20 * window.innerHeight / 100;
 
         const newX = Math.min(Math.max(clientX - imageWidth / 2, 0), window.innerWidth - imageWidth);
         const newY = Math.min(Math.max(clientY - imageHeight / 2, 0), window.innerHeight - imageHeight);
@@ -77,12 +81,14 @@ const DraggableImage = ({ image }) => {
       style={{
         position: "absolute",
         transform: xy.interpolate((x, y) => `translate3d(${x}px, ${y}px, 0)`),
+        opacity: loaded ? 1 : 0, // hide until image is loaded
       }}
     >
       <img
-        src={image.element}
-        alt={`Image ${image.id}`}
+        src={imageData.element.imgix_url}
+        alt={`Image ${imageData.id }`}
         style={{ width: `${8}vw`, height: `${20}vh` }}
+        onLoad={() => setLoaded(true)} // set loaded to true when the image is loaded
       />
     </animated.div>
   );
@@ -98,14 +104,36 @@ const Home = () => {
     overflow: 'hidden',
   };
 
-  const imagesHomepage = Query.queryHome() || [];
+  const [imagesHomepage, setImagesHomepage] = useState([]);
+ 
+ 
 
-  console.log(imagesHomepage);
+  useEffect(() => {
+    const fetchImages = async () => {
+      try {
+        const response = await Query.queryHome();
+        const images = response?.objects || [];
+        setImagesHomepage(images);
+        
+      } catch (error) {
+        console.error("Error fetching images:", error);
+       
+      }
+    };
+
+    fetchImages();
+  }, []);
 
   return (
+    
     <div className={home.page} style={{ overflow: 'hidden' }}>
       <div style={containerStyle}>
-        {imagesHomepage.map(image => (<DraggableImage key={image.id} image={image} />))}
+        
+          {imagesHomepage.map((image, index) => (
+            <DraggableImage key={index} imageData={image.metadata}/>
+          ))}
+        
+       
       </div>
     </div>
   );

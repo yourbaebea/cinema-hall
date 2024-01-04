@@ -14,8 +14,10 @@ function PosterWrap() {
   const { id } = useParams();
 
   console.log("poster wrap with id: " + id);
-  const id_data= id-1;
+  const id_data= id;
+  console.log(id_data)
   let data = Query.queryDetailsPoster(id_data);
+  console.log(data);
 
   //this is just from the dummy information
   //let data = poster_details[id_data];
