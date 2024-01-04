@@ -105,14 +105,36 @@
 /*------------------------------------------oppenheimer-----------------------------------------------------*/
 
 
-.imageContainer:hover .oppenheimerAsh {
-  border-radius: 50%;
-  animation: colorAnimation 9s ease-in-out infinite;
+.imageContainer:hover .oppenheimerAshBg {
+  animation: ashLitBg 7s linear infinite;
 }
 
+@keyframes ashLitBg {
+  9%, 23% {
+    filter: brightness(0) saturate(100%) invert(57%) sepia(22%) saturate(5677%) hue-rotate(-12deg) brightness(103%) contrast(99%);
+  }
+  29%, 100% {
+    filter: initial;
+  }
+}
+
+.imageContainer:hover .oppenheimerAsh {
+  animation: ashLit 7s linear infinite;
+}
+
+@keyframes ashLit {
+  9%, 23% {
+    filter: brightness(0) saturate(100%) invert(29%) sepia(99%) saturate(2752%) hue-rotate(-4deg) brightness(95%) contrast(95%);
+  }
+  29%, 100% {
+    filter: initial;
+  }
+}
+
+
+
+
 .imageContainer:hover .oppenheimerSmoke {
-  border-radius: 50%;
-  animation: colorAnimation 9s ease-in-out infinite;
 }
 
 

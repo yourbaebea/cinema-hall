@@ -96,7 +96,8 @@
       "background": {"width": 2423,"height": 3480,"x": 0,"y": 0, "z": 1,"link": "/posters/oppenheimer/oppenheimer_background.png","animation": ""},
       "alt": "",
       "elements": [
-        {"width": 55,"height": 56,"x": 388,"y": 1323, "z": 2,"link": "/posters/oppenheimer/oppenheimer_ash.png","animation": "oppenheimerAsh"},
+        {"width": 55,"height": 56,"x": 388,"y": 1323, "z": 2,"link": "/posters/oppenheimer/oppenheimer_ash.png","animation": "oppenheimerAshBg"},
+        {"width": 55,"height": 56,"x": 388,"y": 1323, "z": 2,"link": "/posters/oppenheimer/oppenheimer_ash_edited.png","animation": "oppenheimerAsh"},
         {"width": 260,"height": 451,"x": 285,"y": 850, "z": 2,"link": "/posters/oppenheimer/oppenheimer_smoke.png","animation": "oppenheimerSmoke"}
         ]
     },
