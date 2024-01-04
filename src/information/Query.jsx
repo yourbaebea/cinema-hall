@@ -22,9 +22,6 @@ const formatFilterQuery = (selectedGenresArray, selectedDecadesArray, searchText
 
 };
 
-
-
-
 const queryFilterFromServer = (value) => {
   if(value=="") console.log("Query: loading filtered Query NO FILTERS:");
   else{
@@ -32,6 +29,7 @@ const queryFilterFromServer = (value) => {
   }
   return queryfromserver;
 };
+
 async function fetchPosters(){
 const posters =  await cosmic.objects.find({"type": "posters"})
   .props("slug,title,metadata")
@@ -51,6 +49,7 @@ async function aboutPosters(){
     return null;
   }
 };
+
 async function aboutText() {
   try {
     const text = await cosmic.objects.findOne({
@@ -64,6 +63,7 @@ async function aboutText() {
     return null;
   }
 };
+
 async function queryHome() {
 
  
@@ -81,7 +81,6 @@ async function queryHome() {
   }
 };
 
-
 async function queryDetailsPoster(id_data){
 
   console.log("QUERY: "+ id_data);
@@ -95,7 +94,7 @@ async function queryDetailsPoster(id_data){
   const poster =  await cosmic.objects.findOne({"type": "posters", "id": numericId}).props("slug,title,metadata").depth(2);
 
   console.log(poster);
-  return poster;
+  return poster;
 };
 
 const Query = {

@@ -87,7 +87,7 @@ const DraggableImage = ({ imageData }) => {
       <img
         src={imageData.element.imgix_url}
         alt={`Image ${imageData.id }`}
-        style={{ width: `${8}vw`, height: `${20}vh` }}
+        style={{ width: `${8}vw`, height: `100%` }}
         onLoad={() => setLoaded(true)} // set loaded to true when the image is loaded
       />
     </animated.div>
