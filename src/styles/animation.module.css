@@ -331,8 +331,16 @@
 
 
 .imageContainer:hover .pinocchioNose {
-  border-radius: 50%;
-  animation: colorAnimation 9s ease-in-out infinite;
+  animation: noseGrow 10s ease-in-out infinite;
+}
+
+@keyframes noseGrow {
+  0%, 100% {
+    transform: translate(-1.2%, 0) scale(0.98, 1);
+  }
+  50% {
+    transform: translate(-50%, 0) scale(2, 1.1);
+  }
 }
 
 /*------------------------------------------wolf-----------------------------------------------------*/
