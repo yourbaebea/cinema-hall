@@ -31,53 +31,35 @@ export default class Collection extends Component {
 
     return (
         <div className={classes.page}>
+          <div className={classes.collectionContainer}>
           
           {view ?
 
-          <div>
-            <div className={classes.collectionContainer}>
-
-
+         
               <div className={classes.filtersContainer}>
 
                 <Filter {...this.props}></Filter>
                 
               </div>
 
-
-              <div className={classes.collectionGrid} style={{ gridTemplateColumns: `repeat(3, 1fr)` }}>
-                {queryfromserver.map(poster => (<a className={classes.collectionImage} key={poster.id} href={`/poster/${poster.id}`}>
-                  <div className={classesImage.imageLink}>
-                  <div className={classesImage.imageWrapper}><img className={classesImage.image} src={poster.image.default} alt="poster"/></div></div>
-                  </a>))}
-              </div>
           
-            </div>
+          
 
+          : <></>}
+
+
+          <div className={classes.collectionGrid} style={{ gridTemplateColumns: `repeat(${view ? 3 : columnCount}, 1fr)` }}>
+            {queryfromserver.map((poster) => (
+              <a className={classes.collectionImage} key={poster.id} href={`/poster/${poster.id}`}>
+                <div className={classesImage.imageLink}>
+                  <div className={classesImage.imageWrapper}>
+                    <img className={classesImage.image} src={poster.image.default} alt="poster" />
+                  </div>
+                </div>
+              </a>
+            ))}
           </div>
-          
-          
-
-          : <div>
-
-          <div className={classes.collectionContainer}>
-
-
-            <div className={classes.collectionGrid} style={{ gridTemplateColumns: `repeat(${columnCount}, 1fr)` }}>
-            {queryfromserver.map(poster => (<a className={classes.collectionImage} key={poster.id} href={`/poster/${poster.id}`}>
-                  <Image data={poster.image} animate={false}/>
-                  </a>))}
-              </div>
-            
-            </div>
-
-          </div>
-          }
-
-
-            
-            
-
+        </div>   
         </div>
     
     );
