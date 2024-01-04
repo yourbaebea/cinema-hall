@@ -124,7 +124,7 @@
 
 @keyframes ashLit {
   9%, 23% {
-    filter: brightness(0) saturate(100%) invert(29%) sepia(99%) saturate(2752%) hue-rotate(-4deg) brightness(95%) contrast(95%);
+    filter: brightness(0) saturate(100%) invert(29%) sepia(99%) saturate(2752%) hue-rotate(-4deg) brightness(70%) contrast(140%);
   }
   29%, 100% {
     filter: initial;
