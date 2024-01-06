@@ -47,17 +47,19 @@ export default class Collection extends Component {
     try {
       const { selectedGenres, selectedDecades, searchText } = this.state;
       let posters;
-      
-      if (selectedGenres.size === 0 && selectedDecades.size === 0 && !searchText) {
-        const response = await Query.fetchPosters();
+  
+      if (searchText !== "") {
+        // If searchText exists, use queryFilterFromServer to fetch posters
+        const response = await Query.queryFilterFromServer({ searchText: searchText });
         posters = response && response.objects ? response.objects : [];
       } else {
-        const response = await Query.queryFilterFromServer({
-          genres: Array.from(selectedGenres),
-          decades: Array.from(selectedDecades),
-          searchText: searchText,
-        });
+        // If no searchText, fetch all posters using fetchPosters
+        const response = await Query.fetchPosters();
         posters = response && response.objects ? response.objects : [];
+  
+        // Filter posters based on selected genres and decades
+        posters = this.filterPosters(posters, selectedGenres, selectedDecades);
+
       }
   
       this.setState({ posters });
@@ -65,6 +67,36 @@ export default class Collection extends Component {
       console.error('Error fetching posters:', error);
     }
   }
+  
+  filterPosters(posters, selectedGenres, selectedDecades) {
+    let filteredPosters = posters;
+    console.log(filteredPosters);
+    console.log(posters);
+  
+    if (selectedGenres.size > 0) {
+      const selectedGenresArray = Array.from(selectedGenres);
+      filteredPosters = filteredPosters.filter((poster) =>
+        poster.metadata.details.metadata.genres.some((posterGenre) =>
+          selectedGenresArray.includes(posterGenre.title)
+        )
+      );
+  
+      console.log(filteredPosters);
+    }
+  
+    if (selectedDecades.size > 0) {
+      filteredPosters = filteredPosters.filter((poster) =>
+        selectedDecades.has(poster.metadata.details.metadata.year)
+      );
+    }
+  
+    return filteredPosters;
+  }
+  
+  
+  
+  
+  
   
   render() {
     const { view } = this.props;

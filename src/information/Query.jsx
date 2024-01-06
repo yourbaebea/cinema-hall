@@ -38,36 +38,13 @@ async function fetchPosterYears() {
 }
 
 
-async function queryFilterFromServer({ genres, decades, searchText }) {
+async function queryFilterFromServer({ searchText }) {
   try {
-    let posters;
+    const posters = await cosmic.objects.find({
+      "type": "posters",
+      "title": { $regex: searchText, $options: 'i' }
+    }).limit(12).skip(0).props("slug,title,metadata").depth(2);
 
-    if (searchText !== "") {
-      posters = await cosmic.objects.find({
-        "type": "posters",
-        "title": { $regex: searchText, $options: 'i' }
-      }).limit(12).skip(0).props("slug,title,metadata").depth(2);
-    } else if (genres.length > 0) {
-      posters = await cosmic.objects.find({
-        "type": "posters",
-        "metadata.genres": { $in: genres }
-      }).limit(12).skip(0).props("slug,title,metadata").depth(2);
-    } else if (decades.length > 0) {
-      const decadesRange = decades.map(decade => {
-        const [start, end] = decade.split("-");
-        return { $gte: start, $lte: end };
-      });
-
-      posters = await cosmic.objects.find({
-        "type": "posters",
-        "metadata.release_date": { $or: decadesRange }
-      }).limit(12).skip(0).props("slug,title,metadata").depth(2);
-    } else {
-      console.log("Query: loading filtered Query NO FILTERS:");
-      return [];
-    }
-
-    console.log("Query: loading filtered Query:", { genres, decades, searchText });
     return posters;
   } catch (error) {
     console.error('Error fetching posters:', error);
