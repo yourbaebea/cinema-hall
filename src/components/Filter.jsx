@@ -52,7 +52,7 @@ export default class Filter extends Component {
   
         return decades;
       }, []);
-  
+
       return { years: sortedYears, decades: availableDecades };
     } catch (error) {
       console.error('Error fetching available years and decades:', error);

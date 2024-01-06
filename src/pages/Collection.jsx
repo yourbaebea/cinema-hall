@@ -68,10 +68,13 @@ export default class Collection extends Component {
     }
   }
   
+  isYearInDecade(year, decadeRange) {
+    const [start, end] = decadeRange.split('-');
+    return year >= start && year <= end;
+  }
+  
   filterPosters(posters, selectedGenres, selectedDecades) {
     let filteredPosters = posters;
-    console.log(filteredPosters);
-    console.log(posters);
   
     if (selectedGenres.size > 0) {
       const selectedGenresArray = Array.from(selectedGenres);
@@ -85,13 +88,19 @@ export default class Collection extends Component {
     }
   
     if (selectedDecades.size > 0) {
+      const selectedDecadeArray = Array.from(selectedDecades);
       filteredPosters = filteredPosters.filter((poster) =>
-        selectedDecades.has(poster.metadata.details.metadata.year)
+        selectedDecadeArray.some((decade) =>
+          this.isYearInDecade(poster.metadata.details.metadata.year, decade)
+        )
       );
+  
+      console.log(filteredPosters);
     }
   
     return filteredPosters;
   }
+  
   
   
   
