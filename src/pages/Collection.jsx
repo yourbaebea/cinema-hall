@@ -48,7 +48,6 @@ export default class Collection extends Component {
       const { selectedGenres, selectedDecades, searchText } = this.state;
       let posters;
       
-      console.log("size: " + selectedGenres.size);
       if (selectedGenres.size === 0 && selectedDecades.size === 0 && !searchText) {
         const response = await Query.fetchPosters();
         posters = response && response.objects ? response.objects : [];
@@ -60,8 +59,6 @@ export default class Collection extends Component {
         });
         posters = response && response.objects ? response.objects : [];
       }
-
-      console.log(posters);
   
       this.setState({ posters });
     } catch (error) {

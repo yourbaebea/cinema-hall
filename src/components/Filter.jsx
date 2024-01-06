@@ -1,17 +1,79 @@
 import React, { Component } from "react";
 import classes from '../styles/filter.module.css';
 import { IoIosSearch } from "react-icons/io";
+import Query from "../information/Query";
 
 export default class Filter extends Component {
   constructor(props) {
     super(props);
-
+  
     this.state = {
       selectedNumber: this.props.filterNumber,
       selectedGenres: new Set(),
       selectedDecades: new Set(),
+      availableGenres: [],
+      availableYears: [],
+      availableDecades: [],
     };
   }
+  
+  componentDidMount() {
+    this.fetchAvailableData();
+  }
+  
+  fetchAvailableData = async () => {
+    try {
+      const genres = await this.fetchAvailableGenres();
+      this.setState({ availableGenres: genres });
+  
+      const { years, decades } = await this.fetchAvailableDecades();
+      this.setState({
+        availableYears: years,
+        availableDecades: decades,
+      });
+    } catch (error) {
+      console.error('Error fetching available data:', error);
+    }
+  };
+  
+  fetchAvailableDecades = async () => {
+    try {
+      const years = await Query.fetchPosterYears();
+      const sortedYears = years.sort((a, b) => a - b);
+      
+      const availableDecades = sortedYears.reduce((decades, year) => {
+        const decadeStart = Math.floor(year / 10) * 10;
+        const decadeEnd = decadeStart + 9;
+        const decadeLabel = `${decadeStart}-${decadeEnd}`;
+  
+        if (!decades.includes(decadeLabel)) {
+          decades.push(decadeLabel);
+        }
+  
+        return decades;
+      }, []);
+  
+      return { years: sortedYears, decades: availableDecades };
+    } catch (error) {
+      console.error('Error fetching available years and decades:', error);
+      return { years: [], decades: [] };
+    }
+  };
+
+  fetchAvailableGenres = async () => {
+    try {
+      const response = await Query.fetchGenres();
+      let genres = response.map(genre => genre.title);
+      genres.sort();
+  
+      return genres;
+    } catch (error) {
+      console.error('Error fetching genres:', error);
+      return [];
+    }
+  };
+  
+  
 
   handleGenreSelect = (genre) => {
     this.setState((prevState) => {
@@ -58,7 +120,6 @@ export default class Filter extends Component {
 
   render() {
     const { view } = this.props;
-    console.log("log: " + this.props.handleFilterOptions);
 
 
     return (
@@ -77,61 +138,17 @@ export default class Filter extends Component {
           <div className={classes.filterContainer}>
             <div className={classes.filterTitle}>GENRE</div>
             <div className={classes.filterOptionsContainer}>
-              <div className={classes.filterOption}>
-                <input
-                  type="checkbox"
-                  id="checkboxHorror"
-                  checked={this.state.selectedGenres.has("Horror")}
-                  onChange={() => this.handleGenreSelect("Horror")}
-                />
-                <label for="checkboxHorror">
-                  Horror
-                </label>
-              </div>
-              <div className={classes.filterOption}>
-                <input
-                  type="checkbox"
-                  id="checkboxCrime"
-                  checked={this.state.selectedGenres.has("Crime")}
-                  onChange={() => this.handleGenreSelect("Crime")}
-                />
-                <label for="checkboxCrime">
-                  Crime
-                </label>
-              </div>
-              <div className={classes.filterOption}>
-                <input
-                  type="checkbox"
-                  id="checkboxThriller"
-                  checked={this.state.selectedGenres.has("Thriller")}
-                  onChange={() => this.handleGenreSelect("Thriller")}
-                />
-                <label for="checkboxThriller">
-                  Thriller
-                </label>
-              </div>
-              <div className={classes.filterOption}>
-                <input
-                  type="checkbox"
-                  id="checkboxRomance"
-                  checked={this.state.selectedGenres.has("Romance")}
-                  onChange={() => this.handleGenreSelect("Romance")}
-                />
-                <label for="checkboxRomance">
-                  Romance
-                </label>
-              </div>
-              <div className={classes.filterOption}>
-                <input
-                  type="checkbox"
-                  id="checkboxComedy"
-                  checked={this.state.selectedGenres.has("Comedy")}
-                  onChange={() => this.handleGenreSelect("Comedy")}
-                />
-                <label for="checkboxComedy">
-                  Comedy
-                </label>
-              </div>
+              {this.state.availableGenres.map((genre) => (
+                <div className={classes.filterOption} key={genre}>
+                  <input
+                    type="checkbox"
+                    id={`checkbox${genre}`}
+                    checked={this.state.selectedGenres.has(genre)}
+                    onChange={() => this.handleGenreSelect(genre)}
+                  />
+                  <label htmlFor={`checkbox${genre}`}>{genre}</label>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -145,72 +162,17 @@ export default class Filter extends Component {
           <div className={classes.filterContainer}>
             <div className={classes.filterTitle}>DECADE</div>
             <div className={classes.filterOptionsContainer}>
-              <div className={classes.filterOption}>
-                <input
-                  type="checkbox"
-                  id="checkbox1970-1980"
-                  checked={this.state.selectedDecades.has("1970-1980")}
-                  onChange={() => this.handleDecadeSelect("1970-1980")}
-                />
-                <label for="checkbox1970-1980">
-                  1970-1980
-                </label>
-              </div>
-              <div className={classes.filterOption}>
-                <input
-                  type="checkbox"
-                  id="checkbox1980-1990"
-                  checked={this.state.selectedDecades.has("1980-1990")}
-                  onChange={() => this.handleDecadeSelect("1980-1990")}
-                />
-                <label for="checkbox1980-1990">
-                  1980-1990
-                </label>
-              </div>
-              <div className={classes.filterOption}>
-                <input
-                  type="checkbox"
-                  id="checkbox1990-2000"
-                  checked={this.state.selectedDecades.has("1990-2000")}
-                  onChange={() => this.handleDecadeSelect("1990-2000")}
-                />
-                <label for="checkbox1990-2000">
-                  1990-2000
-                </label>
-              </div>
-              <div className={classes.filterOption}>
-                <input
-                  type="checkbox"
-                  id="checkbox2000-2010"
-                  checked={this.state.selectedDecades.has("2000-2010")}
-                  onChange={() => this.handleDecadeSelect("2000-2010")}
-                />
-                <label for="checkbox2000-2010">
-                  2000-2010
-                </label>
-              </div>
-              <div className={classes.filterOption}>
-                <input
-                  type="checkbox"
-                  id="checkbox2010-2020"
-                  checked={this.state.selectedDecades.has("2010-2020")}
-                  onChange={() => this.handleDecadeSelect("2010-2020")}
-                />
-                <label for="checkbox2010-2020">
-                  2010-2020
-                </label>
-              </div>
-              <div className={classes.filterOption}>
-                <input
-                  type="checkbox"
-                  id="checkbox2020-2030"
-                  checked={this.state.selectedDecades.has("2020-2030")}
-                  onChange={() => this.handleDecadeSelect("2020-2030")}
-                />
-                <label for="checkbox2020-2030">
-                  2020-2030
-                </label>
-              </div>
+              {this.state.availableDecades.map((decade) => (
+                <div className={classes.filterOption} key={decade}>
+                  <input
+                    type="checkbox"
+                    id={`checkbox${decade}`}
+                    checked={this.state.selectedDecades.has(decade)}
+                    onChange={() => this.handleDecadeSelect(decade)}
+                  />
+                  <label htmlFor={`checkbox${decade}`}>{decade}</label>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -273,61 +235,17 @@ export default class Filter extends Component {
           <div className={classes.filterContainerMobile}>
             <div className={classes.filterTitleMobile}>GENRE</div>
             <div className={classes.filterOptionsContainerMobile}>
-              <div className={classes.filterOptionMobile}>
-                <input
-                  type="checkbox"
-                  id="checkboxHorror"
-                  checked={this.state.selectedGenres.has("Horror")}
-                  onChange={() => this.handleGenreSelect("Horror")}
-                />
-                <label for="checkboxHorror">
-                  Horror
-                </label>
-              </div>
-              <div className={classes.filterOptionMobile}>
-                <input
-                  type="checkbox"
-                  id="checkboxCrime"
-                  checked={this.state.selectedGenres.has("Crime")}
-                  onChange={() => this.handleGenreSelect("Crime")}
-                />
-                <label for="checkboxCrime">
-                  Crime
-                </label>
-              </div>
-              <div className={classes.filterOptionMobile}>
-                <input
-                  type="checkbox"
-                  id="checkboxThriller"
-                  checked={this.state.selectedGenres.has("Thriller")}
-                  onChange={() => this.handleGenreSelect("Thriller")}
-                />
-                <label for="checkboxThriller">
-                  Thriller
-                </label>
-              </div>
-              <div className={classes.filterOptionMobile}>
-                <input
-                  type="checkbox"
-                  id="checkboxRomance"
-                  checked={this.state.selectedGenres.has("Romance")}
-                  onChange={() => this.handleGenreSelect("Romance")}
-                />
-                <label for="checkboxRomance">
-                  Romance
-                </label>
-              </div>
-              <div className={classes.filterOptionMobile}>
-                <input
-                  type="checkbox"
-                  id="checkboxComedy"
-                  checked={this.state.selectedGenres.has("Comedy")}
-                  onChange={() => this.handleGenreSelect("Comedy")}
-                />
-                <label for="checkboxComedy">
-                  Comedy
-                </label>
-              </div>
+              {this.state.availableGenres.map((genre) => (
+                <div className={classes.filterOptionMobile} key={genre}>
+                  <input
+                    type="checkbox"
+                    id={`checkbox${genre}`}
+                    checked={this.state.selectedGenres.has(genre)}
+                    onChange={() => this.handleGenreSelect(genre)}
+                  />
+                  <label htmlFor={`checkbox${genre}`}>{genre}</label>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -335,72 +253,17 @@ export default class Filter extends Component {
           <div className={classes.filterContainerMobile}>
             <div className={classes.filterTitleMobile}>DECADE</div>
             <div className={classes.filterOptionsContainerMobile}>
-              <div className={classes.filterOptionMobile}>
-                <input
-                  type="checkbox"
-                  id="checkbox1970-1980"
-                  checked={this.state.selectedDecades.has("1970-1980")}
-                  onChange={() => this.handleDecadeSelect("1970-1980")}
-                />
-                <label for="checkbox1970-1980">
-                  1970-1980
-                </label>
-              </div>
-              <div className={classes.filterOptionMobile}>
-                <input
-                  type="checkbox"
-                  id="checkbox1980-1990"
-                  checked={this.state.selectedDecades.has("1980-1990")}
-                  onChange={() => this.handleDecadeSelect("1980-1990")}
-                />
-                <label for="checkbox1980-1990">
-                  1980-1990
-                </label>
-              </div>
-              <div className={classes.filterOptionMobile}>
-                <input
-                  type="checkbox"
-                  id="checkbox1990-2000"
-                  checked={this.state.selectedDecades.has("1990-2000")}
-                  onChange={() => this.handleDecadeSelect("1990-2000")}
-                />
-                <label for="checkbox1990-2000">
-                  1990-2000
-                </label>
-              </div>
-              <div className={classes.filterOptionMobile}>
-                <input
-                  type="checkbox"
-                  id="checkbox2000-2010"
-                  checked={this.state.selectedDecades.has("2000-2010")}
-                  onChange={() => this.handleDecadeSelect("2000-2010")}
-                />
-                <label for="checkbox2000-2010">
-                  2000-2010
-                </label>
-              </div>
-              <div className={classes.filterOptionMobile}>
-                <input
-                  type="checkbox"
-                  id="checkbox2010-2020"
-                  checked={this.state.selectedDecades.has("2010-2020")}
-                  onChange={() => this.handleDecadeSelect("2010-2020")}
-                />
-                <label for="checkbox2010-2020">
-                  2010-2020
-                </label>
-              </div>
-              <div className={classes.filterOptionMobile}>
-                <input
-                  type="checkbox"
-                  id="checkbox2020-2030"
-                  checked={this.state.selectedDecades.has("2020-2030")}
-                  onChange={() => this.handleDecadeSelect("2020-2030")}
-                />
-                <label for="checkbox2020-2030">
-                  2020-2030
-                </label>
-              </div>
+              {this.state.availableDecades.map((decade) => (
+                <div className={classes.filterOptionMobile} key={decade}>
+                  <input
+                    type="checkbox"
+                    id={`checkbox${decade}`}
+                    checked={this.state.selectedDecades.has(decade)}
+                    onChange={() => this.handleDecadeSelect(decade)}
+                  />
+                  <label htmlFor={`checkbox${decade}`}>{decade}</label>
+                </div>
+              ))}
             </div>
           </div>
         </div>

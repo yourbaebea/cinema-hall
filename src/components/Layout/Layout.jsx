@@ -70,9 +70,6 @@ class Layout extends Component {
     } catch (error) {
       PageComponent = require(`../../pages/NotFound`).default;
     }
-
-    
-    console.log(page);
     
     
     return (

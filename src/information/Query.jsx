@@ -6,17 +6,37 @@ const cosmic = createBucketClient({
 })
 
 
-const formatFilterQuery = (selectedGenresArray, selectedDecadesArray, searchText) => {
-  const query="";
-  if(searchText!=="") query= "LAYOUT: new query [" + searchText + ";" + selectedDecadesArray + ";" + searchText + "]" ;
-  else{
-    console.log("Query: new filters were empty, working as it should!");
+async function fetchGenres() {
+  try {
+    const response = await cosmic.objects.find({
+      "type": "poster-genres"
+    }).props("slug,title,metadata").depth(1);
 
+    const genres = response && response.objects ? response.objects : [];
+
+
+    return genres;
+  } catch (error) {
+    console.error('Error fetching genres:', error);
+    return [];
   }
+}
 
-  return query;
+async function fetchPosterYears() {
+  try {
+    const posters = await cosmic.objects.find({
+      "type": "posters"
+    }).limit(12).skip(0).props("slug,title,metadata").depth(2);
 
-};
+    const posterYears = posters && posters.objects ? posters.objects.map(poster => poster.metadata.details.metadata.year) : [];
+
+    return posterYears;
+  } catch (error) {
+    console.error('Error fetching poster years:', error);
+    return [];
+  }
+}
+
 
 async function queryFilterFromServer({ genres, decades, searchText }) {
   try {
@@ -93,8 +113,6 @@ async function aboutText() {
 };
 
 async function queryHome() {
-
- 
   try {
     const objects = await cosmic.objects.find({"type": "home-elements"})
     .props("slug,title,metadata")
@@ -119,10 +137,11 @@ async function queryDetailsPoster(id_data){
 };
 
 const Query = {
+  fetchGenres,
+  fetchPosterYears,
   queryFilterFromServer,
   fetchPosters,
   queryDetailsPoster,
-  formatFilterQuery,
   aboutPosters,
   aboutText,
   queryHome
