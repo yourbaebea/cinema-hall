@@ -93,7 +93,8 @@ class Layout extends Component {
               </a>
             </div>
             <div className={`${filter.filter} ${isFilterVisible ? filter.visible : filter.hidden}`}>
-              <Filter view={view} filterOptions={this.handleFilterOptions} posterNumber={this.handlePosterNumber} />
+              <Filter view={view} handleFilterOptions={this.handleFilterOptions} handleFilterNumber={this.handlePosterNumber} />
+
             </div>
           </div>
         </div>

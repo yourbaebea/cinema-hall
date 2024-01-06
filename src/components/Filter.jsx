@@ -13,7 +13,6 @@ export default class Filter extends Component {
     };
   }
 
-
   handleGenreSelect = (genre) => {
     this.setState((prevState) => {
       const selectedGenres = new Set(prevState.selectedGenres);
@@ -36,22 +35,18 @@ export default class Filter extends Component {
   
     const selectedGenresArray = Array.from(selectedGenres);
     const selectedDecadesArray = Array.from(selectedDecades);
-
+  
     console.log("Selected Genres:", selectedGenresArray);
     console.log("Selected Decades:", selectedDecadesArray);
     console.log("Search Text:", searchText);
     console.log("Searching...");
-
-    this.props.handleFilterOptions(selectedGenresArray, selectedDecadesArray, searchText);
-  };
-
-  handleGenreSelect = (genre) => {
-    this.setState((prevState) => {
-      const selectedGenres = new Set(prevState.selectedGenres);
-      selectedGenres.has(genre) ? selectedGenres.delete(genre) : selectedGenres.add(genre);
-      return { selectedGenres };
+  
+    this.setState({ searchText: searchText }, () => {
+      this.props.handleFilterOptions(selectedGenresArray, selectedDecadesArray, searchText);
     });
   };
+  
+
 
 
   handleFilterNumberChange = (value) => {
@@ -63,7 +58,7 @@ export default class Filter extends Component {
 
   render() {
     const { view } = this.props;
-
+    console.log("log: " + this.props.handleFilterOptions);
 
 
     return (
