@@ -93,14 +93,14 @@ class Layout extends Component {
               </a>
             </div>
             <div className={`${filter.filter} ${isFilterVisible ? filter.visible : filter.hidden}`}>
-              <Filter view={view} filterOptions={this.handleFilterOptions} posterNumber={this.handlePosterNumber} />
+              <Filter view={view} handleFilterOptions={this.handleFilterOptions} posterNumber={this.handlePosterNumber} />
             </div>
           </div>
         </div>
         }
 
         <div className={classes.PageComponent}>
-          <Collection view={view} filterOptions={this.state.filterOptions} posterNumber={this.state.posterNumber} />
+          <Collection view={view} filterOptions={this.state.filterOptions} handleFilterOptions={this.handleFilterOptions} posterNumber={this.state.posterNumber} />
         </div>
 
       </div>
