@@ -51,7 +51,10 @@ export default class Collection extends Component {
       if (searchText !== "") {
         // If searchText exists, use queryFilterFromServer to fetch posters
         const response = await Query.queryFilterFromServer({ searchText: searchText });
-        posters = response && response.objects ? response.objects : [];
+        const allPosters = response && response.objects ? response.objects : [];
+  
+        // Filter posters based on selected genres and decades
+        posters = this.filterPosters(allPosters, selectedGenres, selectedDecades);
       } else {
         // If no searchText, fetch all posters using fetchPosters
         const response = await Query.fetchPosters();
@@ -59,7 +62,6 @@ export default class Collection extends Component {
   
         // Filter posters based on selected genres and decades
         posters = this.filterPosters(posters, selectedGenres, selectedDecades);
-
       }
   
       this.setState({ posters });
@@ -67,6 +69,8 @@ export default class Collection extends Component {
       console.error('Error fetching posters:', error);
     }
   }
+  
+  
   
   isYearInDecade(year, decadeRange) {
     const [start, end] = decadeRange.split('-');
