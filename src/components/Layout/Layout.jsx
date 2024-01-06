@@ -7,7 +7,7 @@ import Footer from "./Footer";
 import Menu from '../Menu'
 import Filter from "../Filter";
 import Collection from "../../pages/Collection"
-import Query from "../../information/Query"
+
 
 const mobileWidth= 800;
 
@@ -18,8 +18,8 @@ class Layout extends Component {
     this.state = {
       isMenuVisible: false,
       isFilterVisible: false,
-      filterNumber: 1,
-      query: "",
+      posterNumber: 1,
+      filterOptions: {},
     };
   }
 
@@ -37,37 +37,31 @@ class Layout extends Component {
     }));
   };
 
-  handleFilterNumber = (value) => {
+  handlePosterNumber = (value) => {
     this.setState((prevState) => ({
-      filterNumber: value,
+      posterNumber: value,
     }));
   };
 
   handleFilterOptions = (selectedGenresArray, selectedDecadesArray, searchText) => {
-    
+    const filterOptions = {
+      selectedGenres: selectedGenresArray,
+      selectedDecades: selectedDecadesArray,
+      searchText: searchText,
+    };
   
-    console.log("CHANGE IN FILTER - Genres:", selectedGenresArray);
-    console.log("CHANGE IN FILTER - Decades:", selectedDecadesArray);
-    console.log("CHANGE IN FILTER - Search Text:", searchText);
-
-    const query = Query.formatFilterQuery(selectedGenresArray,selectedDecadesArray,searchText);
-
-
     this.setState({
-      query: query
-    })
-  
+      filterOptions: filterOptions,
+    });
   };
-
+  
   
   
   render() {
     const { page } = this.props;
-    const { isMenuVisible, isFilterVisible, filterOptions, filterNumber, query } = this.state;
+    const { isMenuVisible, isFilterVisible, posterNumber } = this.state;
 
     const view = window.innerWidth > mobileWidth ;
-
-    //console.log("window inner: "+ window.innerWidth + "> mobile width"+ mobileWidth + "view"+ view);
 
     let PageComponent = null;
 
@@ -98,16 +92,15 @@ class Layout extends Component {
                 filter
               </a>
             </div>
-
             <div className={`${filter.filter} ${isFilterVisible ? filter.visible : filter.hidden}`}>
-              <Filter view={view} filterOptions={filterOptions} filterNumber={filterNumber} handleFilterOptions={this.handleFilterOptions} handleFilterNumber={this.handleFilterNumber}   ></Filter>
+              <Filter view={view} filterOptions={this.handleFilterOptions} posterNumber={this.handlePosterNumber} />
             </div>
           </div>
         </div>
         }
 
         <div className={classes.PageComponent}>
-          <Collection view={view} query={query} filterOptions={this.state.filterOptions} filterNumber={this.state.filterNumber} handleFilterOptions={this.handleFilterOptions} handleFilterNumber={this.handleFilterNumber}/>
+          <Collection view={view} filterOptions={this.state.filterOptions} posterNumber={this.state.posterNumber} />
         </div>
 
       </div>

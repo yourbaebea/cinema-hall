@@ -1,7 +1,3 @@
-import queryfromserver from '../information/poster_result.json';
-import aboutfromserver from '../information/about.json';
-import imagesHomepage from '../information/home.json';
-
 import { createBucketClient } from '@cosmicjs/sdk'
 
 const cosmic = createBucketClient({
@@ -12,7 +8,7 @@ const cosmic = createBucketClient({
 
 const formatFilterQuery = (selectedGenresArray, selectedDecadesArray, searchText) => {
   const query="";
-  if(searchText!="") query= "LAYOUT: new query [" + searchText + ";" + selectedDecadesArray + ";" + searchText + "]" ;
+  if(searchText!=="") query= "LAYOUT: new query [" + searchText + ";" + selectedDecadesArray + ";" + searchText + "]" ;
   else{
     console.log("Query: new filters were empty, working as it should!");
 
@@ -22,18 +18,27 @@ const formatFilterQuery = (selectedGenresArray, selectedDecadesArray, searchText
 
 };
 
-const queryFilterFromServer = (value) => {
-  if(value=="") console.log("Query: loading filtered Query NO FILTERS:");
-  else{
-    console.log("Query: loading filtered Query:" + value);
-  }
-  return queryfromserver;
+async function queryFilterFromServer(value){
+  const posters =  await cosmic.objects.find({"type": "posters"})
+    .limit(12)
+    .skip(0)
+    .props("slug,title,metadata")
+    .depth(2)
+
+    if(value==="") console.log("Query: loading filtered Query NO FILTERS:");
+    else{
+      console.log("Query: loading filtered Query:" + value);
+    }
+  
+  return posters;
 };
 
 async function fetchPosters(){
-const posters =  await cosmic.objects.find({"type": "posters"})
-  .props("slug,title,metadata")
-  .depth(2);
+  const posters =  await cosmic.objects.find({"type": "posters"})
+    .limit(12)
+    .skip(0)
+    .props("slug,title,metadata")
+    .depth(2)
 
   return posters;
 };
@@ -84,16 +89,9 @@ async function queryHome() {
 async function queryDetailsPoster(id_data){
 
   console.log("QUERY: "+ id_data);
-  const numericId = Number(id_data);
 
-  console.log("QUERY: "+ numericId);
+  const poster =  await cosmic.objects.findOne({"type": "posters", "slug": id_data}).props("slug,title,metadata").depth(2);
 
-  if (isNaN(numericId)) {
-    throw new Error('Invalid id_data. It cannot be converted to a number.');
-  }
-  const poster =  await cosmic.objects.findOne({"type": "posters", "id": numericId}).props("slug,title,metadata").depth(2);
-
-  console.log(poster);
   return poster;
 };
 

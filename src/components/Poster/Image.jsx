@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import classesImage from '../../styles/poster.module.css'
 import animation from '../../styles/animation.module.css'
-import poster_result from '../../information/poster_result.json';
 
 export default class Image extends Component {
   constructor(props) {

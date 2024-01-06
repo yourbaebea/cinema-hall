@@ -20,9 +20,9 @@ class PosterDetails extends Component {
 
   async componentDidMount() {
     try {
-      // Wait for the promise to resolve
-      const response = await this.props.data;
-
+      const { data } = this.props;
+      const response = await data;
+  
       if (response && response.object) {
         const poster = response.object;
         this.setState({ poster: poster });
@@ -31,6 +31,7 @@ class PosterDetails extends Component {
       console.error("Error fetching data:", error);
     }
   }
+  
 
 
   handleImageClick = () => {

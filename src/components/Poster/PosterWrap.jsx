@@ -3,7 +3,6 @@ import PosterDetails from "../../pages/PosterDetails";
 import { useParams } from "react-router-dom";
 import Navbar from "../Layout/Navbar";
 import Footer from "../Layout/Footer";
-import poster_details from '../../information/poster_result.json';
 
 import classes from '../../styles/layout.module.css'
 import NotFound from "../../pages/NotFound";
