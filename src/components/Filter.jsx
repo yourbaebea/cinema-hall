@@ -113,7 +113,7 @@ export default class Filter extends Component {
 
   handleFilterNumberChange = (value) => {
     this.setState({ selectedNumber: value }, () => {
-      this.props.handleFilterNumber(this.state.selectedNumber);
+      this.props.handlePosterNumber(this.state.selectedNumber);
     });
   };
 

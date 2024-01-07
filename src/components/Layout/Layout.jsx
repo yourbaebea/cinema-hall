@@ -105,12 +105,12 @@ class Layout extends Component {
                   </a>
                 </div>
                 <div className={`${filter.filter} ${isFilterVisible ? filter.visible : filter.hidden}`}>
-                  <Filter view={view} handleFilterOptions={this.handleFilterOptions} posterNumber={this.handlePosterNumber} />
+                  <Filter view={view} handleFilterOptions={this.handleFilterOptions} handlePosterNumber={this.handlePosterNumber} />
                 </div>
               </div>
 
               <div className={classes.MobilePageComponent}>
-                <Collection view={view} filterOptions={this.state.filterOptions} handleFilterOptions={this.handleFilterOptions} posterNumber={this.state.posterNumber} />
+                <Collection view={view} filterOptions={this.state.filterOptions} handleFilterOptions={this.handleFilterOptions} posterNumber={this.state.posterNumber} handlePosterNumber={this.handlePosterNumber} />
               </div>
             </div>
           }
