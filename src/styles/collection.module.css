@@ -22,6 +22,11 @@
   gap: 1vw;
 }
 
+.noPosters {
+  display: flex;
+  flex-direction: row;
+}
+
 .imageWrapper {
   overflow: hidden;
   border-radius: 10px;

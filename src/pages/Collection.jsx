@@ -115,7 +115,7 @@ export default class Collection extends Component {
     const { view } = this.props;
     const { posters } = this.state;
     const columnCount = getColumnCount(this.state.selectedNumber);
-
+  
     return (
       <div className={classes.page}>
         <div className={classes.collectionContainer}>
@@ -124,21 +124,26 @@ export default class Collection extends Component {
               <Filter {...this.props}></Filter>
             </div>
             : <></>}
-          <div className={classes.collectionGrid} style={{ gridTemplateColumns: `repeat(${view ? 3 : columnCount}, 1fr)` }}>
-            {posters.map((poster) => (
-              <a className={classes.collectionImage} key={poster.metadata.id} href={`/poster/${poster.metadata.id}`}>
-                <div className={classesImage.imageLink}>
-                  <div className={classesImage.imageWrapper}>
-                    <img className={classesImage.image} src={poster.metadata.image.metadata.default.url} alt="poster" />
+          {posters.length > 0 ? (
+            <div className={classes.collectionGrid} style={{ gridTemplateColumns: `repeat(${view ? 3 : columnCount}, 1fr)` }}>
+              {posters.map((poster) => (
+                <a className={classes.collectionImage} key={poster.metadata.id} href={`/poster/${poster.metadata.id}`}>
+                  <div className={classesImage.imageLink}>
+                    <div className={classesImage.imageWrapper}>
+                      <img className={classesImage.image} src={poster.metadata.image.metadata.default.url} alt="poster" />
+                    </div>
                   </div>
-                </div>
-              </a>
-            ))}
-          </div>
+                </a>
+              ))}
+            </div>
+          ) : (
+            <p>No posters match your search...</p>
+          )}
         </div>
       </div>
     );
   }
+  
 }
 
 function getColumnCount(posterNumber) {
