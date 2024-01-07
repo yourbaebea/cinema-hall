@@ -1,84 +1,109 @@
 .page{
-    padding: var(--page-padding);
-    min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  width: 75vw;
 }
 
 .posterDetails{
-    min-height: 30vh;
+  min-height: 30vh;
 }
 
 .lineWeb{
-    width: 100%;
-    padding-bottom: 5vh;
-    margin-top: -13vh;
-    margin-left: -15vh;
-    width: 50px;
-    height: 50px;
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  z-index: 100;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
 }
 
 .lineMobile{
-    width: 100%;
-    padding-bottom: 5vh;
-    margin-top: -14vh;
-    margin-left: -8vh;
-    width: 40px;
-    height: 40px;
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  z-index: 100;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
 }
 
+.filterButtonContainer {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  z-index: 100;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: var(--navbar-font-weight); 
+  font-size: var(--navbar-font-size); 
+}
+.filterButton {
+  width: 100%;
+  height: 100%;
+}
 
 
 .button{
-    background: var(--grey-1);
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
+  background: var(--grey-1);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
 }
 
 .button:hover {
-	background: var(--grey-2);
+  background: var(--grey-2);
 }
 
 .arrow{
-    align-self: center;
-    color: var(--background-color)
+  align-self: center;
+  color: var(--background-color)
 }
 
 
 .posterContainer{
-    width:inherit;
-    height: max-content;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 6vh;
-  }
-  
-  
-  .posterText{
-    flex:1;
-    height: fit-content;
-    text-align: left;
-  }
-  
-  .imageWrapper {
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    border: 3px solid var(--grey-1);
-    width: inherit;
-  }
-  
-  .imageLink {
-    width:100%;
-    height: auto;
-    object-fit: cover;
-  }
-  
-  .image{
-    display: block;
-    width: 100%;
-    height: auto;
-    margin: 0;
-    padding: 0;
-  }
-  
+  width:inherit;
+  height: max-content;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 6vh;
+}
+
+
+.posterText{
+  flex:1;
+  height: fit-content;
+  text-align: left;
+}
+
+.imageWrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 3px solid var(--grey-1);
+  width: inherit;
+}
+
+.imageLink {
+  width:100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.image{
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}

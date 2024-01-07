@@ -120,7 +120,7 @@ export default class Collection extends Component {
       <div className={classes.page}>
         <div className={classes.collectionContainer}>
           {view ?
-            <div className={classes.filtersContainer}>
+            <div>
               <Filter {...this.props}></Filter>
             </div>
             : <></>}

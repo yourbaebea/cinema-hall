@@ -49,7 +49,7 @@ class PosterDetails extends Component {
     const { data, view} = this.props;
     const { poster } = this.state;
     const icon = view ? 50 : 40;
-    const size= (view ? 50 : 100);
+    const size= (view ? 35 : 100);
 
 
     if(poster==null || poster.metadata ==null){

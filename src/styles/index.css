@@ -53,7 +53,7 @@
 
 html, body{
   margin: 0;
-  width: calc(100vw - 2rem);
+  width: calc(100vw - 1rem);
   font-family: var(--primary-font), var(--default-font);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

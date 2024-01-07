@@ -188,9 +188,9 @@
 }
 .filterButtonContainer {
   position: absolute;
-  top: 2rem; /* Adjust the top position as needed */
-  left: 2rem; /* Adjust the right position as needed */
-  z-index: 100; /* Should be higher than the filter */
+  top: 2rem;
+  left: 2rem;
+  z-index: 100;
   cursor: pointer;
   display: flex;
   justify-content: center;

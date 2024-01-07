@@ -64,11 +64,17 @@ class Layout extends Component {
     const view = window.innerWidth > mobileWidth ;
 
     let PageComponent = null;
+    let MobilePageComponent = null;
 
     try {
       PageComponent = require(`../../pages/${page}`).default;
     } catch (error) {
       PageComponent = require(`../../pages/NotFound`).default;
+    }
+    try {
+      MobilePageComponent = require(`../../pages/${page}`).default;
+    } catch (error) {
+      MobilePageComponent = require(`../../pages/NotFound`).default;
     }
     
     
@@ -78,47 +84,66 @@ class Layout extends Component {
 
 
       {page=="Collection" ? 
-      <div>
-        {view ?  <Navbar/>: 
         <div>
-          <Menu isMenuVisible={isMenuVisible} toggleMenuVisibility={this.toggleMenuVisibility}/>
-
-          <div className={filter.filterContainer}>
-            <div className={filter.filterButtonContainer}>
-              <a className={filter.filterButton} onClick={this.toggleFilterVisibility}>
-                filter
-              </a>
+          {view ?  
+            <div>
+              <Navbar/>
+              
+              <div className={classes.PageComponent}>
+                <Collection view={view} filterOptions={this.state.filterOptions} handleFilterOptions={this.handleFilterOptions} posterNumber={this.state.posterNumber} />
+              </div>
             </div>
-            <div className={`${filter.filter} ${isFilterVisible ? filter.visible : filter.hidden}`}>
-              <Filter view={view} handleFilterOptions={this.handleFilterOptions} posterNumber={this.handlePosterNumber} />
-            </div>
-          </div>
-        </div>
-        }
-
-        <div className={classes.PageComponent}>
-          <Collection view={view} filterOptions={this.state.filterOptions} handleFilterOptions={this.handleFilterOptions} posterNumber={this.state.posterNumber} />
-        </div>
-
-      </div>
-      
-      :
-
-      <div> 
-        {view ?
-          <>{page=="Home" ? <Menu isMenuVisible={isMenuVisible} toggleMenuVisibility={this.toggleMenuVisibility}/> : <Navbar/>} </>
+            
           : 
-          <Menu isMenuVisible={isMenuVisible} toggleMenuVisibility={this.toggleMenuVisibility}/>
-        }
+            <div>
+              <Menu isMenuVisible={isMenuVisible} toggleMenuVisibility={this.toggleMenuVisibility}/>
 
-        <div className={classes.PageComponent}>
-            <PageComponent view={view}/>
+              <div className={filter.filterContainer}>
+                <div className={filter.filterButtonContainer}>
+                  <a className={filter.filterButton} onClick={this.toggleFilterVisibility}>
+                    filter
+                  </a>
+                </div>
+                <div className={`${filter.filter} ${isFilterVisible ? filter.visible : filter.hidden}`}>
+                  <Filter view={view} handleFilterOptions={this.handleFilterOptions} posterNumber={this.handlePosterNumber} />
+                </div>
+              </div>
+
+              <div className={classes.MobilePageComponent}>
+                <Collection view={view} filterOptions={this.state.filterOptions} handleFilterOptions={this.handleFilterOptions} posterNumber={this.state.posterNumber} />
+              </div>
+            </div>
+          }
+
+          
+
         </div>
-      
+        
+        :
 
-    
-      </div>
-    
+        <div> 
+          {view ?
+            <>{page=="Home" ? <Menu isMenuVisible={isMenuVisible} toggleMenuVisibility={this.toggleMenuVisibility}/> : <Navbar/>} </>
+            : 
+            <Menu isMenuVisible={isMenuVisible} toggleMenuVisibility={this.toggleMenuVisibility}/>
+          }
+
+          { view ? 
+          <div className={classes.PageComponent}>
+              <PageComponent view={view}/>
+          </div>
+
+          :
+          
+          <div className={classes.MobilePageComponent}>
+              <MobilePageComponent view={view}/>
+          </div>
+
+          }
+        
+
+      
+        </div>
       }
 
     {page=="Home" ? <></> : <Footer/>} 

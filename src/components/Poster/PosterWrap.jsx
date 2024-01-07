@@ -27,11 +27,18 @@ function PosterWrap() {
     <div className={classes.container}>
       
       {view ? <Navbar/>: <></>}
+      
+      {view ? 
+        <div className={classes.PageComponent}>
+          {data === undefined || null  ? <NotFound/> : <PosterDetails view={view} id={id} data={data}/> }
+        </div>
+      : 
+        <div className={classes.MobilePageComponent}>
+          {data === undefined || null  ? <NotFound/> : <PosterDetails view={view} id={id} data={data}/> }
+        </div>
+      }
 
-      <div className={classes.PageComponent}>
 
-      {data === undefined || null  ? <NotFound/> : <PosterDetails view={view} id={id} data={data}/> }
-      </div>
       <Footer/>
 
     </div>
