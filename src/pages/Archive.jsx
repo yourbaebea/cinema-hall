@@ -28,7 +28,7 @@ export default class Archive extends Component {
     const { posters } = this.state
   
 
-    const size = view ? 20 : 100;
+    const size = view ? 27 : 100;
     
     return (
       <div className={classes.page}>

@@ -3,7 +3,9 @@
   }
   
 .page{
-    padding: var(--page-padding);
+  display: flex;
+  flex-direction: column;
+  width: 75vw;
 }
 
 .posterGrid{
@@ -29,12 +31,12 @@
 }
 
 .posterImage{
-  width: 40%;
+  width: 70%;
 }
 
 .posterText{
   flex:1;
-  min-width: 40vh;
+  min-width: 30vh;
   height: fit-content;
   text-align: left;
 }

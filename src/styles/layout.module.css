@@ -3,12 +3,15 @@
 }
 
 .PageComponent{
-    padding-left: 2rem;
-    padding-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
 }
 
 .footer{
     height: 5vh;
+    padding-top: 3vh;
     padding-bottom: 3vh;
     width: 100%;
     display: flex;
@@ -22,6 +25,7 @@
     height: 10vh;
     padding: 0vh 20vw;
     padding-top: 5vh;
+    padding-bottom: 7vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
