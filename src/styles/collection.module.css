@@ -3,7 +3,9 @@
 }
 
 .page{
-  padding: var(--page-padding);
+  display: flex;
+  flex-direction: column;
+  width: 75vw;
 }
 
 .collectionContainer {

@@ -11,7 +11,7 @@
 
 .footer{
     height: 5vh;
-    padding-top: 3vh;
+    padding-top: 5vh;
     padding-bottom: 3vh;
     width: 100%;
     display: flex;
@@ -25,7 +25,7 @@
     height: 10vh;
     padding: 0vh 20vw;
     padding-top: 5vh;
-    padding-bottom: 7vh;
+    padding-bottom: 10vh;
     display: flex;
     justify-content: space-between;
     align-items: center;

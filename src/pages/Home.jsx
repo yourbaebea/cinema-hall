@@ -21,8 +21,6 @@ const DraggableImage = ({ imageData }) => {
     config: { tension: 150, friction: 100 },
     
   }))
-  
-  console.log(imageData.element.imgix_url);
 
   const handleMouseDown = (e) => {
     e.preventDefault();
