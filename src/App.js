@@ -11,7 +11,7 @@ import {
 
 import navigation from './information/navigation.json';
 import Poster from "./pages/PosterDetails";
-import PosterWrap from "./components/Poster/PosterWrap";
+import PosterWrap from "./information/PosterWrap";
 import About from "./pages/About";
 
 

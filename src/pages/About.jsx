@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import classes from '../styles/about.module.css';
 import vars from '../styles/layout.module.css';
 import Query from "../information/Query";
-import Image from "../components/Poster/Image";
+import Image from "../components/Image";
 import classesImage from '../styles/poster.module.css'
 
 

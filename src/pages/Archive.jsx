@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import classes from '../styles/archive.module.css';
-import Image from "../components/Poster/Image";
+import Image from "../components/Image";
 import Query from "../information/Query";
 
 export default class Archive extends Component {

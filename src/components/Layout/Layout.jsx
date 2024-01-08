@@ -1,18 +1,18 @@
 import React, { Component } from "react";
-
-import classes from '../../styles/layout.module.css'
-import filter from '../../styles/filter.module.css'
+import classes from '../../styles/layout.module.css';
+import filter from '../../styles/filter.module.css';
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import Menu from '../Menu'
+import Menu from '../Menu';
 import Filter from "../Filter";
-import Collection from "../../pages/Collection"
+import Collection from "../../pages/Collection";
+import NotFound from "../../pages/NotFound";
+import PosterDetails from "../../pages/PosterDetails";
 
-
-const mobileWidth= 800;
+const mobileWidth = 800;
+const view = window.innerWidth > mobileWidth;
 
 class Layout extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -38,9 +38,9 @@ class Layout extends Component {
   };
 
   handlePosterNumber = (value) => {
-    this.setState((prevState) => ({
+    this.setState({
       posterNumber: value,
-    }));
+    });
   };
 
   handleFilterOptions = (selectedGenresArray, selectedDecadesArray, searchText) => {
@@ -49,107 +49,126 @@ class Layout extends Component {
       selectedDecades: selectedDecadesArray,
       searchText: searchText,
     };
-  
+
     this.setState({
       filterOptions: filterOptions,
     });
   };
+
   
-  
-  
-  render() {
-    const { page } = this.props;
+  renderHeader = () => {
+    const { page, id, data } = this.props;
+    const { isMenuVisible, isFilterVisible, posterNumber } = this.state;
+    if(page=="Home"){
+      return <Menu
+      isMenuVisible={isMenuVisible}
+      toggleMenuVisibility={this.toggleMenuVisibility}
+    />;
+    }
+
+    if(view){return <Navbar/>;}
+     
+    return <Menu
+      isMenuVisible={isMenuVisible}
+      toggleMenuVisibility={this.toggleMenuVisibility}
+    />;
+        
+    
+  }
+
+  renderPage =()=>{
+    const { page, id, data } = this.props;
     const { isMenuVisible, isFilterVisible, posterNumber } = this.state;
 
-    const view = window.innerWidth > mobileWidth ;
+    if(page=="Collection"){
 
-    let PageComponent = null;
-    let MobilePageComponent = null;
+      if(view){
 
-    try {
-      PageComponent = require(`../../pages/${page}`).default;
-    } catch (error) {
-      PageComponent = require(`../../pages/NotFound`).default;
-    }
-    try {
-      MobilePageComponent = require(`../../pages/${page}`).default;
-    } catch (error) {
-      MobilePageComponent = require(`../../pages/NotFound`).default;
-    }
-    
-    
-    return (
+      return <div className={classes.PageComponent}>
+          <Collection
+            view={view}
+            filterOptions={this.state.filterOptions}
+            handleFilterOptions={this.handleFilterOptions}
+            posterNumber={this.state.posterNumber}
+            handlePosterNumber={this.handlePosterNumber}
+          />
+        </div>;
 
-    <div className={classes.container}>
-
-
-      {page=="Collection" ? 
-        <div>
-          {view ?  
-            <div>
-              <Navbar/>
-              
-              <div className={classes.PageComponent}>
-                <Collection view={view} filterOptions={this.state.filterOptions} handleFilterOptions={this.handleFilterOptions} posterNumber={this.state.posterNumber} />
-              </div>
-            </div>
-            
-          : 
-            <div>
-              <Menu isMenuVisible={isMenuVisible} toggleMenuVisibility={this.toggleMenuVisibility}/>
-
-              <div className={filter.filterContainer}>
-                <div className={filter.filterButtonContainer}>
-                  <a className={filter.filterButton} onClick={this.toggleFilterVisibility}>
-                    filter
-                  </a>
-                </div>
-                <div className={`${filter.filter} ${isFilterVisible ? filter.visible : filter.hidden}`}>
-                  <Filter view={view} handleFilterOptions={this.handleFilterOptions} handlePosterNumber={this.handlePosterNumber} />
-                </div>
-              </div>
-
-              <div className={classes.MobilePageComponent}>
-                <Collection view={view} filterOptions={this.state.filterOptions} handleFilterOptions={this.handleFilterOptions} posterNumber={this.state.posterNumber} handlePosterNumber={this.handlePosterNumber} />
-              </div>
-            </div>
-          }
-
-          
-
+      }
+      else{
+        return <div> 
+        <div className={filter.filterContainer}>
+      <div className={filter.filterButtonContainer}>
+        <a
+          className={filter.filterButton}
+          onClick={this.toggleFilterVisibility}
+        >
+          filter
+        </a>
+      </div>
+      <div
+        className={`${filter.filter} ${
+          isFilterVisible ? filter.visible : filter.hidden
+        }`}
+      >
+        <Filter
+          view={view}
+          handleFilterOptions={this.handleFilterOptions}
+          handlePosterNumber={this.handlePosterNumber}
+        />
+      </div>
         </div>
-        
-        :
+        <div className={classes.MobilePageComponent}>
+                  <Collection
+                    view={view}
+                    filterOptions={this.state.filterOptions}
+                    handleFilterOptions={this.handleFilterOptions}
+                    posterNumber={this.state.posterNumber}
+                    handlePosterNumber={this.handlePosterNumber}
+                  />
+                </div>
+        </div>;
 
-        <div> 
-          {view ?
-            <>{page=="Home" ? <Menu isMenuVisible={isMenuVisible} toggleMenuVisibility={this.toggleMenuVisibility}/> : <Navbar/>} </>
-            : 
-            <Menu isMenuVisible={isMenuVisible} toggleMenuVisibility={this.toggleMenuVisibility}/>
-          }
-
-          { view ? 
-          <div className={classes.PageComponent}>
-              <PageComponent view={view}/>
-          </div>
-
-          :
-          
-          <div className={classes.MobilePageComponent}>
-              <MobilePageComponent view={view}/>
-          </div>
-
-          }
-        
-
-      
-        </div>
       }
 
-    {page=="Home" ? <></> : <Footer/>} 
+    }
 
+    let PageComponent;
+
+    if (page === "PosterDetails") {
+      PageComponent = data !== undefined && data !== null ? (
+        <PosterDetails view={view} id={id} data={data} />
+      ) : (
+        <NotFound />
+      );
+    } else {
+      try {
+        const Component = require(`../../pages/${page}`).default;
+        PageComponent = <Component view={view} />;
+      } catch (error) {
+        PageComponent = <NotFound />;
+      }
+    }
+
+    return <div className={view ? classes.PageComponent : classes.MobilePageComponent}>
+      {PageComponent}
     </div>
+          
+  }
 
+  render() {
+    const { page, id, data } = this.props;
+    const { isMenuVisible, isFilterVisible, posterNumber } = this.state;
+    
+
+    return (
+      <div className={classes.container}>
+        {this.renderHeader()}
+
+        {this.renderPage()}
+
+        {page === "Home" ? <></> : <Footer />}
+      </div>
     );
   }
 }

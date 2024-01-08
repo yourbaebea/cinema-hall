@@ -2,7 +2,7 @@ import React, { Component, useParams} from "react";
 import { useHistory } from 'react-router-dom';
 import {BiLeftArrowAlt} from 'react-icons/bi';
 import NotFound from "./NotFound";
-import Image from "../components/Poster/Image"
+import Image from "../components/Image"
 
 
 import classes from '../styles/poster.module.css'

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import classesImage from '../../styles/poster.module.css'
-import animation from '../../styles/animation.module.css'
+import classesImage from '../styles/poster.module.css'
+import animation from '../styles/animation.module.css'
 
 export default class Image extends Component {
   constructor(props) {
