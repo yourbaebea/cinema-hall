@@ -82,54 +82,41 @@ class Layout extends Component {
 
     if(page=="Collection"){
 
-      if(view){
+      return <div className={view ? classes.PageComponent : classes.MobilePageComponent}>
 
-      return <div className={classes.PageComponent}>
-          <Collection
-            view={view}
-            filterOptions={this.state.filterOptions}
-            handleFilterOptions={this.handleFilterOptions}
-            posterNumber={this.state.posterNumber}
-            handlePosterNumber={this.handlePosterNumber}
-          />
-        </div>;
-
-      }
-      else{
-        return <div> 
+        {view ? <></>:
         <div className={filter.filterContainer}>
-      <div className={filter.filterButtonContainer}>
-        <a
-          className={filter.filterButton}
-          onClick={this.toggleFilterVisibility}
-        >
-          filter
-        </a>
-      </div>
-      <div
-        className={`${filter.filter} ${
-          isFilterVisible ? filter.visible : filter.hidden
-        }`}
-      >
-        <Filter
+          <div className={filter.filterButtonContainer}>
+            <a
+              className={filter.filterButton}
+              onClick={this.toggleFilterVisibility}
+            >
+              filter
+            </a>
+          </div>
+          <div
+            className={`${filter.filter} ${
+              isFilterVisible ? filter.visible : filter.hidden
+            }`}
+          >
+            <Filter
+              view={view}
+              handleFilterOptions={this.handleFilterOptions}
+              handlePosterNumber={this.handlePosterNumber}
+            />
+          </div>
+        </div>
+        }
+
+        <Collection
           view={view}
+          filterOptions={this.state.filterOptions}
           handleFilterOptions={this.handleFilterOptions}
+          posterNumber={this.state.posterNumber}
           handlePosterNumber={this.handlePosterNumber}
         />
-      </div>
-        </div>
-        <div className={classes.MobilePageComponent}>
-                  <Collection
-                    view={view}
-                    filterOptions={this.state.filterOptions}
-                    handleFilterOptions={this.handleFilterOptions}
-                    posterNumber={this.state.posterNumber}
-                    handlePosterNumber={this.handlePosterNumber}
-                  />
-                </div>
-        </div>;
+      </div>;
 
-      }
 
     }
 
