@@ -4,10 +4,14 @@
   /* colors */
 	--white-1: white;
   --black-1: black;
+  --black-2: rgba(0, 0, 0, 0.6);
   --off-white: #F0ECE8;
+  --off-white-2: #dbd8d1;
   --grey-2: #555555;
   --grey-1: #8f8f8f;
+  --grey-4: #adadad;
   --shadow-menu: rgba(183, 147, 120, 0.681);
+  --shadow-menu-2: rgba(162, 130, 106, 0.863);
   --grey-3: #ffc4c4;
 
 
@@ -17,7 +21,6 @@
 	--primary-text-color: var(--black-1);
 	--secondary-text-color: var(--white-1);
   --poster-color: var(--grey-3);
-
 
   --poster-width: 72px;
   --poster-height: 108px;

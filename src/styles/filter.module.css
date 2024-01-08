@@ -119,7 +119,7 @@
   color: #000;
   letter-spacing: 3px;
   text-transform: uppercase;
-  align-self: flex-end; /* Align the search title to the center */
+  align-self: flex-end;
   font: 500 30px Futura, sans-serif;
 }
 
@@ -128,15 +128,18 @@
   position: relative;
   --field-padding: 12px;
   display: flex;
+  background-color: var(--off-white-2);
 }
 
 .searchBar input {
   border: none;
+  outline: none;
   -webkit-appearance: none;
   -ms-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background: #f4f4f4;
+  background-color: rgba(255, 255, 255, 0);
+  color: (--primary-text-color);
   padding: 12px;
   width: 100%;
   font: 500 16px Futura, sans-serif;
@@ -145,14 +148,14 @@
 
 .searchButton {
   padding: 0%;
-  border: 0;
+  border: none;
   cursor: pointer;
-  background-color: #f4f4f4;
+  background-color: var(--off-white-2);
   transition: background-color 0.3s ease; /* Add a transition for a smoother effect */
 }
 
 .searchButton:hover {
-  background-color: #b4b4b4;
+  background-color: var(--grey-4);
 }
 
 
@@ -365,29 +368,35 @@
   position: relative;
   --field-padding: 12px;
   display: flex;
+  background-color: var(--shadow-menu-2);
 }
 
 .searchBarMobile input {
   border: none;
+  outline: none;
   -webkit-appearance: none;
   -ms-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background: #f4f4f4;
+  background-color: rgba(255, 255, 255, 0);
+  color: (--primary-text-color);
   padding: 12px;
   width: 100%;
   font: 500 16px Futura, sans-serif;
   padding: var(--field-padding);
+}
+.searchBarMobile input::placeholder {
+  color: var(--black-2);
 }
 
 .searchButtonMobile {
   padding: 0%;
   border: 0;
   cursor: pointer;
-  background-color: #f4f4f4;
+  background-color: var(--shadow-menu-2);
   transition: background-color 0.3s ease; /* Add a transition for a smoother effect */
 }
 
-.searchButtonMobile:hover {
-  background-color: #b4b4b4;
+.searchButtonMobile:active {
+  background-color: var(--grey-4);
 }
