@@ -206,7 +206,7 @@ export default class Filter extends Component {
         <div className={classes.filtersMobile}>
           <div className={classes.postersPerPage}>  
             <div className={classes.postersPerPageTitle}>
-              posters per page: {this.state.selectedNumber}
+              posters per row: {this.state.selectedNumber}
             </div>
             
             <div className={classes.postersPerPageOptionContainer}>
